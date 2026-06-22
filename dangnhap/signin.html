@@ -1,0 +1,198 @@
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lavesta - Trang Sức Bạc Cao Cấp</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="template.css" />
+    <link rel="stylesheet" href="ytb1.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.js"
+      integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+      crossorigin="anonymous"
+    ></script>
+	<script src="ytb1.js"></script>
+  </head>
+  <body class="">
+    <div>
+      <script>
+        $(document).ready(function () {
+          /*Khi nguoi dung lick vao se hien thi/thu lai thanh navigation-bar */
+          $(".header__toggle").click(function () {
+            $(".header__nav").slideToggle();
+          });
+        });
+      </script>
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__left">
+            <button class="header__toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+            <a href="" class="header__logo">
+              <img class="logo__image" src="images/logo.png" alt="Logo" />
+            </a>
+          </div>
+          <div class="header__search">
+            <input
+              type="text"
+              class="header__search-input"
+              placeholder="Tìm kiếm"
+            />
+          </div>
+          <div class="header__actions">
+            <a href="ytb.html"><button class="header__btn header__btn--login">Tài khoản</button></a>
+            <button class="header__btn header__btn--cart">
+              <i class="fas fa-shopping-cart"></i> Giỏ hàng
+            </button>
+          </div>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Sản Phẩm</a></li>
+            <li><a href="">Giới thiệu</a></li>
+            <li><a href="">Về chúng tôi</a></li>
+            <li><a href="">Hướng dẫn</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Bạn có thể thay đổi đường dẫn ảnh trong file CSS cho banner này -->
+      <div id="banner"></div>
+    </div>
+
+   
+    <div class="container">
+      <div class="form-container">
+        
+
+        <div class="auth-tabs">
+          <div class="tab active">Đăng Ký</div>
+        </div>
+        <form class="form-box" onsubmit="return frmValidate5(this);">
+            <div class="input-group">
+                <input class="input-field"
+                    type="text"
+                    id="name"
+                    pattern="^[a-zA-ZÀ-ỹ\s]+$"
+                    placeholder=""
+                    required
+                />
+                <label for="name" class="floating-label">Họ và tên</label>
+                <span id="name-error" class="name-error"></span>
+            </div>
+            <div class="input-group">
+                <input class="input-field"
+                    type="tel"
+                    id="phone"
+                    pattern="^[0-9]{10,11}$"
+                    placeholder=""
+                    required
+                />
+                <label for="phone" class="floating-label">Số điện thoại</label>
+                <span id="phone-error" class="phone-error"></span>
+            </div>
+            <div class="input-group">
+                <input class="input-field"
+                    type="email"
+                    id="email"
+                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                    placeholder=""
+                    required
+                />
+                <label for="email" class="floating-label">Email</label>
+                <span id="email-error" class="email-error"></span>
+            </div>
+            
+            <div class="input-group">
+                <input class="input-field"
+                    type="password"
+                    id="password"
+                    minlength="8"
+                    placeholder=""
+                    required
+                />
+                <label for="password" class="floating-label">Mật khẩu</label>
+                <span id="password-error" class="password-error"></span>
+            <div class="eye-icon" onclick="togglePassword()">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/>
+              </svg>
+            </div>
+          </div>
+           <div class="input-group">
+                <input class="input-field"
+                    type="password"
+                    id="confirm-password"
+                    minlength="8"
+                    placeholder=""
+                    required
+                />
+                <label for="confirm-password" class="floating-label">Xác nhận mật khẩu</label>
+                <span id="confirm-password-error" class="password-error"></span>
+            <div class="eye-icon" onclick="togglePassword()">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/>
+              </svg>
+            </div>
+          </div>
+          <div class="checkbox-group">
+            <div class="form-col remember-me">
+              <input
+                type="checkbox"
+                id="remember-me-checkbox"
+                class="checkbox-field"
+              />
+              <label for="remember-me-checkbox">Ghi nhớ mật khẩu</label>
+            </div>
+          </div>
+          <button type="submit" class="form-btn form-btn--submit">
+            Đăng Ký
+          </button>
+        </form>
+        
+        <div class="form-bottom">
+          <p>
+            Bạn đã có tài khoản? <a href="ytb.html" class="form-link">Đăng nhập ngay</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <a href="" class="footer__logo">
+            <img class="logo__image" src="images/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <div class="footer__content">
+          <div class="footer__section">
+            <h3>Giới thiệu</h3>
+            <a href="">Về Lavesta</a>
+            <a href="">Hệ thống cửa hàng</a>
+          </div>
+          <div class="footer__section">
+            <h3>Chính Sách</h3>
+            <a href="">Chính sách bảo mật</a>
+            <a href="">Chính sách bảo hành</a>
+          </div>
+          <div class="footer__section">
+            <h3>Theo dõi và liên lạc</h3>
+            <a href=""><i class="fab fa-facebook-square"></i> Facebook</a>
+            <a href=""><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 <a href="">Lavesta. Group 6</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
