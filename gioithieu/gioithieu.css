@@ -229,6 +229,14 @@
   margin: 120px auto 50px auto; /* Thêm margin-top để không bị header che mất */
   padding: 0 20px;
 }
+.body {
+    line-height: 1.4;
+    font-size: 14px;
+    color: #19457a;
+    overflow-x: hidden;
+    background: #fff;
+    position: initial !important;
+}
 
 .product-section h2 {
   text-align: center;
