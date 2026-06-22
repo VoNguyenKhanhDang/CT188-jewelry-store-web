@@ -1,6 +1,3 @@
-/* Font */
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -229,14 +226,14 @@ body {
   text-decoration: none;
 }
 
-
 /*@media (max-width: 480px) {
   .form-container {
     padding: 60px 30px;
   }
 }*/
 /*Báo lỗi*/
-.email-error,.password-error {
+.email-error,
+.password-error {
   position: absolute;
   top: 100%;
   left: 0;
@@ -252,45 +249,45 @@ body {
 /* Mobile & Tablet (max-width: 768px) */
 @media only screen and (max-width: 768px) {
   .container {
-    margin: 120px auto auto auto; 
-    height: auto; 
+    margin: 120px auto auto auto;
+    height: auto;
     padding: 15px;
   }
 
   .form-container {
-    padding: 40px 30px; 
+    padding: 40px 30px;
   }
 
   .tab {
-    font-size: 22px; 
+    font-size: 22px;
     padding: 12px 0;
   }
 
   .form-box {
-    gap: 28px; 
+    gap: 28px;
     margin-top: 35px;
   }
 
   .form-socials {
-    gap: 12px; 
+    gap: 12px;
   }
 }
 
 /* Mobile nhỏ (max-width: 480px) */
 @media only screen and (max-width: 480px) {
   .container {
-    margin: 100px auto auto auto; 
+    margin: 100px auto auto auto;
     padding: 10px;
   }
 
   .form-container {
-    padding: 30px 20px; 
-    border: none; 
-    background-color: transparent; 
+    padding: 30px 20px;
+    border: none;
+    background-color: transparent;
   }
 
   .tab {
-    font-size: 18px; 
+    font-size: 18px;
     padding: 10px 0;
   }
 
@@ -305,25 +302,25 @@ body {
   }
 
   .floating-label {
-    font-size: 14px; 
+    font-size: 14px;
   }
 
   .form-socials {
     /* Chuyển từ dạng 3 cột sang dạng danh bạ hàng dọc nếu nút bấm bị méo chữ, hoặc giữ nguyên 3 cột nhưng giảm khoảng cách */
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
   }
-  
+
   .form-btn {
-    height: 44px; 
+    height: 44px;
   }
 
   .form-btn--submit {
     font-size: 15px;
     margin-top: 10px;
   }
-  
+
   .checkbox-group {
-    font-size: 12px; 
+    font-size: 12px;
   }
 }
