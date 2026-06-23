@@ -142,14 +142,26 @@
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 20px;
+    
 }
 
 .page-title {
     font-size: 25px;
     color: #1a426e;
     margin-bottom: 27px;
+    margin-top: 30px;
     font-weight: bold;
+    text-align: center;
 }
+
+.news-wrapper {
+  display: flex;
+  flex-direction:row-reverse;
+  gap: 40px;
+  align-items: start;
+  width: 100%;
+}
+
 .news-list {
   display:flex;
   flex-direction: column;
@@ -181,7 +193,7 @@
     padding-top: 0;
 }
 
-.pro-name {
+.product-name {
     font-size: 19px;
     color: #1a426e;
     margin-top: -4px;
@@ -190,13 +202,13 @@
     
 }
 
-.pro-meta {
+.product-meta {
     font-size: 13px;
-    color: #999999;
+    color: #888;
     margin-bottom: 10px;
 }
 
-.pro-desc {
+.product-desc {
     font-size: 15px;
     color: #333333;
     line-height: 1.5;
@@ -204,39 +216,28 @@
     
 }
 
-.news-wrapper {
-  display: flex;
-  flex-direction:row-reverse;
-  gap: 40px;
-  align-items: start;
-  width: 100%;
-}
-
 .news-sidebar {
   width: 250px;
   flex-shrink: 0;
 }
 
-.news-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
 
-.aside-title {
-  color: #113366;
-  font-size: 18px;
-  border-bottom: 2px solid #333;
-  padding-bottom: 8px;
-  margin-top: 0;
-}
 .aside-box {
   background: #fff;
   border: 1px solid #e0e0e0;
   padding: 15px;            
   border-radius: 4px;      
 }
+
+.aside-title {
+  color: #1a426e;
+  font-size: 18px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+
 .aside-list {
   list-style: none;
   padding: 0;
@@ -250,7 +251,6 @@
   display: flex;
   gap: 12px;
   text-decoration: none;
-  color: #2b5a8f;
 }
 
 .aside-img {
@@ -263,13 +263,14 @@
 .aside-text h4 {
   margin: 0;
   font-size: 14px;
+  color: #1a426e;
 }
 
 .aside-text span {
   font-size: 12px;
   color: #888;
 }
- 
+
   
   .footer {
     background-color: #f9f9f9;
