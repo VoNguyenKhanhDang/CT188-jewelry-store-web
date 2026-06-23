@@ -164,43 +164,6 @@ body {
   margin-top: auto;
 }
 
-.form-divider {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 14px;
-  color: #777;
-  margin-top: 20px;
-}
-
-.form-divider:before,
-.form-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background-color: #ddd;
-}
-
-.form-socials {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.form-btn--social {
-  border: 1px solid #ddd;
-  transition: 0.3s ease;
-}
-
-.form-btn--social:hover {
-  background-color: #f0f0f0;
-}
-
-.btn-icon {
-  width: 30px;
-}
-
 .form-link {
   color: #1a73e8;
   text-decoration: none;
@@ -210,12 +173,6 @@ body {
   text-decoration: underline;
 }
 
-/*
-@media (max-width: 480px) {
-  .form-container {
-    padding: 60px 30px;
-  }
-}*/
 .email-error,.password-error,.name-error,.phone-error {
     position: absolute;
     top: 100%;
