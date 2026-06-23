@@ -204,7 +204,7 @@
 
 .product-meta {
     font-size: 13px;
-    color: #999999;
+    color: #888;
     margin-bottom: 10px;
 }
 
@@ -230,7 +230,7 @@
 }
 
 .aside-title {
-  color: #113366;
+  color: #1a426e;
   font-size: 18px;
   border-bottom: 2px solid #333;
   padding-bottom: 8px;
@@ -251,7 +251,6 @@
   display: flex;
   gap: 12px;
   text-decoration: none;
-  color: #2b5a8f;
 }
 
 .aside-img {
@@ -264,6 +263,7 @@
 .aside-text h4 {
   margin: 0;
   font-size: 14px;
+  color: #1a426e;
 }
 
 .aside-text span {
