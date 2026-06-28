@@ -19,7 +19,7 @@ body {
   margin: 190px auto auto auto; /* Thêm margin-top để không bị header che mất */
 }
 
-.form-container {
+.form {
   position: relative;
   background-color: #fff;
   padding: 50px 40px;
@@ -30,36 +30,38 @@ body {
   overflow: hidden;
 }
 
-.form-header  {
+.form__header  {
   display: flex;
   text-align: center;
   border-bottom: 1px solid #ddd;
+  margin-top: -35px;
 }
 
-.form-title {
+.form__title {
   flex: 1;
   padding: 15px 0;
   font-weight: bold;
   color: #000;
-  pointer-events: none; /* Vô hiệu hóa sự kiện click */
+  pointer-events: none; 
   font-size: 26px;
   border-bottom: 1.5px solid #3788be;
+  
 }
 
-.form-box {
+.form__box {
   display: flex;
   flex-direction: column;
   gap: 32px;
   margin-top: 50px;
 }
 
-.input-group {
+.form__group {
   position: relative;
   display: flex;
   width: 100%;
 }
 
-.input-field {
+.form__input {
   height: 48px;
   padding-inline: 14px;
   border: 1px solid #ccc;
@@ -72,7 +74,7 @@ body {
   padding-right: 40px;
 }
 
-.floating-label {
+.form__label {
   position: absolute;
   top: 50%;
   left: 8px;
@@ -84,8 +86,8 @@ body {
   pointer-events: none;
 }
 
-.input-field:focus ~ .floating-label,
-.input-field:not(:placeholder-shown) ~ .floating-label {
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) ~ .form__label {
   top: 0;
   left: 8px;
   transform: translateY(-50%);
@@ -93,11 +95,11 @@ body {
   color: #007bff;
 }
 
-.input-field:focus {
+.form__input:focus {
   border-color: #007bff;
 }
 
-.input-field:not(:focus):not(:placeholder-shown) ~ .floating-label {
+.form__input:not(:focus):not(:placeholder-shown) ~ .form__label {
   color: #5f6368;
 }
 
@@ -116,20 +118,20 @@ body {
   color: #777;
 }
 
-.checkbox-group {
+.form__options {
   display: flex;
   justify-content: space-between;
   gap: 10px;
   font-size: 14px;
 }
 
-.remember-me {
+.form__remember {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.form-btn {
+.form__btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,7 +144,7 @@ body {
   padding-inline: 8px;
 }
 
-.form-btn--submit {
+.form__btn--submit {
   background-color: #007bff;
   color: #fff;
   font-size: 16px;
@@ -151,11 +153,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.form-btn--submit:hover {
+.form__btn--submit:hover {
   background-color: #0056b3;
 }
 
-.form-bottom {
+.form__bottom {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,7 +166,7 @@ body {
   margin-top: 20px;
 }
 
-.form-divider {
+.form__divider {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -173,27 +175,27 @@ body {
   margin-top: 20px;
 }
 
-.form-divider:before,
-.form-divider::after {
+.form__divider:before,
+.form__divider::after {
   content: "";
   flex: 1;
   height: 1px;
   background-color: #ddd;
 }
 
-.form-socials {
+.form__socials {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.form-btn--social {
+.form__btn--social {
   border: 1px solid #ddd;
   transition: 0.3s ease-in-out;
 }
 
-.form-btn--social:hover {
+.form__btn--social:hover {
   background-color: #f0f0f0;
 }
 
@@ -201,16 +203,16 @@ body {
   width: 30px;
 }
 
-.form-link {
+.form__link {
   color: #1a73e8;
   text-decoration: none;
 }
-.form-link:hover {
+.form__link:hover {
   text-decoration: underline;
 }
 
 /*Báo lỗi*/
-.email-error,.password-error {
+.form__error {
   position: absolute;
   top: 100%;
   left: 0;
@@ -231,21 +233,21 @@ body {
     padding: 15px;
   }
 
-  .form-container {
+  .form {
     padding: 40px 30px; 
   }
 
-  .tab {
+  .form__title {
     font-size: 22px; 
     padding: 12px 0;
   }
 
-  .form-box {
-    gap: 30px; 
+  .form__box {
+    gap: 32px; 
     margin-top: 35px;
   }
 
-  .form-socials {
+  .form__socials {
     gap: 12px; 
   }
 }
@@ -257,47 +259,46 @@ body {
     padding: 10px;
   }
 
-  .form-container {
+  .form {
     padding: 30px 20px; 
     border: none; 
     background-color: transparent; 
   }
 
-  .tab {
+  .form__title {
     font-size: 18px; 
     padding: 10px 0;
   }
 
-  .form-box {
+  .form__box {
     gap: 32px;
     margin-top: 25px;
   }
 
-  .input-field {
+  .form__input {
     height: 44px;
     font-size: 14px;
   }
 
-  .floating-label {
+  .form__label {
     font-size: 14px; 
   }
 
-  .form-socials {
-    /* Chuyển từ dạng 3 cột sang dạng danh bạ hàng dọc nếu nút bấm bị méo chữ, hoặc giữ nguyên 3 cột nhưng giảm khoảng cách */
+  .form__socials {
     grid-template-columns: repeat(3, 1fr); 
     gap: 8px;
   }
   
-  .form-btn {
+  .form__btn {
     height: 44px; 
   }
 
-  .form-btn--submit {
+  .form__btn--submit {
     font-size: 15px;
     margin-top: 10px;
   }
   
-  .checkbox-group {
+  .form__options {
     font-size: 12px; 
   }
 }
