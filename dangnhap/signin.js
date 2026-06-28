@@ -4,7 +4,7 @@ function frmValidate5(frm) {
 // Lấy phần tử input mật khẩu và icon mắt
 function togglePassword() {
   const clickedIcon = event.currentTarget;
-  const inputGroup = clickedIcon.closest('.input-group');
+  const inputGroup = clickedIcon.closest('.form__group');
   const passwordInput = inputGroup.querySelector('input');
 
   if (passwordInput.type === "password") {

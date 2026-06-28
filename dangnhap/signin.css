@@ -16,10 +16,10 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 20px;
-  margin: 200px auto auto auto; /* Thêm margin-top để không bị header che mất */
+  margin: 200px auto auto auto; 
 }
 
-.form-container {
+.form {
   position: relative;
   background-color: #fff;
   padding: 50px 40px;
@@ -30,13 +30,14 @@ body {
   overflow: hidden;
 }
 
-.form-header  {
+.form__header  {
   display: flex;
   text-align: center;
   border-bottom: 1px solid #ddd;
+  margin-top: -35px;
 }
 
-.form-title {
+.form__title {
   flex: 1;
   padding: 15px 0;
   font-weight: bold;
@@ -46,20 +47,20 @@ body {
   border-bottom: 1.5px solid #3788be;
 }
 
-.form-box {
+.form__box {
   display: flex;
   flex-direction: column;
   gap: 32px;
   margin-top: 50px;
 }
 
-.input-group {
+.form__group {
   position: relative;
   display: flex;
   width: 100%;
 }
 
-.input-field {
+.form__input {
   height: 48px;
   padding-inline: 14px;
   border: 1px solid #ccc;
@@ -72,7 +73,7 @@ body {
   padding-right: 40px;
 }
 
-.floating-label {
+.form__label {
   position: absolute;
   top: 50%;
   left: 8px;
@@ -84,8 +85,8 @@ body {
   pointer-events: none;
 }
 
-.input-field:focus ~ .floating-label,
-.input-field:not(:placeholder-shown) ~ .floating-label {
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) ~ .form__label {
   top: 0;
   left: 8px;
   transform: translateY(-50%);
@@ -93,11 +94,11 @@ body {
   color: #007bff;
 }
 
-.input-field:focus {
+.form__input:focus {
   border-color: #007bff;
 }
 
-.input-field:not(:focus):not(:placeholder-shown) ~ .floating-label {
+.form__input:not(:focus):not(:placeholder-shown) ~ .form__label {
   color: #5f6368;
 }
 
@@ -116,20 +117,20 @@ body {
   color: var(--color-placeholder);
 }
 
-.checkbox-group {
+.form__options {
   display: flex;
   justify-content: space-between;
   gap: 10px;
   font-size: 14px;
 }
 
-.remember-me {
+.form__remember {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.form-btn {
+.form__btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,7 +143,7 @@ body {
   padding-inline: 8px;
 }
 
-.form-btn--submit {
+.form__btn--submit {
   background-color: #007bff;
   color: #fff;
   font-size: 16px;
@@ -151,11 +152,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.form-btn--submit:hover {
+.form__btn--submit:hover {
   background-color: #0056b3;
 }
 
-.form-bottom {
+.form__bottom {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,25 +165,25 @@ body {
   margin-top: auto;
 }
 
-.form-link {
+.form__link {
   color: #1a73e8;
   text-decoration: none;
 }
 
-.form-link:hover {
+.form__link:hover {
   text-decoration: underline;
 }
 
-.email-error,.password-error,.name-error,.phone-error {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    font-size: 13px;
-    display: block;
-    margin-top: 5px;
-    color: red;
-    text-align: left;
-    pointer-events: none;
+.form__error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 13px;
+  display: block;
+  margin-top: 5px;
+  color: red;
+  text-align: left;
+  pointer-events: none;
 }
 /*================================================
   BỔ SUNG MEDIA QUERY CHO PHẦN MAIN (FORM) 
@@ -195,22 +196,22 @@ body {
     padding: 15px;
   }
 
-  .form-container {
+  .form {
     padding: 40px 30px; 
   }
 
-  .tab {
+  .form__title {
     font-size: 22px; 
     padding: 12px 0;
   }
 
-  .form-box {
+  .form__box {
     gap: 30px; 
     margin-top: 35px;
   }
 
-  .form-socials {
-    gap: 12px; 
+  .form__btn {
+    height: 44px; 
   }
 }
 
@@ -221,46 +222,41 @@ body {
     padding: 10px;
   }
 
-  .form-container {
+  .form {
     padding: 30px 20px; 
     border: none; 
     background-color: transparent; 
   }
 
-  .tab {
+  .form__title {
     font-size: 18px; 
     padding: 10px 0;
   }
 
-  .form-box {
+  .form__box {
     gap: 32px;
     margin-top: 25px;
   }
 
-  .input-field {
+  .form__input {
     height: 44px;
     font-size: 14px;
   }
 
-  .floating-label {
+  .form__label {
     font-size: 14px; 
   }
 
-  .form-socials {
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 8px;
-  }
-  
-  .form-btn {
+  .form__btn {
     height: 44px; 
   }
 
-  .form-btn--submit {
+  .form__btn--submit {
     font-size: 15px;
     margin-top: 10px;
   }
   
-  .checkbox-group {
+  .form__options {
     font-size: 12px; 
   }
 }
