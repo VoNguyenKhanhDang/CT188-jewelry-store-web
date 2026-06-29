@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="header__inner">
+    <div class="header__left">
+      <button class="header__toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a href="/trangchu.html" class="header__logo">
+        <img
+          class="logo__image"
+          src="/images/logo.png"
+          data-src="/images/logo.png"
+          alt="Logo"
+        />
+      </a>
+    </div>
+    <div class="header__search">
+      <input type="text" class="header__search-input" placeholder="Tìm kiếm" />
+    </div>
+    <div class="header__actions">
+      <button class="header__btn header__btn--login">Tài khoản</button>
+      <button class="header__btn header__btn--cart">
+        <i class="fas fa-shopping-cart"></i> Giỏ hàng
+      </button>
+    </div>
+  </div>
+  <nav class="header__nav">
+    <ul class="header__menu">
+      <li><a href="/trangchu.html">Trang chủ</a></li>
+      <li><a href="/SanPham/main.html">Sản Phẩm</a></li>
+      <li><a href="/gioithieu/gioithieu.html">Giới thiệu</a></li>
+      <li><a href="">Liên hệ</a></li>
+      <li><a href="/tintuc.html">Tin tức</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  // Chạy script này ngay khi header được load xong
+  $(".header__toggle")
+    .off("click")
+    .on("click", function () {
+      $(".header__nav").slideToggle();
+    });
+</script>
