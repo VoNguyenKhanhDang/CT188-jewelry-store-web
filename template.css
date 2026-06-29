@@ -221,10 +221,11 @@
 /* ==============================================================
    PHẦN MAIN CONTENT
    ============================================================== */
-
+/* 
 .container {
   max-width: 1024px;
-  margin: 120px auto 50px auto; /* Thêm margin-top để không bị header che mất */
+  margin: 120px
+   auto 50px auto; 
   padding: 0 20px;
 }
 
@@ -258,7 +259,7 @@
 }
 
 .product-item img:hover {
-  transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi trỏ chuột vào ảnh */
+  transform: scale(1.05); 
 }
 
 .product-item h3 {
@@ -272,7 +273,7 @@
   font-size: 18px;
   font-weight: bold;
   color: #000;
-}
+} */
 
 /* ==============================================================
    RESPONSIVE - MOBILE & TABLET
