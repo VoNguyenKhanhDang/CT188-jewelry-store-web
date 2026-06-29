@@ -223,18 +223,11 @@
    ============================================================== */
 
 .container {
-  display: grid;
-  grid-template-areas: "aside article";
-  grid-template-columns: 1fr 3fr;
+  display: flex;
+  justify-content: flex-end;
   max-width: 1024px;
-  margin: 150px auto 50px auto; /* Thêm margin-top để không bị header che mất */
+  margin: 120px auto 50px auto; /* Thêm margin-top để không bị header che mất */
   padding: 0 20px;
-}
-.aside{
-  grid-area: aside;
-}
-.article{
-  grid-area: article;
 }
 .article__title{
     color: #1a426e;
