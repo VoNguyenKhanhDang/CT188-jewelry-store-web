@@ -221,11 +221,10 @@
 /* ==============================================================
    PHẦN MAIN CONTENT
    ============================================================== */
-/* 
-.container {
+
+/* .container {
   max-width: 1024px;
-  margin: 120px
-   auto 50px auto; 
+  margin: 120px auto 50px auto;
   padding: 0 20px;
 }
 
@@ -259,7 +258,7 @@
 }
 
 .product-item img:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .product-item h3 {
