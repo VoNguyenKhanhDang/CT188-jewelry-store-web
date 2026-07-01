@@ -32,7 +32,7 @@ function togglePassword() {
 
     // Biểu thức chính quy (Regex) theo định dạng HTML5 pattern của bạn
     const nameReg = /^[a-zA-ZÀ-ỹ\s]+$/;
-    const phoneReg = /^[0-9]{10,11}$/;
+    const phoneReg = /^[0-9]{10}$/;
     const emailReg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // ==========================================
@@ -54,7 +54,7 @@ function togglePassword() {
       if (phoneInp.value.trim() === "") {
         phoneErr.textContent = "Số điện thoại không được để trống.";
       } else if (!phoneReg.test(phoneInp.value)) {
-        phoneErr.textContent = "Số điện thoại phải gồm 10 hoặc 11 chữ số.";
+        phoneErr.textContent = "Số điện thoại phải gồm 10 chữ số.";
       }
     });
     phoneInp.addEventListener('focus', function() { phoneErr.textContent = ""; });

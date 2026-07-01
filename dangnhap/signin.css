@@ -114,7 +114,7 @@ body {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  color: var(--color-placeholder);
+  color: #777;
 }
 
 .form__options {
@@ -185,9 +185,7 @@ body {
   text-align: left;
   pointer-events: none;
 }
-/*================================================
-  BỔ SUNG MEDIA QUERY CHO PHẦN MAIN (FORM) 
-  ================================================*/
+
 /* Mobile & Tablet (max-width: 768px) */
 @media only screen and (max-width: 768px) {
   .container {
