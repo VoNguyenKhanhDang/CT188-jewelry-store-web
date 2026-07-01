@@ -408,18 +408,34 @@
  .main__section .sections {
  display:flex;
  align-items: center;
- gap:80px;
+ gap: 80px;
+ justify-content: space-between;
 
+
+}
+
+
+.main__section .sections > div {
+  flex: 1 1 0;
+  max-width: 350px;
+  
 }
  .swap-img {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 100%;
+  
+  aspect-ratio: 1/1;
+  
  }
  .swap-img img {
   position: absolute;
   left:0;
   top:0;
+  right:0;
+  width: 100%;
+  height: 100%;
+ 
  }
   .swap-img .img-1 {
     opacity: 1;
@@ -437,7 +453,7 @@
     opacity: 1;
    }
  .sections div a  img {
-    width: 350px;
+    width:100%;
     border: 3px solid white;
     border:3px solid #bdbdbd;
 }
@@ -454,7 +470,30 @@
     font-size: 12px;
     font-weight: 500;
 }
-.main__section .first__section > div {}
+/* PHẦN GIỎ HÀNG */
+.Cart-container {
+  padding: 100px 20px 20px;
+}
+.Cart-container .price {
+  border: 0;
+}
+.Cart-container h1 {
+  Color:rgb(0, 52, 148); 
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+.Cart-container h2 {
+  background-color: #fafafa;
+  font-size: 18px;
+  font-weight: 300;
+  color:rgb(0, 52, 148);  
+  padding: 10px 5px 10px 5px;
+}
+.Cart-container h2 > span {
+  font-weight: bold;
+ 
+}
 /* ==============================================================
    RESPONSIVE - MOBILE & TABLET
    ============================================================== */
@@ -615,7 +654,7 @@
    gap: 100px;
 }
 .pages__section .swap-img img {
-  width: 500px;
+  width: 100%;
 
   
 }
@@ -627,6 +666,8 @@
   margin-bottom: 150px;
   margin-top:150px;
   margin-left: 200px;
+  
+  
 }
 .page-sidebar {
   flex: 1;
@@ -641,7 +682,7 @@
  margin-bottom: 20px;
 }
 .des-img {
-  width: 400px;
+  width: 100%;
   
 }
 .details {
@@ -718,6 +759,7 @@ font-size: 16px;
   text-align: center;
   color: #19457a;
   font-weight:bold ;
+  
 }
 .buy {
   width: 100%;

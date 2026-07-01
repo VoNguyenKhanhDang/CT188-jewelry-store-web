@@ -1,22 +1,81 @@
- $(".options__list li, .sort__list li").click(function() {
-     $(this).parent().prev().find("span").text($(this).text());
-    });
+class dropList {
+    constructor(selector) {
+        document.querySelectorAll(selector).forEach((li) => {
+            li.addEventListener("click",() => {
+                this.selecItems(li);
+            })
+        })
+    };
+   selecItems(li) {
+    const temp = li.parentElement;
+    const temp2 = temp.previousElementSibling;
+    const content = temp2.querySelector("span");
+     content.textContent = li.textContent;
+   };
+};
 
 
-   
-     $(document).ready(function() {
+class itemDetails {
+    constructor(items) {
+        this.items = items;
+    };
+    getID() {
         const temp = new URLSearchParams(window.location.search);
-        const temp1 = temp.get("id");
-        const temp2 = list[temp1];
+        return temp.get("id");
+    };
+    swapItem() {
+        const id = this.getID();
+        const sp = this.items[id];
+      
+           document.querySelector(".h2-name").textContent = sp.name;
+           document.querySelector(".img-1").src = sp.img1;
+           document.querySelector(".img-2").src = sp.img2;
+           document.querySelector(".des-img.img1").src = sp.img1;
+           document.querySelector(".des-img.img2").src = sp.img2;
+           document.querySelector(".price").textContent = sp.price;
+           document.querySelector(".items-name").textContent = sp.gt;
 
-        if(temp2) {
-            $(".h2-name").text(temp2.name);
-            $(".img-1").attr("src",temp2.img1);
-            $(".img-2").attr("src", temp2.img2);
-            $(".des-img.img1").attr("src",temp2.img1);
-             $(".des-img.img2").attr("src",temp2.img2);
-             $(".price").text(temp2.price);
-             $("items-name").text(temp2.gt);
-        }
-     })
-   
+    };
+}
+
+
+
+class inputAddQuantity{
+  constructor(input, increaseButton, decreaseButton) {
+    this.input = document.querySelector(input);
+    this.input.value = 0;
+
+    document.querySelector(increaseButton)
+      .addEventListener("click", () => this.increase());
+    document.querySelector(decreaseButton)
+      .addEventListener("click", () => this.decrease());
+  };
+
+  increase() {
+    this.input.value = Number(this.input.value) + 1;
+  };
+  decrease() {
+    const check = Number(this.input.value) - 1;
+    if(check < 0) {
+        
+        this.input.value = 0;
+    }else {
+        this.input.value = check;
+    }
+  };
+
+};
+
+    
+document.addEventListener("DOMContentLoaded", () => {
+    new dropList(".options__list li, .sort__list li");
+
+  if (document.querySelector(".h2-name")) {
+    new itemDetails(list).swapItem();
+  };
+
+  if (document.querySelector(".input_number")) {
+    new inputAddQuantity(".input_number", ".increase", ".decreass");
+  }
+
+})
