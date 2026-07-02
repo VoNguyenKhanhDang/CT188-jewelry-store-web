@@ -1,7 +1,7 @@
 function frmValidate5(frm) {   
     return frm.checkValidity(); 
 }
-// Lấy phần tử input mật khẩu và icon mắt
+//ẩn/hiện mật khẩu
 function togglePassword() {
   const clickedIcon = event.currentTarget;
   const inputGroup = clickedIcon.closest('.form__group');
