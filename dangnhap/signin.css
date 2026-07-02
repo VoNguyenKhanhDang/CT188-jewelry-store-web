@@ -34,14 +34,13 @@ body {
   display: flex;
   text-align: center;
   border-bottom: 1px solid #ddd;
-  margin-top: -35px;
+  margin-top: -55px;
 }
 
 .form__title {
   flex: 1;
   padding: 15px 0;
   font-weight: bold;
-  color: #555;
   font-size: 26px;
   color: #000;
   border-bottom: 1.5px solid #3788be;
@@ -197,14 +196,16 @@ body {
   .form {
     padding: 40px 30px; 
   }
-
+  .form__header  {
+    margin-top: -35px;
+  }
   .form__title {
     font-size: 22px; 
     padding: 12px 0;
   }
 
   .form__box {
-    gap: 30px; 
+    gap: 35px; 
     margin-top: 35px;
   }
 
