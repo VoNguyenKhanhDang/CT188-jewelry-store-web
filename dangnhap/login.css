@@ -16,7 +16,7 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 20px;
-  margin: 190px auto auto auto; /* Thêm margin-top để không bị header che mất */
+  margin: 160px auto auto auto; /* Thêm margin-top để không bị header che mất */
 }
 
 .form {
@@ -51,7 +51,7 @@ body {
 .form__box {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 35px;
   margin-top: 50px;
 }
 
@@ -263,7 +263,7 @@ body {
 
   .form {
     padding: 30px 20px; 
-    border: none; 
+    border: none;
     background-color: transparent; 
   }
 
