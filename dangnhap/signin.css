@@ -24,7 +24,7 @@ body {
   background-color: #fff;
   padding: 50px 40px;
   width: 100%;
-  max-width: 480px;
+  max-width: 500px;
   border-radius: 8px;
   border: 1px solid #ccc;
   overflow: hidden;
@@ -43,7 +43,7 @@ body {
   font-weight: bold;
   font-size: 26px;
   color: #000;
-  border-bottom: 1.5px solid #3788be;
+  border-bottom: 1.5px solid #007bff;
 }
 
 .form__box {
