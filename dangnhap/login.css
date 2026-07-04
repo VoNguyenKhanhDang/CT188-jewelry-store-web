@@ -78,6 +78,7 @@ body {
   position: absolute;
   top: 50%;
   left: 8px;
+  font-size: 14px;
   transform: translateY(-50%);
   color: #777;
   background-color: #fff;
@@ -303,4 +304,27 @@ body {
   .form__options {
     font-size: 12px; 
   }
+}
+/* ========================================================
+   CSS KÍCH HOẠT MÀU ĐỎ KHI ĐĂNG NHẬP SAI HOẶC CHƯA ĐỦ
+   ======================================================== */
+
+/* 1. Đổi màu chữ của Label (Nhãn) sang màu đỏ khi có lỗi */
+.form__group.error .form__label {
+  color: #e74c3c !important; /* #e74c3c là mã màu đỏ chuẩn */
+}
+
+/* 2. Đổi màu khung viền của ô Input sang màu đỏ khi có lỗi */
+.form__group.error .form__input {
+  border-color: #e74c3c !important;
+    
+}
+
+/* 3. Đảm bảo dòng chữ báo lỗi hiển thị rõ ràng dưới ô input */
+.form__error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 5px;
+  display: block;
+  text-align: left;
 }
