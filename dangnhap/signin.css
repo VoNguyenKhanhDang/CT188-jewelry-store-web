@@ -76,6 +76,7 @@ body {
   position: absolute;
   top: 50%;
   left: 8px;
+  font-size: 14px;
   transform: translateY(-50%);
   color: #777;
   background-color: #fff;
@@ -115,6 +116,7 @@ body {
   cursor: pointer;
   color: #777;
 }
+
 
 .form__options {
   display: flex;
@@ -258,4 +260,33 @@ body {
   .form__options {
     font-size: 12px; 
   }
+}
+
+/* --- TRẠNG THÁI LỖI (CHỈ ĐỔI BORDER VÀ LABEL, CHỮ TRONG Ô GIỮ NGUYÊN) --- */
+
+/* Đổi màu viền ô input sang đỏ khi rời chuột */
+.form__group.error .form__input:not(:focus) {
+  border-color: #e74c3c !important;
+}
+
+/* Đổi màu chữ Label nổi lên sang đỏ khi rời chuột */
+.form__group.error .form__input:not(:focus) ~ .form__label {
+  color: #e74c3c !important;
+}
+
+/* --- KHI CLICK VÀO LẠI (FOCUS) --- */
+/* Ép buộc trả về màu xanh dương chuẩn ban đầu của bạn */
+.form__input:focus {
+  border-color: #007bff !important;
+}
+.form__input:focus ~ .form__label {
+  color: #007bff !important;
+}
+
+/* Màu xanh lá cố định khi đăng ký thành công */
+.form__group.success .form__input {
+  border-color: #2ecc71 !important;
+}
+.form__group.success .form__label {
+  color: #2ecc71 !important;
 }
