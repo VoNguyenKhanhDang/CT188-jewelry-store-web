@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Quicksand", sans-serif, inherit;
 }
 
 body {
@@ -229,11 +229,8 @@ body {
   color: red;
   text-align: left;
 }
-/*================================================
-  BỔ SUNG MEDIA QUERY CHO PHẦN MAIN (FORM) 
-  ================================================*/
-/* Mobile & Tablet (max-width: 768px) */
-@media only screen and (max-width: 768px) {
+/*Tablet*/
+@media only screen and (max-width: 1024px) {
   .container {
     margin: 120px auto auto auto; 
     height: auto; 
@@ -261,8 +258,8 @@ body {
   }
 }
 
-/* Mobile nhỏ (max-width: 480px) */
-@media only screen and (max-width: 480px) {
+/* Mobile*/
+@media only screen and (max-width: 600px) {
   .container {
     margin: 100px auto auto auto; 
     padding: 10px;
@@ -312,22 +309,17 @@ body {
     font-size: 12px; 
   }
 }
-/* ========================================================
-   CSS KÍCH HOẠT MÀU ĐỎ KHI ĐĂNG NHẬP SAI HOẶC CHƯA ĐỦ
-   ======================================================== */
+/* Error Messages khi lỗi */
 
-/* 1. Đổi màu chữ của Label (Nhãn) sang màu đỏ khi có lỗi */
 .form__group.error .form__label {
-  color: #e74c3c !important; /* #e74c3c là mã màu đỏ chuẩn */
+  color: #e74c3c !important; 
 }
 
-/* 2. Đổi màu khung viền của ô Input sang màu đỏ khi có lỗi */
 .form__group.error .form__input {
   border-color: #e74c3c !important;
     
 }
 
-/* 3. Đảm bảo dòng chữ báo lỗi hiển thị rõ ràng dưới ô input */
 .form__error {
   color: #e74c3c;
   font-size: 13px;
