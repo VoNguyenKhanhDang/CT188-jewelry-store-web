@@ -1,49 +1,24 @@
-function loadFragment(selector, url) {
-  const target = document.querySelector(selector);
-  if (!target) return;
-
-  // Resolve URL relative to this script file so pages in subfolders work
-  const scriptEl =
-    document.currentScript || document.scripts[document.scripts.length - 1];
-  const base = scriptEl
-    ? new URL(".", scriptEl.src).href
-    : window.location.origin + "/";
-  const fetchUrl = new URL(url, base).href;
-
-  fetch(fetchUrl)
-    .then((response) => {
-      if (!response.ok) throw new Error("Failed to load " + fetchUrl);
-      return response.text();
+function loadComponent(elementId, filePath) {
+  fetch(filePath)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById(elementId).innerHTML = data;
     })
-    .then((html) => {
-      target.innerHTML = html;
-      // After injecting fragment, resolve any images that use data-src
-      try {
-        const imgs = target.querySelectorAll("img[data-src]");
-        imgs.forEach((img) => {
-          img.src = new URL(img.dataset.src, base).href;
-        });
-      } catch (e) {
-        console.warn("Failed to resolve fragment images:", e);
-      }
-      if (selector === "#header-placeholder") {
-        const menuToggle = document.querySelector(".header__toggle");
-        const nav = document.querySelector(".header__nav");
-        if (menuToggle && nav) {
-          menuToggle.addEventListener("click", function () {
-            nav.classList.toggle("open");
-          });
-        }
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-      target.innerHTML =
-        "<p>Không thể tải header/footer. Nếu bạn đang mở file trực tiếp, hãy chạy trên web server (ví dụ: `python -m http.server`).</p>";
-    });
+    .catch((error) => console.error("Lỗi nạp file:", error));
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadFragment("#header-placeholder", "header.html");
-  loadFragment("#footer-placeholder", "footer.html");
+  loadComponent("header-placeholder", "/header.html");
+  loadComponent("footer-placeholder", "/footer.html");
+});
+
+//xử lý sự kiện cho nút hamburger menu
+document.addEventListener("click", function (event) {
+  const isClickToggleBtn = event.target.closest(".header__toggle");
+  if (isClickToggleBtn) {
+    const navMenu = document.querySelector(".header__nav");
+    if (navMenu) {
+      navMenu.classList.toggle("show-menu");
+    }
+  }
 });

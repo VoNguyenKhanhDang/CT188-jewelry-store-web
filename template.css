@@ -1,6 +1,3 @@
-/* ============================================================
-   PHẦN HEADER - CẤU TRÚC BEM
-   ============================================================ */
 .header {
   position: fixed;
   top: 0;
@@ -85,14 +82,6 @@
   color: #fff;
 }
 
-.header__btn--login {
-  /* Variant specific styling if needed */
-}
-
-.header__btn--cart {
-  /* Variant specific styling if needed */
-}
-
 /* Navigation */
 .header__nav {
   background-color: #f9f9f9;
@@ -140,9 +129,6 @@
   flex: 0 0 auto;
 }
 
-/* ============================================================
-   PHẦN FOOTER - CẤU TRÚC BEM
-   ============================================================ */
 .footer {
   background-color: #f9f9f9;
   border-top: 1px solid #eee;
@@ -218,65 +204,7 @@
   text-decoration: underline;
 }
 
-/* ==============================================================
-   PHẦN MAIN CONTENT
-   ============================================================== */
-
-/* .container {
-  max-width: 1024px;
-  margin: 120px auto 50px auto;
-  padding: 0 20px;
-}
-
-.product-section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 28px;
-  letter-spacing: 2px;
-  color: #333;
-}
-
-.product-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.product-item {
-  width: 30%;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.product-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  transition: transform 0.3s ease;
-}
-
-.product-item img:hover {
-  transform: scale(1.05);
-}
-
-.product-item h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #333;
-  font-weight: normal;
-}
-
-.product-item .price {
-  font-size: 18px;
-  font-weight: bold;
-  color: #000;
-} */
-
-/* ==============================================================
-   RESPONSIVE - MOBILE & TABLET
-   ============================================================== */
+/* RWD */
 
 /* Tablet (768px - 1024px) */
 @media only screen and (max-width: 1024px) {
@@ -351,7 +279,9 @@
     border-bottom: 1px solid #eee;
     z-index: 999;
   }
-
+  .header__nav.show-menu {
+    display: block !important;
+  }
   .header__menu {
     flex-direction: column;
     max-width: 100%;
@@ -379,44 +309,5 @@
   .footer__content {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-}
-
-/* Mobile nhỏ (max-width: 480px) */
-@media only screen and (max-width: 480px) {
-  .header__inner {
-    padding: 10px 12px;
-    gap: 10px;
-  }
-
-  .header__left {
-    gap: 5px;
-  }
-
-  .header__left .logo__image {
-    height: 40px;
-  }
-
-  .header__toggle {
-    font-size: 20px;
-    padding: 4px;
-  }
-
-  .header__search-input {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-
-  .header__menu li a {
-    padding: 12px 15px;
-    font-size: 13px;
-  }
-
-  .footer__section h3 {
-    font-size: 14px;
-  }
-
-  .footer__section a {
-    font-size: 12px;
   }
 }
