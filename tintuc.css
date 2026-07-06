@@ -1,3 +1,6 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 .container {
   max-width: 1101px;
   padding: 0 15px;
@@ -65,13 +68,12 @@
 }
 .news-sidebar {
   width: 250px;
-}
-.aside-box {
   background: #fff;
   border: 1px solid #e0e0e0;
   padding: 15px;
   border-radius: 4px;
 }
+
 .aside-title {
   color: #1a426e;
   font-size: 18px;
