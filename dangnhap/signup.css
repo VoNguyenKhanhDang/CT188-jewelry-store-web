@@ -269,7 +269,6 @@ body {
 }
 
 /*TRẠNG THÁI LỖI */
-
 /* Đổi màu viền ô input sang đỏ khi rời chuột */
 .form__group.error .form__input:not(:focus) {
   border-color: #e74c3c !important;
