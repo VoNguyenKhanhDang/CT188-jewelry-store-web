@@ -14,9 +14,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
   padding: 20px;
-  margin: 160px auto auto auto; /* Thêm margin-top để không bị header che mất */
+  margin: 125px auto -75px auto; /* Thêm margin-top để không bị header che mất */
 }
 
 .form {
@@ -232,7 +233,7 @@ body {
 /*Tablet*/
 @media only screen and (max-width: 1024px) {
   .container {
-    margin: 120px auto auto auto; 
+    margin: 125px auto -75px auto; 
     height: auto; 
     padding: 15px;
   }
@@ -261,7 +262,7 @@ body {
 /* Mobile*/
 @media only screen and (max-width: 768px) {
   .container {
-    margin: 100px auto auto auto; 
+    margin: 40px auto -115px auto; 
     padding: 10px;
   }
 
