@@ -173,7 +173,8 @@ allInputs.forEach(input => {
 // 4. LOGIC XỬ LÝ KIỂM TRA TỔNG THỂ VÀ ĐĂNG KÝ (SUBMIT)
 // ========================================================
 window.frmValidate5 = function(frm) {
-  event.preventDefault(); // Ngăn trình duyệt reload lại trang web khi bấm nút gửi form
+  // Ngăn trình duyệt reload lại trang web khi bấm nút gửi form
+  event.preventDefault(); 
   
   // Kiểm tra: Nếu nút bấm đã biến thành loại "button" thường (nghĩa là đã đăng ký xong) thì dừng hoàn toàn hàm
   const submitBtn = frm.querySelector('.form__btn--submit');
