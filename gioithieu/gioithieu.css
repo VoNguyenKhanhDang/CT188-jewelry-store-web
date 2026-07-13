@@ -1,92 +1,237 @@
-
-
+/* Huynh Trung Hau B2410718
+    @create-date: 17/6/2026
+    Link tham khao: https://jensy.vn/pages/about-us/  */
 /* ==============================================================
-   PHẦN MAIN CONTENT
+   RESET
    ============================================================== */
-*
-{
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     color: #1a426e;
 }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ==============================================================
+   MOBILE FIRST
+   ============================================================== */
+
 .container {
-  display: grid;
-  grid-template-areas: "aside article";
-  grid-template-columns: 1fr 3fr;
-  max-width: 1024px;
-  margin: 150px auto 50px auto; /* Thêm margin-top để không bị header che mất */
-  padding: 0 20px;
-}
-.aside{
-  align-self: flex-start;
-  grid-area: aside;
-  border: 1px solid rgb(186, 183, 183);
-}
-.aside ul
-{
-  list-style: none;
-}
-.aside h2
-{
-  text-align: center;
-}
-.aside li{
-  margin-bottom: 12px;
-}
-.article{
-  grid-area: article;
-}
-.article__title{
-    color: #1a426e;
-    margin-bottom: 27px;
-    font-weight: bold;
+    width: 92%;
+    margin: 100px auto 40px;
+    display: grid;
+    grid-template-areas:
+        "article"
+        "aside";
+    gap: 32px;
 }
 
-.product-section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 28px;
-  letter-spacing: 2px;
-  color: #333;
+/* ================= ARTICLE ================= */
+
+.article {
+    grid-area: article;
 }
 
-.product-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.article__title {
+    margin: 0 0 32px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
-.product-item {
-  width: 30%;
-  text-align: center;
-  margin-bottom: 30px;
+.article__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 48px;
 }
 
-.product-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  transition: transform 0.3s ease;
+.article__content p {
+    margin: 0 0 18px;
+    line-height: 1.9;
+    text-align: justify;
 }
 
-.product-item img:hover {
-  transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi trỏ chuột vào ảnh */
+.article__reason h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.7rem;
 }
 
-.product-item h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #333;
-  font-weight: normal;
+.article__intro img,
+.article__reason img {
+    width: 100%;
 }
 
-.product-item .price {
-  font-size: 18px;
-  font-weight: bold;
-  color: #000;
+/* ================= ASIDE ================= */
+
+.aside {
+    grid-area: aside;
+    border: 1px solid #d9d9d9;
+    padding: 20px;
+}
+
+.aside__title {
+    text-align: center;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+.aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.aside li {
+    padding: 12px 0;
+}
+
+.aside li:not(:last-child) {
+    border-bottom: 1px dotted #999;
+}
+
+.aside a {
+    text-decoration: none;
+    transition: .25s;
+}
+
+.aside a:hover {
+    padding-left: 6px;
 }
 
 /* ==============================================================
-   RESPONSIVE - MOBILE & TABLET
+   TABLET
    ============================================================== */
 
+@media (min-width: 768px) {
+
+.container {
+    width: 90%;
+}
+
+.article__title {
+    font-size: 2.3rem;
+}
+
+.article__intro {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+}
+
+.article__reason h2 {
+    font-size: 2rem;
+}
+
+}
+
+/* ==============================================================
+   DESKTOP
+   ============================================================== */
+
+@media (min-width: 1024px) {
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 140px auto 60px;
+    display: grid;
+    grid-template-areas: "aside article";
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+}
+
+.aside {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+}
+
+.article__title {
+    font-size: 2.6rem;
+}
+
+.article__intro {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+}
+
+.article__reason h2 {
+    font-size: 2.2rem;
+}
+
+}
+/* ==============================================================
+   WIREFRAME (DEBUG)
+   ============================================================== */
+
+.container {
+    outline: 3px solid #ff0000;
+}
+
+.article {
+    outline: 3px solid #2196f3;
+}
+
+.article__title {
+    outline: 2px dashed #9c27b0;
+}
+
+.article__intro {
+    outline: 3px solid #4caf50;
+}
+
+.article__content {
+    outline: 2px dashed #ff9800;
+}
+
+.article__intro img {
+    outline: 2px dashed #795548;
+}
+
+.article__reason {
+    outline: 3px solid #009688;
+}
+
+.article__reason h2 {
+    outline: 2px dashed #e91e63;
+}
+
+.article__reason img {
+    outline: 2px dashed #607d8b;
+}
+
+.aside {
+    outline: 3px solid #f44336;
+}
+
+.aside__title {
+    outline: 2px dashed #673ab7;
+}
+
+.aside ul {
+    outline: 2px dashed #3f51b5;
+}
+
+.aside li {
+    outline: 1px dashed #8bc34a;
+}
+
+.aside a {
+    outline: 1px dotted #ff5722;
+}
