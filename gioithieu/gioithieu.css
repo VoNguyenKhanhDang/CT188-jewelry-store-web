@@ -1,9 +1,10 @@
 /* Huynh Trung Hau B2410718
     @create-date: 17/6/2026
     Link tham khao: https://jensy.vn/pages/about-us/  */
-/* ==============================================================
-   RESET
-   ============================================================== */
+
+
+/*RESET */
+
 
 *,
 *::before,
@@ -14,7 +15,7 @@
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", sans-serif, inherit;
     background: #fff;
 }
 
@@ -24,9 +25,9 @@ img {
     height: auto;
 }
 
-/* ==============================================================
-   MOBILE FIRST
-   ============================================================== */
+
+/* MOBILE */
+
 
 .container {
     width: 92%;
@@ -38,7 +39,7 @@ img {
     gap: 32px;
 }
 
-/* ================= ARTICLE ================= */
+/*ARTICLE  */
 
 .article {
     grid-area: article;
@@ -77,7 +78,23 @@ img {
     width: 100%;
 }
 
-/* ================= ASIDE ================= */
+ol li::marker{
+    font-weight: bold;
+    font-size: 2rem;
+}
+/*Thu tu chinh sach mua hang */
+.order ol li::marker{
+    font-size: 1rem;
+}
+ /* Thu tu chinh sach kiem hang */
+.checkgoods ol li::marker{
+    font-size: 1rem;
+}
+
+
+/* ASIDE  */
+
+
 
 .aside {
     grid-area: aside;
@@ -115,9 +132,7 @@ img {
     padding-left: 6px;
 }
 
-/* ==============================================================
-   TABLET
-   ============================================================== */
+/* TABLET */
 
 @media (min-width: 768px) {
 
@@ -134,15 +149,15 @@ img {
     gap: 36px;
 }
 
-.article__reason h2 {
+.article h2 {
     font-size: 2rem;
 }
 
 }
 
-/* ==============================================================
-   DESKTOP
-   ============================================================== */
+
+/*DESKTOP*/
+
 
 @media (min-width: 1024px) {
 
@@ -171,14 +186,14 @@ img {
     gap: 48px;
 }
 
-.article__reason h2 {
+.article h2{
     font-size: 2.2rem;
 }
-
 }
-/* ==============================================================
-   WIREFRAME (DEBUG)
-   ============================================================== */
+
+
+/*WIREFRAME */
+
 
 .container {
     outline: 3px solid #ff0000;
