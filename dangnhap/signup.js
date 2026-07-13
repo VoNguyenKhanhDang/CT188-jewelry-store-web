@@ -278,6 +278,6 @@ window.frmValidate5 = function(frm) {
   }
 
   // Hiển thị hộp thoại chúc mừng kết thúc quy trình
-  alert("Chúc mừng bạn đã Đăng ký tài khoản thành công! Đăng nhập ngay và trải nghiệm!");
+  alert("Chúc mừng bạn đã đăng ký tài khoản thành công! Đăng nhập ngay và trải nghiệm!");
   return false; // Trả về false nhằm đảm bảo tuyệt đối trang web không bị reload mất màu sắc thành công
 };

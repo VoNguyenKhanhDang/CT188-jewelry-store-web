@@ -198,7 +198,7 @@ window.frmValidate5 = function(frm) {
   
   // Thực hiện điều hướng người dùng sang trang chủ
   setTimeout(() => {
-    window.location.href = "trangchu.html"; 
+    window.location.href = "../trangchu.html"; 
   }, 1000); // Trì hoãn 1 giây tạo cảm giác hệ thống đang load mượt mà
 
   return false; // Đảm bảo trang web không bị reload đột ngột
