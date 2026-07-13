@@ -3,15 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Jensy - Trang Sức Bạc Cao Cấp</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>Lavesta - Trang Sức Bạc Cao Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="..\images\logo.png" type="image/png" />
     <link rel="stylesheet" href="./main.css" />
-        <link rel="stylesheet" href="/template.css" />
-    <link rel="styl" href="" />
+    <link rel="styl" href="">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -21,9 +17,8 @@
       integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
       crossorigin="anonymous"
     ></script>
-        <script defer  src="./SP.js"></script> 
          <script defer src="./main.js"></script>
-     
+    <script defer  src="./SP.js"></script>  
 
   </head>
   <body class="">
@@ -76,42 +71,34 @@
       </header>
       <div id="banner"></div>
     </div>
-    <!-- Phần main của trang chi tiết items -->
-    <main class="pages-container">
-     <section class="pages__section">
-       <article class="pages-article">
-        <!-- ảnh chi tiết của sản phẩm  -->
-        <div class="swap-img">
-            <img class="img-1" src="./imgs/bo6ngtai...png" alt="">
-            <img class="img-2" src="./imgs/bongtai1.png" alt="">
+    <!-- Phần main của trang giỏ hàng -->
+    <main class="Cart-container">
+        <H1>GIỎ HÀNG CỦA BẠN</H1>
+     <section class="Cart__section">
+      
+     <article class="Cart__article">
+        <h2>Các <span>sản phẩm</span> trong giỏ hàng</h2>
+       <!-- bắt đầu sinh vật phẩm từ đây -->
+
+
+       
+        <!-- kết thúc sinh sản phẩm ở đây -->
+        <div class="form-details">
+         <form class="Cart__form">
+            <h2>Ghi chú đơn hàng:</h2>
+             <textarea id="text__supmit"></textarea>
+         </form>
         </div>
-       </article>
-        <!-- sidepar hiển thị thông tin chi tiết của sản phẩm -->
-        <div class="page-sidebar">
-          <h2 class="h2-name">Bông Tai Bạc Nữ S925 JENSY Trái Tim Đá Hồng "Roselle" BTARM03639 . Khuyên Tai Bạc Nữ Dễ Thương</h2>
-          <p class="price">636000</p>
-          <!-- các lựa chọn cho sản phẩm  -->
-          <div class="size">
-            <button>4mm</button>
-             <button>6mm</button>
-          </div>
-            <div class="box">
-                <button>Không Hợp Túi</button>
-                 <button>Có Hợp Túi</button>
-            </div>
-            <div class="SL">
-                <button class="decreass">-</button>
-                 <input class="input_number" type="number">
-                <button class="increase">+</button>
-            </div>
-             <button class="buy">THÊM VÀO GIỎ HÀNG</button>
-              <button class="cart">MUA NGAY</button>
-            
-            <h3>GIỚI THIỆU SẢN PHẨM</h3>
-             <p class="items-name">Bông Tai Bạc Nữ S925 JENSY Trái Tim Đá Hồng "Roselle"</p>
-            <img class="des-img img1"  src="./imgs/bo6ngtai...png" alt="">
-            <img class="des-img img2" src="./imgs/bongtai1.png" alt="">
+     </article>
+       <!-- phần sidebar -->
+      <div class="Cart__sidebar">
+       <h2>Thông tin đơn hàng</h2>
+        <div class="sPrice">
+           <p>Tổng tiền: </p>
+          <p class="price">0đ</p>
         </div>
+          <button class="buying__button">XÁC NHẬN ĐƠN HÀNG</button>
+      </div>
      </section>
 
     </main>

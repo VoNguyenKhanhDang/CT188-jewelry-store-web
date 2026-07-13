@@ -10,7 +10,7 @@
     />
     <link rel="shortcut icon" href="..\images\logo.png" type="image/png" />
     <link rel="stylesheet" href="./main.css" />
-    <link rel="stylesheet" href="/template.css" />
+   <link rel="stylesheet" href="/template.css" />
     <link rel="styl" href="" />
     <link
       rel="stylesheet"
@@ -21,194 +21,251 @@
       integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
       crossorigin="anonymous"
     ></script>
+    
   </head>
   <body class="">
-    <div id="header-placeholder"></div>
+    <div>
+      <script>
+        $(document).ready(function () {
+          $(".header__toggle").click(function () {
+            $(".header__nav").slideToggle();
+          });
+        });
+
+
+  
+      
+      </script>
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__left">
+            <button class="header__toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+            <a href="" class="header__logo">
+              <img class="logo__image" src="../images/logo.png" alt="Logo" />
+            </a>
+          </div>
+          <div class="header__search">
+            <input
+              type="text"
+              class="header__search-input"
+              placeholder="Tìm kiếm"
+            />
+          </div>
+          <div class="header__actions">
+            <button class="header__btn header__btn--login">Tài khoản</button>
+            <button class="header__btn header__btn--cart">
+              <i class="fas fa-shopping-cart"></i>
+              Giỏ hàng
+            </button>
+          </div>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Sản Phẩm</a></li>
+            <li><a href="">Giới thiệu</a></li>
+            <li><a href="">Liên hệ</a></li>
+            <li><a href="">Hướng dẫn</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="banner"></div>
+    </div>
+    <!-- phần thân của trang tất cả sản phẩm -->
     <main class="main-container">
       <div class="main__sort">
         <div class="first-sort">
           <span>Tất cả sản phẩm</span>
-          <div class="sort__options">
-            <button class="sort__button">
-              <span>SẮP XẾP THEO</span> <img src="./imgs/down.png" alt="" />
-            </button>
-            <ul class="sort__list">
-              <li class="list__items">Tên: từ A -> Z</li>
-              <li class="list__items">Tên: từ Z -> A</li>
-              <li class="list__items">Giá: từ cao đến thấp</li>
-              <li class="list__items">Giá: từ thấp đến cao</li>
-            </ul>
-          </div>
+           <div class="Lavitas">Jensy</div>
         </div>
-        <div class="more-options">
-          <div class="filter">
-            <img src="./imgs/filter.png" alt="" />
-            <span>BỘ LỌC</span>
-          </div>
-
-          <div class="more-options__div">
-            <div class="options">
-              <button class="sort__button">
-                <span>LOẠI SẢN PHẨM</span> <img src="./imgs/down.png" alt="" />
-              </button>
-              <ul class="options__list">
-                <li class="op">Nhẫn</li>
-                <li class="op">Lắc tay/Chân</li>
-                <li class="op">Vòng tay</li>
-                <li class="op">Dây chuyền</li>
-              </ul>
+        <!-- bộ lọc sort theo loại sản phẩm hiển thị -->
+         <div class="more-options">
+            <div class="filter">
+                <img src="./imgs/filter.png" alt="">
+               <span>BỘ LỌC</span>
             </div>
-            <div class="options">
-              <button class="sort__button">
-                <span>CHỌN KHOẢNG GIÁ</span>
-                <img src="./imgs/down.png" alt="" />
-              </button>
-              <ul class="options__list">
-                <li class="op">Dưới 100.000đ</li>
-                <li class="op">Từ: 100.0000đ - 250.000đ</li>
-                <li class="op">Từ: 250.000đ - 500.000đ</li>
-                <li class="op">Từ: 500.000 - 1.000.000đ</li>
-                <li class="op">Trên 1.000.000đ</li>
-              </ul>
+           
+            <div class="more-options__div">
+              <div class="options">
+                 <button class="sort__button"><span>LOẠI SẢN PHẨM</span> <img src="./imgs/down.png" alt=""></button>
+                <ul class="options__list">
+                  <li class="op">Nhẫn</li>
+                  <li class="op">Lắc tay/Chân</li>
+                  <li class="op">Bông tay</li>
+                  <li class="op">Dây chuyền</li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </div>
+         </div>
       </div>
       <section class="main__section">
-        <article class="sections">
-          <div id="first">
-            <a href="./items-pages.html?id=1"
-              ><div class="swap-img">
-                <img class="img-1" src="./imgs/bo6ngtai...png" alt="" />
-                <img class="img-2" src="./imgs/bongtai1.png" alt="" /></div
-            ></a>
-            <p>ROSELLE BTARMO3639</p>
-            <p>636.000đ</p>
-          </div>
-          <div id="second">
-            <a href="./items-pages.html?id=2">
+            <div class="items bong" >
+              <a id="1"  href="./items-pages.html"><div class="swap-img">
+                    <img class="img-1" src="./imgs/bo6ngtai...png" alt="">
+                    <img class="img-2" src="./imgs/bongtai1.png" alt="">
+              </div></a>
+              <p>ROSELLE BTARMO3639</p>
+              <p>636.000đ</p>
+            </div>
+            <div class="items bong">
+             <a id="2" href="./items-pages.html">
               <div class="swap-img">
-                <img class="img-1" src="./imgs/bông tai.png" alt="" />
-                <img class="img-2" src="./imgs/bongtai2.png" alt="" />
+                <img class="img-1" src="./imgs/bông tai.png" alt="">
+                 <img class="img-2" src="./imgs/bongtai2.png" alt="">
               </div>
-            </a>
-            <p>JULIETTE KIM CUONG MOISSANITE</p>
-            <p>367.000đ</p>
-          </div>
-          <div id="third">
-            <a href="./items-pages.html?id=3">
+             </a>
+              <p>JULIETTE KIM CUONG MOISSANITE</p>
+              <p>367.000đ</p>
+            </div>
+            <div class="items bong">
+              <a id="3" href="./items-pages.html">
+                <div class="swap-img">
+                  <img class="img-1" src="./imgs/bôngtai.png" alt="">
+                   <img class="img-2" src="./imgs/bongtai3.png" alt="">
+                </div>
+              </a>
+              <p>RADIANT HALO BTRU2</p>
+              <p>911.000đ</p>
+            </div>
+         
+        
+           
+               <div class="items daych">
+              <a id="4" href="./items-pages.html">
+                <div class="swap-img">
+                  <img class="img-1" src="./imgs/daychuyen.jpg" alt="">
+                  <img class="img-2" src="./imgs/daychuyen1.png" alt="">
+                </div>
+              </a>
+              <p>CELESTIAL SPARK</p>
+              <p>863.000đ</p>
+            </div>
+            <div class="items daych" >
+             <a id="5" href="./items-pages.html">
               <div class="swap-img">
-                <img class="img-1" src="./imgs/bôngtai.png" alt="" />
-                <img class="img-2" src="./imgs/bongtai3.png" alt="" />
+                <img class="img-1" src="./imgs/dây chuyen...png"alt="">
+                 <img class="img-2" src="./imgs/daychuyen2.png" alt="">
               </div>
-            </a>
-            <p>RADIANT HALO BTRU2</p>
-            <p>911.000đ</p>
-          </div>
-        </article>
+             </a>
+              <p>ENAMOR VCJ8</p>
+              <p>945.000đ</p>
+            </div>
+            <div class="items daych">
+             <a id="6" href="./items-pages.html">
+              <div class="swap-img">
+                <img class="img-1" src="./imgs/dây chuyền.png" alt="">
+                 <img class="img-2" src="./imgs/daychuyen3.png" alt="">
+              </div>
+             </a>
+              <p>LUCENT VCVAVN1</p>
+              <p>677.000đ</p>
+            </div>
+            
+         
 
-        <article class="sections">
-          <div id="first">
-            <a href="./items-pages.html?id=4">
+           
+                <div class="items lac">
+              <a id="7" href="./items-pages.html">
+                <div class="swap-img">
+                  <img class="img-1" src="./imgs/lactay.png" alt="">
+                  <img class="img-2" src="./imgs/lacchan1.png" alt="">
+                </div>
+              </a>
+              <p>CELESTA PETA</p>
+              <p>778.000đ</p>
+            </div>
+            <div class="items lac">
+            <a id="8" href="./items-pages.html">
               <div class="swap-img">
-                <img class="img-1" src="./imgs/daychuyen.jpg" alt="" />
-                <img class="img-2" src="./imgs/daychuyen1.png" alt="" />
+                <img class="img-1" src="./imgs/lắc tay.png" alt="">
+                 <img class="img-2" src="./imgs/lactai1.png" alt="">
               </div>
             </a>
-            <p>CELESTIAL SPARK</p>
-            <p>863.000đ</p>
-          </div>
-          <div id="second">
-            <a href="./items-pages.html?id=5">
-              <div class="swap-img">
-                <img class="img-1" src="./imgs/dây chuyen...png" alt="" />
-                <img class="img-2" src="./imgs/daychuyen2.png" alt="" />
-              </div>
-            </a>
-            <p>ENAMOR VCJ8</p>
-            <p>945.000đ</p>
-          </div>
-          <div id="third">
-            <a href="./items-pages.html?id=6">
-              <div class="swap-img">
-                <img class="img-1" src="./imgs/dây chuyền.png" alt="" />
-                <img class="img-2" src="./imgs/daychuyen3.png" alt="" />
-              </div>
-            </a>
-            <p>LUCENT VCVAVN1</p>
-            <p>677.000đ</p>
-          </div>
-        </article>
+              <p>HALO LIGHT LTIN1</p>
+              <p>776.000đ</p>
+            </div>
+            <div class="items lac">
+              <a id="9" href="./items-pages.html">
+                <div class="swap-img">
+                  <img class="img-1" src="./imgs/lắcchan.png" alt="">
+                  <img class="img-2" src="./imgs/lactai2.png" alt="">
+                </div>
+              </a>
+              <p>VELINA BOW LCARS5339</p>
+              <p>1.945.000đ</p>
+            </div>
+         
 
-        <article class="sections">
-          <div id="first">
-            <a href="./items-pages.html?id=7">
-              <div class="swap-img">
-                <img class="img-1" src="./imgs/lactay.png" alt="" />
-                <img class="img-2" src="./imgs/lacchan1.png" alt="" />
+         
+              <div class="items nhan">
+              <a id="10" href="./items-pages.html">
+                <div class="swap-img">
+                  <img class="img-1"  src="./imgs/nhẫn đôi.png" alt="">
+                   <img class="img-2" src="./imgs/nhan1.png" alt="">
+                </div>
+              </a>
+              <p>VELARIS NDIN2</p>
+              <p>3.636.000đ</p>
+            </div>
+            <div class="items nhan">
+             <a id="11" href="./items-pages.html">
+              <div class="swap-img"> 
+                <img class="img-1" src="./imgs/nhẫn....png" alt="">
+                 <img class="img-2" src="./imgs/nhan2.png" alt="">
               </div>
-            </a>
-            <p>CELESTA PETA</p>
-            <p>778.000đ</p>
-          </div>
-          <div id="second">
-            <a href="./items-pages.html?id=8">
-              <div class="swap-img">
-                <img class="img-1" src="./imgs/lắc tay.png" alt="" />
-                <img class="img-2" src="./imgs/lactai1.png" alt="" />
-              </div>
-            </a>
-            <p>HALO LIGHT LTIN1</p>
-            <p>776.000đ</p>
-          </div>
-          <div id="third">
-            <a href="./items-pages.html?id=9">
-              <div class="swap-img">
-                <img class="img-1" src="./imgs/lắcchan.png" alt="" />
-                <img class="img-2" src="./imgs/lactai2.png" alt="" />
-              </div>
-            </a>
-            <p>VELINA BOW LCARS5339</p>
-            <p>1.945.000đ</p>
-          </div>
-        </article>
-
-        <article class="sections">
-          <div id="first">
-            <a href="./items-pages.html?id=10">
-              <div class="swap-img">
-                <img class="img-1" src="./imgs/nhẫn đôi.png" alt="" />
-                <img class="img-2" src="./imgs/nhan1.png" alt="" />
-              </div>
-            </a>
-            <p>VELARIS NDIN2</p>
-            <p>3.636.000đ</p>
-          </div>
-          <div id="second">
-            <a href="./items-pages.html?id=11">
-              <div class="swap-img">
-                <img class="img-1" src="./imgs/nhẫn....png" alt="" />
-                <img class="img-2" src="./imgs/nhan2.png" alt="" />
-              </div>
-            </a>
-            <p>FOREVER YOURS NLRU1</p>
-            <p>565.000đ</p>
-          </div>
-          <div id="third">
-            <a href="./items-pages.html?id=12">
-              <div class="swap-img">
-                <img class="img-1" src="./imgs/nhẫn.png" alt="" />
-                <img class="img-2" src="./imgs/nhan3.png" alt="" />
-              </div>
-            </a>
-            <p>RADIANT PROMISE NLJ9</p>
-            <p>819.450đ</p>
-          </div>
-        </article>
+             </a>
+              <p>FOREVER YOURS NLRU1</p>
+              <p>565.000đ</p>
+            </div>
+            <div class="items nhan">
+              <a id="12" href="./items-pages.html">
+                <div class="swap-img">
+                  <img class="img-1" src="./imgs/nhẫn.png" alt="">
+                   <img class="img-2" src="./imgs/nhan3.png" alt="">
+                </div>
+              </a>
+              <p>RADIANT PROMISE NLJ9</p>
+              <p>819.450đ</p>
+            </div>
+         
       </section>
     </main>
-    <div id="footer-placeholder"></div>
-    <script src="/include.js"></script>
+    <footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <a href="" class="footer__logo">
+        <img
+          class="logo__image"
+          src="/images/logo.png"
+          data-src="/images/logo.png"
+          alt="Logo"
+        />
+      </a>
+    </div>
+    <div class="footer__content">
+      <div class="footer__section">
+        <h3>Giới thiệu</h3>
+        <a href="">Về Jensy</a>
+        <a href="">Hệ thống cửa hàng</a>
+      </div>
+      <div class="footer__section">
+        <h3>Chính Sách</h3>
+        <a href="">Chính sách bảo mật</a>
+        <a href="">Chính sách bảo hành</a>
+      </div>
+      <div class="footer__section">
+        <h3>Theo dõi và liên lạc</h3>
+        <a href=""><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href=""><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 <a href="">Jensy. Group 6</a></p>
+    </div>
+  </div>
+</footer>
     <script src="./main.js"></script>
   </body>
 </html>
