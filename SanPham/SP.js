@@ -96,3 +96,62 @@ const list = {
     gt: "NHẪN BẠC NỮ BALMY RING"
   }
 };
+
+
+class loadItems {
+  constructor(tag, list) {
+    this.tag = tag;
+    this.list = list;
+    this.parent = document.querySelector(tag);
+    this.load();
+  }
+  load() {
+    // đảm bảo section trống 
+    this.parent.innerHTML = "";
+ 
+    Object.values(this.list).forEach((item) => {
+      const container = document.createElement("div");
+      container.classList.add("items", item.type);
+ 
+      const a = document.createElement("a");
+      a.id = item.id;
+      a.href = "./items-pages.html";
+      a.addEventListener("click", () => {
+        window.localStorage.setItem("itemID", item.id);
+      });
+ 
+      // div.swap-img
+      const swapImg = document.createElement("div");
+      swapImg.classList.add("swap-img");
+ 
+      const img1 = document.createElement("img");
+      img1.classList.add("img-1");
+      img1.src = item.img1;
+      img1.alt = item.gt;
+ 
+      const img2 = document.createElement("img");
+      img2.classList.add("img-2");
+      img2.src = item.img2;
+ 
+      swapImg.appendChild(img1);
+      swapImg.appendChild(img2);
+      a.appendChild(swapImg);
+      container.appendChild(a);
+ 
+      const pName = document.createElement("p");
+      pName.textContent = item.gt;
+      container.appendChild(pName);
+ 
+      // p giá
+      const pPrice = document.createElement("p");
+      pPrice.textContent = Number(item.price).toLocaleString("vi-VN") + "đ";
+      container.appendChild(pPrice);
+ 
+      this.parent.appendChild(container);
+    });
+  }
+}
+ 
+if (document.querySelector(".main__section")) {
+  new loadItems(".main__section", list);
+}
