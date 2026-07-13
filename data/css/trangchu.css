@@ -1,0 +1,411 @@
+/*--------------------------------------------
+                    KHỐI BANER CHÍNH
+----------------------------------------------*/
+.hero {
+  width: 100%;
+  background-image: url("/data/images/trangchu/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 130px;
+}
+/*--------------------------------------------
+                    KHỐI GIẢM GIÁ
+----------------------------------------------*/
+.coupon-section {
+  width: 100%;
+  background-color: #f4f5f7;
+  padding: 20px 0 30px 0;
+  margin-top: 20px;
+}
+
+/* --- TIÊU ĐỀ KHỐI --- */
+.section-title {
+  text-align: center;
+  color: #1a426e;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 0 15px;
+}
+
+/* --- KHUNG CHỨA PHIẾU --- */
+.coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* --- THIẾT KẾ MÃ GIẢM --- */
+.coupon-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #fff;
+  border: 2px dashed #d4af37;
+  border-radius: 8px;
+  padding: 25px 15px;
+  transition: all 0.3s ease;
+}
+
+.coupon-content h3 {
+  font-size: 24px;
+  color: #d4af37;
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+}
+
+.coupon-content p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 20px 0;
+}
+
+/* Nút bấm lấy mã */
+.coupon-btn {
+  background-color: #1a426e;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+/* --- HIỆU ỨNG TRỎ CHUỘT --- */
+.coupon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+  border-color: #1a426e;
+}
+
+.coupon-card:hover .coupon-content h3 {
+  color: #1a426e;
+}
+
+.coupon-btn:hover {
+  cursor: pointer;
+  background-color: #d4af37;
+}
+/*--------------------------------------------
+                    KHỐI DANH MỤC SẢN PHẨM
+----------------------------------------------*/
+.category-section {
+  padding: 60px 0;
+}
+
+/* .category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+} */
+
+/* --- KHUNG BAO BỌC SLIDER --- */
+.carousel-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* --- THIẾT KẾ NÚT MŨI TÊN --- */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 50%;
+  color: #333;
+  font-size: 18px;
+  z-index: 10; /* Nổi lên trên cùng */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Ẩn nút mặc định, chờ hover mới hiện */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+/* Định vị nút trái, phải */
+.left-btn {
+  left: -5px;
+}
+.right-btn {
+  right: -5px;
+}
+/* Đổi màu khi trỏ chuột vào nút */
+.carousel-btn:hover {
+  cursor: pointer;
+  background-color: #1a426e;
+  color: #fff;
+  border-color: #1a426e;
+}
+
+/* KHI RÊ CHUỘT VÀO KHU VỰC DANH MỤC -> HIỆN 2 MŨI TÊN LÊN */
+.carousel-wrapper:hover .carousel-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- KHUNG CUỘN CHỨA CÁC DANH MỤC --- */
+.category-carousel {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth; /* Hiệu ứng cuộn */
+}
+/* dấu thanh cuộn ở dưới cho Chrome, Safari, Edge */
+.category-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- ĐIỀU CHỈNH KÍCH THƯỚC CARD TRONG SLIDER --- */
+.carousel-wrapper .category-card {
+  /* Ép hiển thị đúng 4 thẻ trên 1 hàng (chia 25% và trừ đi khoảng cách) */
+  flex: 0 0 calc(25% - 22.5px);
+}
+
+/* HẾT TINH CHỈNH */
+
+/* --- THIẾT KẾ CARD --- */
+.category-card {
+  position: relative; /* Để khối màu trắng có thể định vị đè lên trên */
+  display: block;
+  text-decoration: none;
+  overflow: hidden; /* Cắt bỏ phần ảnh bị lồi ra khi zoom */
+  aspect-ratio: 1 / 1; /* Ép khung thành hình vuông tỷ lệ 1:1 giống bức ảnh */
+  background-color: #f8f8f8;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* --- KHỐI MÀU TRẮNG CHỨA CHỮ --- */
+.category-info {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Căn giữa khối trắng tuyệt đối */
+  width: 85%; /* Khối trắng sẽ chiếm 85% chiều ngang của bức ảnh */
+  background-color: #ffffff;
+  padding: 15px 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ tạo chiều sâu */
+  transition: all 0.4s ease;
+}
+
+.category-name {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* --- CHỮ XEM THÊM ĐƯỢC ẨN KHI CHƯA TRỎ VÀO --- */
+.category-more {
+  display: block;
+  font-size: 13px;
+  color: #1a426e;
+  font-weight: 600;
+  opacity: 0; /* Làm trong suốt hoàn toàn */
+  max-height: 0; /* Ép chiều cao về 0 để không chiếm chỗ */
+  overflow: hidden;
+  transition: all 0.4s ease;
+  transform: translateY(
+    10px
+  ); /* Kéo tuột xuống 10px để xíu nữa trượt lên cho mượt */
+}
+
+/* --- HIỆU ỨNG TRỎ CHUỘT (HOVER) --- */
+.category-card:hover img {
+  transform: scale(1.08);
+}
+
+.category-card:hover .category-name {
+  color: #1a426e;
+}
+
+/* HIEN CHU XEM THEM */
+.category-card:hover .category-more {
+  opacity: 1;
+  max-height: 30px; /* mở rộng chiều cao để chứa chữ */
+  transform: translateY(0); /* trả về đúng vị trí ban đầu */
+  margin-top: 5px;
+}
+
+/* MŨI TÊN DUY CHUYỂN SANG PHẢI 5px */
+.category-card:hover .category-more i {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+/*--------------------------------------------
+                    KHỐI TIN TỨC VÀ XU HƯỚNG
+----------------------------------------------*/
+
+/* --- KHUNG CHỨA TIN TỨC --- */
+/* section-title sài lại cái trên */
+.news-section {
+  padding: 60px 0 0 0;
+  background-color: #ffffff;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* --- THIẾT KẾ THẺ BÀI VIẾT  --- */
+.news-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* --- KHUNG HÌNH ẢNH CỦA BÀI VIẾT --- */
+.news-img-box {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1.2; /* tỉ lệ rộng , cao */
+  overflow: hidden;
+}
+
+.news-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* --- PHẦN NỘI DUNG CHỮ --- */
+.news-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.news-title {
+  font-size: 16px;
+  color: #1a426e;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+  overflow: hidden;
+}
+
+.news-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  overflow: hidden;
+}
+.news-footer {
+  text-align: right;
+  margin-top: auto;
+}
+.news-footer a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* --- HIỆU ỨNG TRỎ CHUỘT --- */
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.news-card:hover .news-img-box img {
+  transform: scale(1.05);
+}
+
+.news-footer a:hover {
+  color: #1a426e;
+}
+
+/*--------------------------------------------
+                    KHỐI DỊCH VỤ
+----------------------------------------------*/
+/* --- KHỐI LỚN BỌC NGOÀI --- */
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 10px auto 0px auto;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border: 3px solid #eaeaea;
+}
+
+/* --- TỪNG Ô DỊCH VỤ --- */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  border: 1px solid #eaeaea;
+}
+
+/* --- TRANG TRÍ ICON FONTAWESOME --- */
+.service-icon i {
+  font-size: 35px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* --- TRANG TRÍ PHẦN CHỮ --- */
+.service-title {
+  font-size: 16px;
+  font-weight: normal;
+  color: #444;
+  margin: 0 0 8px 0;
+}
+
+.service-desc {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+/* Khi trỏ chuột vào ô -> Đổi nền xám, icon và title thanh xanh */
+.service-card:hover {
+  background-color: #f4f5f7;
+  transition: background-color 0.3s ease;
+}
+.service-card:hover .service-title {
+  color: #1a426e;
+}
+
+.service-card:hover .service-icon i {
+  color: #1a426e;
+}

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" href="/template.css" />
+    <link rel="stylesheet" href="/data/css/trangchu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <main class="container">
+      <!--  BANNER CHÍNH -->
+      <section class="hero">
+        <div class="hero-content"></div>
+      </section>
+
+      <!-- PHIẾU GIẢM GIÁ -->
+      <section class="coupon-section">
+        <h2 class="section-title">Ưu Đãi Đặc Quyền</h2>
+
+        <div class="coupon-grid">
+          <article class="coupon-card">
+            <div class="coupon-icon"><i class="fas fa-gift"></i></div>
+            <div class="coupon-content">
+              <h3>GIẢM 50K</h3>
+              <p>Áp dụng cho đơn từ 500K</p>
+            </div>
+            <button class="coupon-btn">LẤY MÃ</button>
+          </article>
+          <article class="coupon-card">
+            <div class="coupon-icon"><i class="fas fa-gift"></i></div>
+            <div class="coupon-content">
+              <h3>GIẢM 100K</h3>
+              <p>Áp dụng cho đơn từ 1 Triệu</p>
+            </div>
+            <button class="coupon-btn">LẤY MÃ</button>
+          </article>
+          <article class="coupon-card">
+            <div class="coupon-icon"><i class="fas fa-gift"></i></div>
+            <div class="coupon-content">
+              <h3>GIẢM 200K</h3>
+              <p>Áp dụng cho đơn từ 2 Triệu</p>
+            </div>
+            <button class="coupon-btn">LẤY MÃ</button>
+          </article>
+          <article class="coupon-card">
+            <div class="coupon-icon"><i class="fas fa-gift"></i></div>
+            <div class="coupon-content">
+              <h3>GIẢM 5%</h3>
+              <p>Áp dụng cho đơn từ 5 Triệu</p>
+            </div>
+            <button class="coupon-btn">LẤY MÃ</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- KHỐI DANH MỤC SẢN PHẨM -->
+      <section class="category-section">
+        <h2 class="section-title">Danh Mục Nổi Bật</h2>
+        <div class="carousel-wrapper">
+          <!-- nút trượt trái -->
+          <button class="carousel-btn left-btn" id="btnLeft">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="category-carousel" id="categoryCarousel">
+            <a href="#" class="category-card">
+              <img src="/data/images/trangchu/nhan.png" alt="Nhẫn Bạc" />
+              <div class="category-info">
+                <h3 class="category-name">Nhẫn Bạc</h3>
+                <span class="category-more"
+                  >Xem thêm <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </a>
+            <a href="#" class="category-card">
+              <img src="/data/images/trangchu/daychuyen.png" alt="Dây Chuyền" />
+              <div class="category-info">
+                <h3 class="category-name">Dây Chuyền</h3>
+                <span class="category-more"
+                  >Xem thêm <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </a>
+            <a href="#" class="category-card">
+              <img src="/data/images/trangchu/bongtai.png" alt="Bông Tai" />
+              <div class="category-info">
+                <h3 class="category-name">Bông Tai</h3>
+                <span class="category-more"
+                  >Xem thêm <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </a>
+            <a href="#" class="category-card">
+              <img src="/data/images/trangchu/lactay.png" alt="Lắc Tay" />
+              <div class="category-info">
+                <h3 class="category-name">Lắc Tay / Vòng Tay</h3>
+                <span class="category-more"
+                  >Xem thêm <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </a>
+            <a href="#" class="category-card">
+              <img src="/data/images/trangchu/nhandoi.png" alt="Nhẫn Đôi" />
+              <div class="category-info">
+                <h3 class="category-name">Nhẫn Đôi</h3>
+                <span class="category-more"
+                  >Xem thêm <i class="fas fa-arrow-right"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+          <!-- Nút trượt phải -->
+          <button class="carousel-btn right-btn" id="btnRight">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- 4. SẢN PHẨM MỚI -->
+      <!-- <section class="product-section">
+        <h2 class="section-title">Sản Phẩm Mới</h2>
+        <div class="grid-layout">
+          <article class="product-card">
+            <div class="prod-img">Ảnh SP</div>
+            <h3 class="prod-name">Dây Chuyền Ánh Sao</h3>
+            <div class="prod-price">
+              <span class="price-sale">450.000đ</span>
+              <span class="price-old">600.000đ</span>
+            </div>
+            <button class="btn-buy">Thêm vào giỏ</button>
+          </article>
+
+          <article class="product-card">
+            <div class="prod-img">Ảnh SP</div>
+            <h3 class="prod-name">Nhẫn Đính Đá Moissanite</h3>
+            <div class="prod-price">
+              <span class="price-sale">850.000đ</span>
+            </div>
+            <button class="btn-buy">Thêm vào giỏ</button>
+          </article>
+        </div>
+      </section> -->
+
+      <!-- KHỐI TIN TỨC & XU HƯỚNG -->
+      <section class="news-section">
+        <h2 class="section-title">Tin Tức & Xu Hướng</h2>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-img-box">
+              <img
+                src="/data/images/trangchu/newyear.png"
+                alt="Chúc Mừng Năm Mới 2026"
+              />
+            </div>
+
+            <div class="news-content">
+              <h3 class="news-title">Chúc Mừng Năm Mới 2026 -...</h3>
+
+              <p class="news-desc">
+                Cảm ơn bạn đã luôn đồng hành cùng Jensy trong suốt năm qua 💙
+                Bước sang năm mới, chúc bạn An Khang - Hạnh Phúc -...
+              </p>
+
+              <div class="news-footer">
+                <a href="tintuc.html">XEM THÊM</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-img-box">
+              <img
+                src="/data/images/trangchu/happy.png"
+                alt="Happy Valentine"
+              />
+            </div>
+
+            <div class="news-content">
+              <h3 class="news-title">Happy Valentine !</h3>
+              <p class="news-desc">
+                Tình yêu luôn được tạo nên từ những điều tinh tế và chân thành
+                ✨ là những khoảnh khắc nhỏ nhưng đủ làm trái tim rung...
+              </p>
+              <div class="news-footer">
+                <a href="tintuc.html">XEM THÊM</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-img-box">
+              <img
+                src="/data/images/trangchu/gift.png"
+                alt="Món quà bạn tặng"
+              />
+            </div>
+
+            <div class="news-content">
+              <h3 class="news-title">Món quà bạn tặng nói lên điều gì?</h3>
+              <p class="news-desc">
+                Món quà bạn tặng đang "nói" gì với cô ấy? 💌 ✨ Ưu đãi nhỏ, yêu
+                thương to: 🌷 Đơn từ 500K→ Tặng kèm thiệp xinh +...
+              </p>
+              <div class="news-footer">
+                <a href="tintuc.html">XEM THÊM</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- KHỐI DỊCH VỤ -->
+      <aside class="service-container">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Giao hàng miễn phí</h3>
+            <p class="service-desc">với đơn hàng từ 500k trở lên</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Hỗ trợ 24/7</h3>
+            <p class="service-desc">Hỗ trợ online / offline 24/7</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-box-open"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Miễn phí đổi trả</h3>
+            <p class="service-desc">Trong vòng 7 ngày</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Đặt hàng trực tuyến</h3>
+            <p class="service-desc">Hotline: 0982463691</p>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="include.js"></script>
+    <script src="/data/js/trangchu.js"></script>
+  </body>
+</html>
