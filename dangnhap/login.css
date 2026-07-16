@@ -177,24 +177,6 @@ body {
   gap: 5px;
 }
 
-.form__divider {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 14px;
-  color: #777;
-  margin-top: 20px;
-}
-
-.form__divider:before,
-.form__divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background-color: #ddd;
-}
-
-
 .form__link {
   color: #1a73e8;
   text-decoration: none;
