@@ -1,7 +1,12 @@
+/* Dinh Thuy Tien _MSSV:B2404882
+  @create-date: 17/6/2026
+  Link tham khao:https://jensy.vn/blogs/news/
+  */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-/* Khung giới hạn độ rộng trang web tối đa và đẩy cách xa Header */
+
 .container {
   max-width: 1101px;
   padding: 0 15px;
@@ -74,7 +79,7 @@ body {
 /* Khoảng cách dòng văn bản giúp nội dung báo chí dễ đọc hơn */
 .product-detail p {
   font-size: 15px;
-  color: #333333;
+  color: #1a426e;
   line-height: 1.5;
 }
 /* Tạo hiệu ứng đổi sang màu đỏ nổi bật và gạch chân khi người dùng rê chuột vào */
@@ -145,8 +150,8 @@ body {
 .aside-item:hover .aside-img {
   cursor: pointer;
 }
-/* TABLET (Màn hình từ 600px trở lên) */
-@media only screen and (min-width: 600px) {
+/* TABLET (Màn hình từ 768px trở lên) */
+@media only screen and (min-width: 768px) {
   .news-wrapper {
     gap: 30px;
   }
@@ -162,8 +167,8 @@ body {
   }
 }
 
-/* DESKTOP (Màn hình từ 900px trở lên) */
-@media only screen and (min-width: 900px) {
+/* DESKTOP (Màn hình từ 1024px trở lên) */
+@media only screen and (min-width: 1024px) {
   .news-wrapper {
     flex-direction: row;
     gap: 40px;
@@ -182,13 +187,12 @@ body {
     order: 1; /* Ép cột bài viết mới nhất (Sidebar) nhảy sang phía bên TRÁI màn hình */
   }
 }
-
+/* vẽ widframe*/
 main.container {
   outline: 2px solid #06b6d4 !important;
   outline-offset: 5px;
 }
 
-/* vẽ widframe*/
 .news-wrapper,
 .page-title {
   outline: 2px dashed rgb(115, 149, 193) !important;
