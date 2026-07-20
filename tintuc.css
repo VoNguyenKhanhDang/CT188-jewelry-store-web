@@ -2,7 +2,11 @@
   @create-date: 17/6/2026
   Link tham khao:https://jensy.vn/blogs/news/
   */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -44,25 +48,25 @@ body {
   align-items: flex-start;
 }
 /* Khung chứa ảnh bài viết lớn*/
-.product-img {
+.article-img {
   width: 100%;
   flex-shrink: 0;
   overflow: hidden;
 }
 /* Thiết lập hình ảnh co giãn mượt mà bên trong khung bọc */
-.product-img img {
+.article-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.2s ease-in-out;
 }
 /* Khối văn bản text chi tiết của bài viết */
-.product-detail {
+.article-detail {
   flex: 1;
   padding-top: 0;
 }
 /* Định dạng tiêu đề bài viết */
-.product-detail h2 {
+.article-detail h2 {
   font-size: 19px;
   color: #1a426e;
   margin-top: -4px;
@@ -70,20 +74,20 @@ body {
   font-weight: bold;
 }
 /* Định dạng nhãn thông tin người viết */
-.product-detail span {
+.article-detail span {
   font-size: 13px;
   color: #888;
   margin-bottom: 10px;
   display: block;
 }
 /* Khoảng cách dòng văn bản giúp nội dung báo chí dễ đọc hơn */
-.product-detail p {
+.article-detail p {
   font-size: 15px;
   color: #1a426e;
   line-height: 1.5;
 }
 /* Tạo hiệu ứng đổi sang màu đỏ nổi bật và gạch chân khi người dùng rê chuột vào */
-.product-detail p a:hover {
+.article-detail p a:hover {
   color: red;
   text-decoration: underline;
 }
@@ -141,12 +145,12 @@ body {
 }
 
 /*Khi di chuột vào bài viết lớn hoặc bài viết nhỏ, chỉ phóng to thẻ img bên trong */
-.news-item:hover .product-img img,
+.news-item:hover .article-img img,
 .aside-item:hover .aside-img img {
   transform: scale(1.1);
 }
 /*Biến con trỏ chuột thành hình bàn tay khi rê vào vùng chứa ảnh*/
-.news-item:hover .product-img,
+.news-item:hover .article-img,
 .aside-item:hover .aside-img {
   cursor: pointer;
 }
@@ -159,10 +163,10 @@ body {
     flex-direction: row; /* Thay đổi từ hàng dọc thành hàng ngang: Ảnh trái - Chữ phải */
     gap: 30px;
   }
-  .product-img {
+  .article-img {
     width: 280px;
   }
-  .product-img img {
+  .article-img img {
     object-fit: cover;
   }
 }
@@ -178,7 +182,7 @@ body {
     flex: 1;
     order: 2; /* Đẩy danh sách bài viết sang bên PHẢI màn hình */
   }
-  .product-img {
+  .article-img {
     width: 350px;
   }
   .news-sidebar {
@@ -211,18 +215,18 @@ main.container {
   outline-offset: 2px;
 }
 
-.product-detail h2,
-.product-detail span,
-.product-detail p,
-.product-detail p a,
+.article-detail h2,
+.article-detail span,
+.article-detail p,
+.article-detail p a,
 .aside-title,
 .aside-text h4,
 .aside-text span {
   outline: 2px dashed #c69370 !important;
   outline-offset: 0px;
 }
-.product-img,
-.product-detail,
+.article-img,
+.article-detail,
 .aside-img,
 .aside-text {
   outline: 2px solid #eab308 !important;
