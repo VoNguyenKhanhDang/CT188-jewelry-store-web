@@ -5,18 +5,14 @@
 const KEY_DANH_SACH_USER = "danhSachUser";
 const KEY_USER_HIEN_TAI   = "userHienTai";
 
-/**
- * Hàm lấy danh sách toàn bộ người dùng đã đăng ký thành công
- * Nếu chưa có dữ liệu dưới máy, hàm tự động trả về một mảng rỗng []
- */
+//Hàm lấy danh sách toàn bộ người dùng đã đăng ký thành công
+// Nếu chưa có dữ liệu dưới máy, hàm tự động trả về một mảng rỗng []
 function layDanhSachNguoiDung() {
   const du_lieu = localStorage.getItem(KEY_DANH_SACH_USER);
   return du_lieu ? JSON.parse(du_lieu) : [];
 }
 
-/**
- * Hàm ghi đè danh sách người dùng mới/cập nhật xuống LocalStorage
- */
+/*Hàm ghi đè danh sách người dùng mới/cập nhật xuống LocalStorage*/
 function luuDanhSachNguoiDung(danhSach) {
   localStorage.setItem(KEY_DANH_SACH_USER, JSON.stringify(danhSach));
 }
@@ -45,6 +41,7 @@ function togglePassword() {
 // ========================================================
 // 2. KHAI BÁO BIẾN TOÀN CỤC & BIỂU THỨC CHÍNH QUY (REGEX)
 // ========================================================
+
 // Truy vấn các thẻ dữ liệu đầu vào (Input) từ file HTML Đăng nhập bằng ID
 const loginForm = document.getElementById('form');
 const emailInp  = document.getElementById('email');
@@ -199,7 +196,7 @@ window.frmValidate5 = function(frm) {
   // Thực hiện điều hướng người dùng sang trang chủ
   setTimeout(() => {
     window.location.href = "../trangchu.html"; 
-  }, 1000); // Trì hoãn 1 giây tạo cảm giác hệ thống đang load mượt mà
+  }, 1000); // Trì hoãn 1 giây
 
   return false; // Đảm bảo trang web không bị reload đột ngột
 };

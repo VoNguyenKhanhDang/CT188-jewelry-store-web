@@ -5,27 +5,26 @@
 const KEY_DANH_SACH_USER = "danhSachUser";
 const KEY_USER_HIEN_TAI   = "userHienTai";
 
-/**
- * Hàm lấy danh sách toàn bộ người dùng đã đăng ký thành công
- * Nếu chưa có dữ liệu dưới máy, hàm tự động trả về một mảng rỗng []
- */
+
+//Hàm lấy danh sách toàn bộ người dùng đã đăng ký thành công
+//Nếu chưa có dữ liệu dưới máy, hàm tự động trả về một mảng rỗng []
+
 function layDanhSachNguoiDung() {
   const du_lieu = localStorage.getItem(KEY_DANH_SACH_USER);
   return du_lieu ? JSON.parse(du_lieu) : [];
 }
 
-/**
- * Hàm ghi đè danh sách người dùng mới/cập nhật xuống LocalStorage
- * Bắt buộc dùng JSON.stringify để ép mảng (Array) thành chuỗi dữ liệu (String)
- */
+
+// Hàm ghi đè danh sách người dùng mới/cập nhật xuống LocalStorage
+//Bắt buộc dùng JSON.stringify để ép mảng (Array) thành chuỗi dữ liệu (String)
+
 function luuDanhSachNguoiDung(danhSach) {
   localStorage.setItem(KEY_DANH_SACH_USER, JSON.stringify(danhSach));
 }
 
-/**
- * Hàm chuẩn hóa số điện thoại: cắt khoảng trắng 2 đầu và xóa bỏ mọi khoảng trắng ở giữa
- * Mục đích: Giúp việc đối chiếu dữ liệu chính xác tuyệt đối, tránh lỗi gõ nhầm cách dòng
- */
+
+//Hàm chuẩn hóa số điện thoại: cắt khoảng trắng 2 đầu và xóa bỏ mọi khoảng trắng ở giữa
+//Nhằm giúp việc đối chiếu dữ liệu chính xác tuyệt đối, tránh lỗi gõ nhầm cách dòng
 function chuanHoaSdt(sdt) {
   return (sdt || "").trim().replace(/\s+/g, "");
 }
