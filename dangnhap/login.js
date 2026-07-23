@@ -20,22 +20,33 @@ function luuDanhSachNguoiDung(danhSach) {
 // ========================================================
 // 1. CHỨC NĂNG ẨN / HIỆN MẬT KHẨU
 // ========================================================
-function togglePassword() {
-  const clickedIcon = event.currentTarget; // Lấy thẻ chứa icon mắt vừa được click
-  const inputGroup = clickedIcon.closest('.form__group'); // Tìm thẻ bọc ngoài cùng của ô nhập liệu đó
-  const passwordInput = inputGroup.querySelector('input'); // Tìm thẻ input nằm bên trong nhóm
 
-  // Nếu tài khoản đã đăng nhập thành công (form đã khóa), chặn không cho bấm ẩn/hiện nữa
-  if (passwordInput.disabled) return; 
+const togglePassword = document.querySelectorAll(".eye");
+let activeClassName = "is-active";
 
-  // Thực hiện hoán đổi kiểu dữ liệu (type) của input và thay đổi icon SVG tương ứng
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text"; // Hiện mật khẩu
-    clickedIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>`; 
+togglePassword.forEach((item) => {
+  item.addEventListener("click", handleTogglePassword);//tự động gắn hàm handleTogglePassword vào tất cả các nút có class .eye
+});
+
+function handleTogglePassword() {
+  let inputType = "password";
+  const input = this.closest('.form__group')?.querySelector('input');
+  if (!input || input.disabled) return;
+
+  if (this.matches(".eye-close")) {
+    inputType = "text";
+    // nếu bấm mắt đóng -> tìm mắt mở (.eye-open) đứng ngay trước nó để thêm class
+    const eyeOpen = this.previousElementSibling;
+    if (eyeOpen) eyeOpen.classList.add(activeClassName);
+
   } else {
-    passwordInput.type = "password"; // Ẩn mật khẩu
-    clickedIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>`;
+    inputType = "password";
+    // nếu bấm mắt mở -> gỡ class khỏi bản thân nó (.eye-open)
+    // CSS sẽ tự động hiện lại .eye-close bên cạnh
+    this.classList.remove(activeClassName);
   }
+  // sau đó đổi type cho ô input
+  input.setAttribute("type", inputType);
 }
 
 // ========================================================

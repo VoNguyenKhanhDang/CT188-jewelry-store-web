@@ -121,11 +121,35 @@ body {
   transform: translateY(-50%);
 }
 
+.eye {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+}
+
 .eye-icon svg {
   width: 20px;
   height: 20px;
   cursor: pointer;
   color: #777;
+}
+
+.eye-open {
+  display: none;
+}
+
+.eye-open.is-active {
+  display: block;
+}
+
+.eye-open.is-active + .eye-close {
+  display: none;
 }
 
 .form__options {
