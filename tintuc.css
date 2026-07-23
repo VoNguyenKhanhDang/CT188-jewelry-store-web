@@ -91,6 +91,10 @@ body {
   color: red;
   text-decoration: underline;
 }
+.article-detail ul {
+  list-style-position: inside;
+  color: #1a426e;
+}
 /* Thiết kế giao diện cột thanh bên (sidebar) */
 .news-sidebar {
   width: 100%;
@@ -217,6 +221,7 @@ main.container {
 
 .article-detail h2,
 .article-detail span,
+.article-detail ul,
 .article-detail p,
 .article-detail p a,
 .aside-title,
