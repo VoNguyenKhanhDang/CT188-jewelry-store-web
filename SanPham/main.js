@@ -71,7 +71,7 @@ class inputQuality {
     this.inNumber = inNumber;
     this.deNumBer = deNumBer;
     this.price = price;
-    this.temp = document.querySelector(price).textContent;
+    this.temp = Number(document.querySelector(price).textContent.replace(/[^0-9]/g, ''));
     this.number = document.querySelector(input);
     
     //đợi sự kiện click vào nút +
@@ -96,27 +96,40 @@ class inputQuality {
         this.number.value = 1;
       }
   };
+
+  getSize() {
+    return 
+  }
+  getBox() {
+    
+  }
   getValue() {
   return Number(this.number.value);
 }
   priceTextInD() {
+    //sử lý type của price
    const p =  document.querySelector(this.price);
-   //mỗi lần click nút + thì trừ giá lên 1 lần
-   p.textContent = String(Number(p.textContent) + Number(this.temp));
+   const  price1 = Number(p.textContent.replace(/[^0-9]/g, '')); 
+   //mỗi lần nhấn + tăng giá trị lên + 1 lần
+   const price2 = price1 + Number(this.temp);
+   p.textContent = price2.toLocaleString('vi-VN') + 'đ';
   };
-  priceTextDeD() {
-     const temp =  document.querySelector(this.price);
-     const p =  document.querySelector(this.price);
-     //mỗi lần click nút - thì trừ giá đi 1 lần
-   p.textContent = String(Number(p.textContent) - Number(this.temp));
-   if(Number(p.textContent) < 0) {
-    p.textContent = '0';
-   };
-   if(this.number.value = 1) {
-    p.textContent = this.temp;
-   };
 
-  }
+
+  priceTextDeD() {
+     
+     const p =  document.querySelector(this.price);
+     const temp1 = Number(p.textContent.replace(/[^0-9]/g, '')); // bỏ dấu chấm, chữ "đ" trước khi trừ
+     let temp2 = temp1 - Number(this.temp);
+     //mỗi lần click nút - thì trừ giá đi 1 lần
+     if(temp2 < 0) {
+     temp2 = 0;
+     };
+     if(this.number.value == 1) {           
+     temp2 = Number(this.temp);
+     };
+    p.textContent = temp2.toLocaleString('vi-VN') + 'đ';
+}
 }
 //đưa id của thẻ a lên localStorage nếu a được click
 class localId {
@@ -143,14 +156,15 @@ class SwapPages {
 
   swapItems(id) {
     //tìm kiếm sản phẩm tương ứng theo id(được lưu trên localStorage) của list
-  if (!id || !this.list[id]) return;
-   document.querySelector('.h2-name').textContent = this.list[id].name;
-   document.querySelector('.price').textContent = this.list[id].price;
-   document.querySelector('.img-1').src = this.list[id].img1;
-   document.querySelector('.img-2').src = this.list[id].img2;
-   document.querySelector('.des-img.img1').src = this.list[id].img1;
-   document.querySelector('.des-img.img2').src = this.list[id].img2;
-   document.querySelector('.items-name').textContent = this.list[id].gt;
+    const item = this.list.find((i) => i.id == id)
+  if (!id || !item) return;
+  document.querySelector('.h2-name').textContent = item.name;
+  document.querySelector('.price').textContent = Number(item.price).toLocaleString('vi-VN') + 'đ';
+   document.querySelector('.img-1').src = item.img1;
+   document.querySelector('.img-2').src = item.img2;
+   document.querySelector('.des-img.img1').src = item.img1;
+   document.querySelector('.des-img.img2').src = item.img2;
+   document.querySelector('.items-name').textContent = item.gt;
   }
 }
 class loadCart{
@@ -174,6 +188,7 @@ class loadCart{
     cart.forEach((item) => {
       const id = item.id;
       const quantity = item.quantity;
+      const temp = this.list.find((t) => t.id == id);
      //bắt đầu sinh con
     const contain = document.createElement('div');
     contain.classList.add('Cart__details');
@@ -183,15 +198,18 @@ class loadCart{
     div2.classList.add('Cart__details__text');
     const img = document.createElement('img');
     img.classList.add('Cart__details__img');
-    img.src = this.list[id].img1;
+    img.src = temp.img1;
     div1.appendChild(img);
     const h2 = document.createElement('H2');
-    h2.textContent = this.list[id].name;
+    h2.textContent = temp.name;
     div2.appendChild(h2);
     const p1 = document.createElement('p');
     p1.classList.add('price');
-    p1.textContent = this.list[id].price + "đ";
+    p1.textContent = Number(temp.price).toLocaleString('vi-VN') + "đ";
     div2.appendChild(p1);
+
+    //Note: thêm các lựa chọn cho cart
+
     const div3 = document.createElement('div');
     div3.classList.add('price-div');
     div2.appendChild(div3);
@@ -209,9 +227,10 @@ class loadCart{
     div3.appendChild(p5);
     const p4 = document.createElement('p');
     p4.classList.add('sum__price');
-    p4.textContent = "Tổng: " + (Number(this.list[id].price) * quantity);
-    sum = sum + (Number(this.list[id].price) * quantity);
-    document.querySelector(".sPrice .price").textContent = String(sum) + "đ";
+    const total = Number(temp.price) * quantity;
+    p4.textContent = "Tổng: " + total.toLocaleString('vi-VN') + "đ";
+    sum = sum + total;
+    document.querySelector(".sPrice .price").textContent = sum.toLocaleString('vi-VN') + "đ";
     div3.appendChild(p4);
     contain.appendChild(div1);
     contain.appendChild(div2);
@@ -253,8 +272,92 @@ const id = window.localStorage.getItem('itemID');
   window.localStorage.setItem('cart', JSON.stringify(cart));
 };
 }
-
-
+const list = [
+  { id: "1",
+    name: "Bông Tai Bạc Nữ S925 JENSY Trái Tim Đá Hồng \"Roselle\" BTARM03639. Khuyên Tai Bạc Nữ Dễ Thương",
+    img1: "./imgs/bo6ngtai...png",
+    img2: "./imgs/bongtai1.png",
+    price: "636000",
+    gt: "ROSELLE BTARMO",
+  },
+  { id: "2",
+    name: "Bông Tai Bạc Gắn Kim Cương Moissanite Xi Bạch Kim, Kiểm Định GRA \"Juliette\" BTYA1. Khuyên Tai Bạc Nữ Sang Trọng",
+    img1: "./imgs/bông tai.png",
+    img2: "./imgs/bongtai2.png",
+    price: "367000",
+    gt: "JULIETTE KIM CUONG MOISSANITE",
+  },
+  { id: "3",
+    name: "Bông Tai Bạc Gắn Kim Cương Moissanite Xi Bạch Kim, Kiểm Định GRA \"Radiant Halo\" BTRU2. Khuyên Tai Bạc Nữ Sang Trọng",
+    img1: "./imgs/bôngtai.png",
+    img2: "./imgs/bongtai3.png",
+    price: "911000",
+    gt: "RADIANT HALO BTRU",
+  },
+  { id: "4",
+    name: "Dây Chuyền Kim Cương Moissanite 7 Ly JENSY Xi Bạch Kim, Kiểm Định GRA \"Celestial Spark\" VCJ6, Vòng Cổ Bạc Nữ",
+    img1: "./imgs/daychuyen.jpg",
+    img2: "./imgs/daychuyen1.png",
+    price: "863000",
+    gt: "CELESTIAL SPARK",
+  },
+  { id: "5",
+    name: "Dây Chuyền Kim Cương Moissanite 5 Ly JENSY Xi Bạch Kim, Kiểm Định GRA \"Enamor\" VCJ8, Vòng Cổ Bạc Nữ",
+    img1: "./imgs/dây chuyen...png",
+    img2: "./imgs/daychuyen2.png",
+    price: "945000",
+    gt: "ENAMOR VCJ",
+  },
+  { id: "6",
+    name: "Dây Chuyền Bạc S925 JENSY Mặt Đá Vuông Sang Chảnh \"Lucent\" VCVAVN1. Vòng Cổ Bạc Nữ",
+    img1: "./imgs/dây chuyền.png",
+    img2: "./imgs/daychuyen3.png",
+    price: "677000",
+    gt: "LUCENT VCVAVN",
+  },
+  { id: "7",
+    name: "Lắc Tay Bạc Nữ S925 JENSY Cỏ 4 Lá Mix Đá Hot Trend \"Celeste Peta\" LTTL12. Vòng Tay Bạc Nữ Xinh Xắn",
+    img1: "./imgs/lactay.png",
+    img2: "./imgs/lacchan1.png",
+    price: "778000",
+    gt: "CELESTA PETA",
+  },
+  { id: "8",
+    name: "Lắc Tay Bạc Gắn Kim Cương Moissanite 7 Ly Xi Bạch Kim, Kiểm Định GRA. \"Halo Light\" LTIN1. Vòng Tay Bạc Nữ Sang Trọng",
+    img1: "./imgs/lắc tay.png",
+    img2: "./imgs/lactai1.png",
+    price: "776000",
+    gt: "HALO LIGHT LTIN",
+  },
+  { id: "9",
+    name: "Lắc Tay Bạc Nữ S925 JENSY Hình Nơ Đơn Giản \"Meliora\" LTARS6944. Vòng Tay Bạc Nữ Xinh Xắn",
+    img1: "./imgs/lắcchan.png",
+    img2: "./imgs/lactai2.png",
+    price: "1945000",
+    gt: "VELINA BOW LCARS",
+  },
+  { id: "10",
+    name: "Nhẫn Đôi Bạc JENSY Gắn Kim Cương Moissanite Xi Bạch Kim Kiểm Định GRA \"Velaris\" NDIN2, Nhẫn Cặp Đôi Bạc Đính Kim Cương Sang Trọng Ý Nghĩa",
+    img1: "./imgs/nhẫn đôi.png",
+    img2: "./imgs/nhan1.png",
+    price: "3636000",
+    gt: "VELARIS NDIN",
+  },
+  { id: "11",
+    name: "Nhẫn Bạc Gắn Kim Cương Moissanite Xi Bạch Kim, Kiểm Định GRA \"Forever Yours\" NLRU1. Nhẫn Nữ Cao Cấp",
+    img1: "./imgs/nhẫn....png",
+    img2: "./imgs/nhan2.png",
+    price: "565000",
+    gt: "FOREVER YOURS NLRU",
+  },
+  { id: "12",
+    name: "Nhẫn Bạc Gắn Kim Cương Moissanite Xi Bạch Kim, Kiểm Định GRA \"Balmy\" NLJC5. Nhẫn Bạc Nữ Đính Kim Cương Sang Trọng.",
+    img1: "./imgs/nhẫn.png",
+    img2: "./imgs/nhan3.png",
+    price: "819450",
+    gt: "RADIANT PROMISE NLJ",
+  }
+];
 
 document.addEventListener('DOMContentLoaded', () => {
   //chạy khởi tạo khi ở trang tất cả sản phẩm
@@ -273,7 +376,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.buy').addEventListener('click', () => {
       new addToCart('.buy',quality);
      } )
-  
     };
 
   if(document.querySelector('.more-options')) {
@@ -281,5 +383,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
    if(document.querySelector('.Cart-container')) {
     new loadCart('.Cart__article',list)
+
+     document.querySelector('.buying__button').addEventListener("click",() => {
+      alert('Ban da  mua hang thanh cong');
+     })
    }
 })
