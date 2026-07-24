@@ -167,9 +167,6 @@ body {
   .article-img {
     width: 280px;
   }
-  .article-img img {
-    object-fit: cover;
-  }
 }
 
 /* DESKTOP (Màn hình từ 1024px trở lên) */
