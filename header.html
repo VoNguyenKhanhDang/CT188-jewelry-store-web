@@ -15,16 +15,33 @@
     </div>
     <div class="header__search">
       <input type="text" class="header__search-input" placeholder="Tìm kiếm" />
+      <i class="fas fa-search header__search-icon"></i>
     </div>
-    <div class="header__actions">
+    <!-- <div class="header__actions">
       <a href="/dangnhap/login.html" class="header__btn header__btn--login">
         <i class="far fa-user"></i> <span class="btn-text">Tài khoản</span>
       </a>
-      <button class="header__btn header__btn--cart">
+      <a href="/SanPham/Cart.html" class="toCart header__btn header__btn--cart">
         <i class="fas fa-shopping-bag"></i>
-        <a class="toCart" href="/SanPham/Cart.html" class="btn-text">Giỏ hàng</a>
+        <span class="btn-text">Giỏ hàng</span>
         <span class="cart-badge">0</span>
-      </button>
+      </a>
+    </div> -->
+    <div class="header__actions">
+      <a href="/SanPham/Cart.html" class="toCart header__btn header__btn--cart">
+        <div class="icon-wrapper">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge">0</span>
+        </div>
+      </a>
+      <a
+        href="/dangnhap/login.html"
+        class="header__btn header__btn--login"
+        id="loginBtn"
+      >
+        <i class="fas fa-user" id="loginIcon"></i>
+        <span class="btn-text" id="loginText">Đăng nhập</span>
+      </a>
     </div>
   </div>
   <nav class="header__nav">
@@ -32,7 +49,6 @@
       <li><a href="/trangchu.html">Trang chủ</a></li>
       <li><a href="/SanPham/main.html">Sản Phẩm</a></li>
       <li><a href="/gioithieu/gioithieu.html">Giới thiệu</a></li>
-      <li><a href="">Liên hệ</a></li>
       <li><a href="/tintuc.html">Tin tức</a></li>
     </ul>
   </nav>
