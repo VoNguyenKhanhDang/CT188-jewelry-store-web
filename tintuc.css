@@ -189,44 +189,45 @@ body {
   }
 }
 /* vẽ widframe*/
+
 main.container {
-  outline: 2px solid #06b6d4 !important;
-  outline-offset: 5px;
+  outline: 3px solid #06b6d4 !important;
+  outline-offset: 6px;
 }
 
-.news-wrapper,
-.page-title {
-  outline: 2px dashed rgb(115, 149, 193) !important;
-  outline-offset: 5px;
+.page-title,
+.news-wrapper {
+  outline: 2px dashed #3b82f6 !important;
+  outline-offset: 4px;
 }
 
 .news-list,
 .news-sidebar {
-  outline: 2px dashed #8d3880 !important;
+  outline: 2px dashed #a855f7 !important;
   outline-offset: 3px;
 }
 
-.aside-item,
-.news-item {
-  outline: 2px solid #b85a95 !important;
+.news-item,
+.aside-item {
+  outline: 2px solid #ec4899 !important;
   outline-offset: 2px;
 }
 
-.article-detail h2,
-.article-detail span,
-.article-detail ul,
-.article-detail p,
-.article-detail p a,
-.aside-title,
-.aside-text h4,
-.aside-text span {
-  outline: 2px dashed #c69370 !important;
-  outline-offset: 0px;
-}
 .article-img,
 .article-detail,
 .aside-img,
 .aside-text {
   outline: 2px solid #eab308 !important;
   outline-offset: 1px;
+}
+
+.article-detail h2,
+.article-detail span,
+.article-detail p,
+.article-detail ul,
+.aside-title,
+.aside-text h4,
+.aside-text span {
+  outline: 1px dashed #10b981 !important;
+  outline-offset: 0px;
 }
