@@ -7,11 +7,11 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 500px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 130px;
+  margin-top: 80px;
 }
 /*--------------------------------------------
                     KHỐI GIẢM GIÁ
@@ -38,8 +38,8 @@
 /* --- KHUNG CHỨA PHIẾU --- */
 .coupon-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 15px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
@@ -102,84 +102,17 @@
                     KHỐI DANH MỤC SẢN PHẨM
 ----------------------------------------------*/
 .category-section {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
-/* .category-grid {
+.category-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-} */
-
-/* --- KHUNG BAO BỌC SLIDER --- */
-.carousel-wrapper {
-  position: relative;
+  grid-template-columns: 1fr;
+  gap: 15px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
-/* --- THIẾT KẾ NÚT MŨI TÊN --- */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
-  border-radius: 50%;
-  color: #333;
-  font-size: 18px;
-  z-index: 10; /* Nổi lên trên cùng */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* Ẩn nút mặc định, chờ hover mới hiện */
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-/* Định vị nút trái, phải */
-.left-btn {
-  left: -5px;
-}
-.right-btn {
-  right: -5px;
-}
-/* Đổi màu khi trỏ chuột vào nút */
-.carousel-btn:hover {
-  cursor: pointer;
-  background-color: #1a426e;
-  color: #fff;
-  border-color: #1a426e;
-}
-
-/* KHI RÊ CHUỘT VÀO KHU VỰC DANH MỤC -> HIỆN 2 MŨI TÊN LÊN */
-.carousel-wrapper:hover .carousel-btn {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* --- KHUNG CUỘN CHỨA CÁC DANH MỤC --- */
-.category-carousel {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  scroll-behavior: smooth; /* Hiệu ứng cuộn */
-}
-/* dấu thanh cuộn ở dưới cho Chrome, Safari, Edge */
-.category-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-/* --- ĐIỀU CHỈNH KÍCH THƯỚC CARD TRONG SLIDER --- */
-.carousel-wrapper .category-card {
-  /* Ép hiển thị đúng 4 thẻ trên 1 hàng (chia 25% và trừ đi khoảng cách) */
-  flex: 0 0 calc(25% - 22.5px);
-}
-
-/* HẾT TINH CHỈNH */
 
 /* --- THIẾT KẾ CARD --- */
 .category-card {
@@ -265,14 +198,14 @@
 /* --- KHUNG CHỨA TIN TỨC --- */
 /* section-title sài lại cái trên */
 .news-section {
-  padding: 60px 0 0 0;
+  padding: 40px 0 0 0;
   background-color: #ffffff;
 }
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 15px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
@@ -359,7 +292,7 @@
 /* --- KHỐI LỚN BỌC NGOÀI --- */
 .service-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   margin: 10px auto 0px auto;
   max-width: 1200px;
   background-color: #ffffff;
@@ -408,4 +341,62 @@
 
 .service-card:hover .service-icon i {
   color: #1a426e;
+}
+
+/* =====================================
+          RWD TRANG CHỦ (MOBILE FIRST)
+=====================================*/
+
+/* Tablet từ 768px trở lên */
+@media only screen and (min-width: 768px) {
+  .coupon-grid,
+  .category-grid,
+  .news-grid,
+  .service-container {
+    gap: 20px;
+  }
+
+  .coupon-grid,
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    min-height: 400px;
+    margin-top: 110px;
+  }
+}
+
+/* Desktop từ 1024px trở lên */
+@media only screen and (min-width: 1024px) {
+  .coupon-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .service-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero {
+    min-height: 500px;
+    margin-top: 130px;
+  }
 }
