@@ -44,7 +44,7 @@ body {
 .main-container {
   width: 100%;
 
-  padding: 100px 100px;
+  padding: 100px 16px 40px 16px;
   font-family: "Nunito", sans-serif;
   color: rgb(5, 3, 63);
   overflow: hidden;
@@ -66,7 +66,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 200px;
+  
   background-color: white;
   border: 2px solid rgb(183, 214, 249);
   border-radius: 20px;
@@ -187,15 +187,16 @@ body {
 .main__section {
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  column-gap: 12px; 
+  row-gap: 20px;   
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .main__section .items {
-  width: calc((100% - 30px) / 2);
-  min-width: 120px;
+ width: calc((100% - 12px) / 2);
+  min-width: 0;
 
   margin-bottom: 70px;
   text-align: center;
@@ -257,8 +258,8 @@ p:last-child {
 /* PHẦN GIỎ HÀNG */
 .Cart-container {
   padding: 100px 20px 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 0;
+  margin-right: 0;
   text-align: center;
 }
 .Cart-container .price {
@@ -455,7 +456,7 @@ p:last-child {
 .Cart__form {
   background-color: #ededed;
   width: 100%;
-  height: 267px;
+  height: 150px;
 
   display: flex;
   flex-direction: column;
@@ -716,7 +717,7 @@ p:last-child {
 /* Tablet (768px - 1024px) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .main__section .items {
-    width: calc((100% - 60px) / 3);
+    width: calc((100% - 40px) / 3);
   }
   .pages-article {
     margin-left: 30px;
@@ -754,6 +755,17 @@ p:last-child {
   p:last-child {
     margin-bottom: 10px;
   }
+   .sort__button {
+    width: 200px;
+  }
+   .Cart-container {
+  margin-left: 100px;
+  margin-right: 100px;
+  }
+    .Cart__form {
+    height: 260px;
+  }
+
 }
 
 /* Desktop */
@@ -788,6 +800,8 @@ p:last-child {
   }
   .Cart-container {
     text-align: start;
+  margin-left: 100px;
+  margin-right: 100px;
   }
   .Cart__section .Cart__sidebar {
     width: 40%;
@@ -815,5 +829,11 @@ p:last-child {
   .items p:first-of-type,
   p:last-child {
     margin-bottom: 0;
+  }
+  .sort__button {
+    width: 200px;
+  }
+  .Cart__form {
+    height: 260px;
   }
 }
