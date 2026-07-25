@@ -66,7 +66,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 200px;
+  
   background-color: white;
   border: 2px solid rgb(183, 214, 249);
   border-radius: 20px;
@@ -755,6 +755,9 @@ p:last-child {
   p:last-child {
     margin-bottom: 10px;
   }
+   .sort__button {
+    width: 200px;
+  }
 }
 
 /* Desktop */
@@ -816,5 +819,8 @@ p:last-child {
   .items p:first-of-type,
   p:last-child {
     margin-bottom: 0;
+  }
+  .sort__button {
+    width: 200px;
   }
 }
