@@ -195,7 +195,7 @@ body {
 
 .main__section .items {
   width: calc((100% - 30px) / 2);
-  min-width: 166px;
+  min-width: 120px;
 
   margin-bottom: 70px;
   text-align: center;
@@ -377,32 +377,38 @@ p:last-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+
 }
 .form-details {
   background-color: #ededed;
 }
-.Cart__details__text .price-div .Quality__items,
+.Cart__details__text  .Quality__items,
 .Cart__details__text .price-div .sum__price {
   color: rgb(0, 52, 148);
   font-weight: bold;
   font-size: 20px;
+  width: 100%;
+  margin-top:10px;
 }
 .Cart__details__text .price-div .Quality__items,
 .Cart__details__text .price-div .sum__price {
-  padding: 10px 50px 10px 50px;
+  padding: 10px 30px 10px 30px;
   background-color: #faf8f8;
   border: 1px solid rgb(205, 204, 204);
+  text-align: center;
 }
 /* Bộ điều khiển +/- số lượng trong giỏ hàng */
 .Cart__details__text .price-div .qty-control {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0;
   padding: 4px;
   background-color: #fff;
   border: 1.5px solid #19457a;
   border-radius: 999px; /* bo tròn hết cỡ -> hình viên thuốc */
+  
 }
 .qty-control .qty-btn {
   width: 30px;
@@ -471,10 +477,35 @@ p:last-child {
   font-size: 24px;
 }
 
+.Cart__details__text .spSize {
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 52, 148);
+    font-weight: bold;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed rgb(0, 52, 148);
+ }
+
+ 
+ .Cart__details__text .spBox {
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 52, 148);
+    font-weight: bold;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed rgb(0, 52, 148);
+ }
+
+  .Cart__details .div__img {
+    display:flex;
+    flex-direction: column;
+  }
+
 /* PAGES SAN PHAM CSS */
 
-.pages-container {
-}
+ 
 .pages__section {
   display: flex;
   align-items: center;
@@ -545,6 +576,11 @@ p:last-child {
   background-color: black;
   color: white;
 }
+
+.size .active {
+   background-color: black;
+  color: white;
+}
 .box {
   margin-top: 20px;
   padding-bottom: 10px;
@@ -561,7 +597,10 @@ p:last-child {
   background-color: black;
   color: white;
 }
-
+.box .active {
+  background-color: black;
+  color: white;
+}
 .SL {
   margin-top: 20px;
   display: flex;
@@ -665,18 +704,21 @@ p:last-child {
   text-align: center;
 }
 .Cart__details__text .delete {
-  padding: 10px 50px 10px 50px;
+  margin:0;
+  margin-top:10px;
+  padding: 10px 20px 10px 20px;
   background-color: #9a0202;
   border: 1px solid rgb(205, 204, 204);
   font-weight: bold;
   color: white;
   cursor: pointer;
+  width: 100%;
 }
 /* =================================================s=============
    RESPONSIVE - MOBILE & TABLET
    ============================================================== */
 /* Tablet (768px - 1024px) */
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .main__section .items {
     width: calc((100% - 60px) / 3);
   }
@@ -689,6 +731,7 @@ p:last-child {
   }
   .Cart__details .div__img img {
     max-width: 100px;
+    margin-right: 10px;
   }
   .Cart__details .Cart__details__text {
     max-width: 60%;
@@ -697,12 +740,27 @@ p:last-child {
   .Cart__details__text .price-div .sum__price {
     padding: 10px 20px 10px 20px;
     font-size: 10px;
+    width: 100%;
   }
   .Cart__details__text .delete {
     padding: 10px 20px 10px 20px;
     font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
+  .Cart__details__text .price-div .qty-control {
+  padding: 0;
 }
+   .Cart__details__text .price-div {
+    flex-direction: column;
+  }
+.items p:first-of-type, p:last-child {
+  margin-bottom: 10px;
+}
+
+
+}
+
 
 /* Desktop */
 @media (min-width: 1025px) {
@@ -747,60 +805,20 @@ p:last-child {
   .Cart__details .div__img img {
     min-width: 120px;
   }
-  /* .footer__content {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-  .footer__inner {
-    padding: 50px 20px 30px;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 40px;
-  }
-  .header__menu li a {
-    padding: 15px 20px;
-    font-size: 14px;
-    border-bottom: none;
-  }
-  .header__menu li {
-    width: auto;
-  }
-  .header__menu {
+  .Cart__details__text .price-div {
     flex-direction: row;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: center;
-    padding: 0 20px;
   }
-  .header__nav {
-    display: block;
-    width: auto;
-    background-color: #f9f9f9;
-    border-top: 1px solid #eee;
-    border-bottom: none;
-    z-index: auto;
-  }
-  .header__actions {
-    display: block;
-  }
-  .header__search-input {
-    max-width: 400px;
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-  .header__search {
-    flex: 1 1 auto;
-    min-width: 200px;
-  }
-
-  .header__toggle {
-    display: none;
-  }
-  .header__left {
-    flex: 0 0 auto;
-    gap: 10px;
-  }
-  .header__inner {
-    padding: 15px 20px;
-    gap: 20px;
-  } */
+  .Cart__details__text  .Quality__items,
+.Cart__details__text .price-div .sum__price {
+  width: 180px;
+  font-size: 16px;
+}
+.Cart__details__text .delete {
+  width: auto;
+  margin-left: 10px;
+    margin-right: 10px;
+}
+.items p:first-of-type, p:last-child {
+  margin-bottom: 0;
+}
 }

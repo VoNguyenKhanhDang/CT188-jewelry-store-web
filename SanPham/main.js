@@ -74,7 +74,8 @@ class inputQuality {
       document.querySelector(price).textContent.replace(/[^0-9]/g, ""),
     );
     this.number = document.querySelector(input);
-
+      this.boxS = null;
+    this.size = null;
     //đợi sự kiện click vào nút +
     document.querySelector(inNumber).addEventListener("click", () => {
       this.increass();
@@ -110,11 +111,23 @@ class inputQuality {
       this.number.value = 1;
     }
   }
-
-  getSize() {
-    return;
+    getBoxSizing() {
+    document.querySelectorAll('.box button').forEach((b) => {
+      b.addEventListener('click', (e) => {
+        this.boxS = e.target.textContent;
+      });
+    });
+    return this.boxS;
   }
-  getBox() {}
+  getSizing() {
+    document.querySelectorAll('.size button').forEach((b) => {
+      b.addEventListener('click', (e) => {
+        this.size = e.target.textContent;
+      });
+    });
+    return this.size;
+  }
+
   getValue() {
     return Number(this.number.value) || 1;
   }
@@ -203,7 +216,16 @@ class loadCart {
       p1.textContent = Number(temp.price).toLocaleString("vi-VN") + "đ";
       div2.appendChild(p1);
 
-      //Note: thêm các lựa chọn cho cart
+      const sizeText = document.createElement("p");
+      sizeText.classList.add("spSize");
+      sizeText.textContent = item.size;
+      div2.appendChild(sizeText);
+
+      const boxText = document.createElement("p");
+      boxText.classList.add("spBox");
+      boxText.textContent = item.box;
+      div2.appendChild(boxText);
+     
 
       const div3 = document.createElement("div");
       div3.classList.add("price-div");
@@ -305,6 +327,16 @@ class addToCart {
     const id = window.localStorage.getItem("itemID");
     let cart = JSON.parse(window.localStorage.getItem("cart")) || [];
     const quantity = this.sl.getValue();
+    const boxS = this.sl.getBoxSizing();
+    const size = this.sl.getSizing();
+
+    if (!boxS || !size) {
+      alert('Vui lòng chọn size và loại túi trước khi thêm vào giỏ hàng!');
+      return ;
+    }else {
+      alert('Bạn đã thêm vào giỏ hàng thành công!');
+    }
+
     // kiểm tra vật phẩm đã tồn tại trong giỏ hay chưa?
     const check = cart.find((item) => item.id === id);
     if (check) {
@@ -313,6 +345,8 @@ class addToCart {
       cart.push({
         id: id,
         quantity: quantity,
+        box: boxS,
+        size: size,
       });
     }
     //lưu cart sau khi được cặp nhật thêm dữ liệu
@@ -323,6 +357,29 @@ class addToCart {
     }
   }
 }
+
+class activeButton {
+  constructor(tag) {
+    this.tag = tag;
+    document.querySelectorAll(tag).forEach((ls) => {
+      ls.addEventListener('click', (evt) => {
+        const temp = evt.target;
+        const parent = temp.parentElement;
+        const isActive = temp.classList.contains('active');
+
+        Array.from(parent.children).forEach((d) => {
+          d.classList.remove('active');
+        });
+
+        if (!isActive) {
+          temp.classList.add('active');
+        }
+      });
+    });
+  }
+}
+
+
 const list = [
   {
     id: "1",
@@ -435,15 +492,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".h2-name")) {
     const but = document.querySelector(".input_number");
     but.value = 1;
-    const quality = new inputQuality(
-      ".input_number",
-      ".increase",
-      ".decreass",
-      ".price",
-    );
+    const quality = new inputQuality(".input_number",".increase",".decreass", ".price");
+    quality.getBoxSizing();
+    quality.getSizing();
     document.querySelector(".buy").addEventListener("click", () => {
       new addToCart(".buy", quality);
     });
+    new activeButton(".box button");
+    new activeButton(".size button");
+
+    document.querySelector('.cart').addEventListener('click',(e)=>{
+      window.location.href = 'Cart.html';
+    })
   }
 
   if (document.querySelector(".more-options")) {
