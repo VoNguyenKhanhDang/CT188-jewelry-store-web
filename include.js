@@ -1,3 +1,4 @@
+// hàm này rendrer header với footer chỉ tạm thời khi nào hoàn thành thi về hardcode
 function loadComponent(elementId, filePath) {
   fetch(filePath)
     .then((response) => response.text())
@@ -5,6 +6,7 @@ function loadComponent(elementId, filePath) {
       document.getElementById(elementId).innerHTML = data;
       if (elementId === "header-placeholder") {
         capNhatHeaderKhiDangNhap();
+        updateCartBadge();
       }
     })
     .catch((error) => console.error("Lỗi nạp file:", error));
@@ -16,16 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //xử lý sự kiện cho nút hamburger menu
-// document.addEventListener("click", function (event) {
-//   const isClickToggleBtn = event.target.closest(".header__toggle");
-//   if (isClickToggleBtn) {
-//     const navMenu = document.querySelector(".header__nav");
-//     if (navMenu) {
-//       navMenu.classList.toggle("show-menu");
-//     }
-//   }
-// });
-
 document.addEventListener("click", function (event) {
   const isClickToggleBtn = event.target.closest(".header__toggle");
   if (isClickToggleBtn) {
@@ -48,10 +40,10 @@ document.addEventListener("click", function (event) {
 function capNhatHeaderKhiDangNhap() {
   const loginBtn = document.getElementById("loginBtn");
 
-  // Nếu không tìm thấy nút bấm trên giao diện (ví dụ file header chưa tải xong) thì dừng hàm luôn
+  // Nếu không tìm thấy nút bấm trên giao diện thì dừng
   if (!loginBtn) return;
 
-  // Đọc thông tin user từ localStorage (do file login.js lưu qua)
+  // Đọc thông tin user từ localStorage (file login.js lưu qua)
   const userHienTaiStr = localStorage.getItem("userHienTai");
 
   // Nếu có user đang đăng nhập thì tiến hành đổi giao diện
@@ -64,11 +56,11 @@ function capNhatHeaderKhiDangNhap() {
         loginBtn.removeChild(loginBtn.firstChild);
       }
 
-      //Tạo icon Đăng xuất bằng createElement
+      //Tạo icon Đăng xuất
       const newIcon = document.createElement("i");
       newIcon.className = "fas fa-sign-out-alt";
 
-      //Tạo thẻ span chứa Tên tài khoản bằng createElement
+      //Tạo thẻ span chứa Tên tài khoản
       const newText = document.createElement("span");
       newText.className = "btn-text";
       newText.textContent = user.name;
@@ -92,3 +84,15 @@ function capNhatHeaderKhiDangNhap() {
 }
 
 document.addEventListener("DOMContentLoaded", capNhatHeaderKhiDangNhap);
+
+// cập nhật nút số lượng sản phẩm trên giỏ hàng khi người dùng thay đổi
+function updateCartBadge() {
+  const badge = document.querySelector(".cart-badge");
+  if (!badge) return;
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const total = cart.reduce(
+    (sum, item) => sum + (Number(item.quantity) || 0),
+    0,
+  );
+  badge.textContent = total;
+}

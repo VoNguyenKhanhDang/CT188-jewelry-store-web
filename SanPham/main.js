@@ -69,7 +69,8 @@ class inputQuality {
     this.inNumber = inNumber;
     this.deNumBer = deNumBer;
     this.price = price;
-    this.temp = Number(
+    // đơn giá gốc (giá của 1 sản phẩm), giữ cố định để tính lại mỗi khi số lượng đổi
+    this.unitPrice = Number(
       document.querySelector(price).textContent.replace(/[^0-9]/g, ""),
     );
     this.number = document.querySelector(input);
@@ -77,12 +78,25 @@ class inputQuality {
     //đợi sự kiện click vào nút +
     document.querySelector(inNumber).addEventListener("click", () => {
       this.increass();
-      this.priceTextInD();
+      this.updatePrice();
     });
     //đợi sự kiện click vào nút -
     document.querySelector(deNumBer).addEventListener("click", () => {
       this.decreass();
-      this.priceTextDeD();
+      this.updatePrice();
+    });
+    // cho phép gõ tay số lượng trực tiếp vào ô input
+    this.number.addEventListener("input", () => {
+      // loại bỏ mọi ký tự không phải số (phòng người dùng gõ chữ/dấu)
+      this.number.value = this.number.value.replace(/[^0-9]/g, "");
+      this.updatePrice();
+    });
+    // khi rời khỏi ô nhập mà để trống hoặc gõ 0 -> tự đưa về 1
+    this.number.addEventListener("blur", () => {
+      if (!this.number.value || Number(this.number.value) < 1) {
+        this.number.value = 1;
+        this.updatePrice();
+      }
     });
   }
 
@@ -102,29 +116,13 @@ class inputQuality {
   }
   getBox() {}
   getValue() {
-    return Number(this.number.value);
+    return Number(this.number.value) || 1;
   }
-  priceTextInD() {
-    //sử lý type của price
+  // tính lại giá = đơn giá x số lượng hiện tại (đúng dù bấm +/- hay gõ tay số bất kỳ)
+  updatePrice() {
+    const qty = Number(this.number.value) || 0;
     const p = document.querySelector(this.price);
-    const price1 = Number(p.textContent.replace(/[^0-9]/g, ""));
-    //mỗi lần nhấn + tăng giá trị lên + 1 lần
-    const price2 = price1 + Number(this.temp);
-    p.textContent = price2.toLocaleString("vi-VN") + "đ";
-  }
-
-  priceTextDeD() {
-    const p = document.querySelector(this.price);
-    const temp1 = Number(p.textContent.replace(/[^0-9]/g, "")); // bỏ dấu chấm, chữ "đ" trước khi trừ
-    let temp2 = temp1 - Number(this.temp);
-    //mỗi lần click nút - thì trừ giá đi 1 lần
-    if (temp2 < 0) {
-      temp2 = 0;
-    }
-    if (this.number.value == 1) {
-      temp2 = Number(this.temp);
-    }
-    p.textContent = temp2.toLocaleString("vi-VN") + "đ";
+    p.textContent = (this.unitPrice * qty).toLocaleString("vi-VN") + "đ";
   }
 }
 //đưa id của thẻ a lên localStorage nếu a được click
@@ -210,9 +208,32 @@ class loadCart {
       const div3 = document.createElement("div");
       div3.classList.add("price-div");
       div2.appendChild(div3);
-      const p3 = document.createElement("p");
-      p3.classList.add("Quality__items");
-      p3.textContent = "SL: " + quantity;
+      const p3 = document.createElement("div");
+      p3.classList.add("Quality__items", "qty-control");
+
+      const btnMinus = document.createElement("button");
+      btnMinus.type = "button";
+      btnMinus.classList.add("qty-btn", "qty-minus");
+      btnMinus.textContent = "-";
+      btnMinus.addEventListener("click", () => {
+        this.changeQuantity(id, -1);
+      });
+
+      const qtyValue = document.createElement("span");
+      qtyValue.classList.add("qty-value");
+      qtyValue.textContent = quantity;
+
+      const btnPlus = document.createElement("button");
+      btnPlus.type = "button";
+      btnPlus.classList.add("qty-btn", "qty-plus");
+      btnPlus.textContent = "+";
+      btnPlus.addEventListener("click", () => {
+        this.changeQuantity(id, 1);
+      });
+
+      p3.appendChild(btnMinus);
+      p3.appendChild(qtyValue);
+      p3.appendChild(btnPlus);
       div3.appendChild(p3);
       const p5 = document.createElement("p");
       p5.classList.add("delete");
@@ -241,6 +262,35 @@ class loadCart {
     let cart = JSON.parse(window.localStorage.getItem("cart")) || [];
     cart = cart.filter((item) => item.id !== id); //chừa lại những phần tử có id khác phần tử được xoá
     window.localStorage.setItem("cart", JSON.stringify(cart)); // đảm bảo nén dạng opject thành string để lưu vài localStorage
+    if (typeof updateCartBadge === "function") {
+      updateCartBadge();
+    }
+    // tải lại trang giỏ hàng để danh sách và tổng tiền hiển thị đúng sau khi xoá
+    location.reload();
+  }
+
+  // Tăng/giảm số lượng 1 sản phẩm trong giỏ (delta = 1 hoặc -1)
+  changeQuantity(id, delta) {
+    let cart = JSON.parse(window.localStorage.getItem("cart")) || [];
+    const item = cart.find((i) => i.id === id);
+    if (!item) return;
+
+    // Nếu đang bấm "-" mà số lượng hiện tại đã là 1 -> hỏi có muốn xoá luôn sản phẩm không
+    if (delta < 0 && item.quantity <= 1) {
+      if (confirm("Bạn có muốn xoá sản phẩm này khỏi giỏ hàng không?")) {
+        this.removeItem(id); // đồng ý -> xoá hẳn sản phẩm (hàm này tự lưu + reload)
+      }
+      return; // dù đồng ý hay không cũng dừng ở đây, không cho số lượng xuống dưới 1
+    }
+
+    item.quantity += delta;
+
+    window.localStorage.setItem("cart", JSON.stringify(cart));
+    if (typeof updateCartBadge === "function") {
+      updateCartBadge();
+    }
+    // tải lại trang để số lượng, "Tổng" từng sản phẩm và tổng tiền cả giỏ được tính lại đúng
+    location.reload();
   }
 }
 //thêm vẫn phẩm vào biến cart được lưu trên localStorage
@@ -267,6 +317,10 @@ class addToCart {
     }
     //lưu cart sau khi được cặp nhật thêm dữ liệu
     window.localStorage.setItem("cart", JSON.stringify(cart));
+    // cập nhật lại số hiển thị trên badge giỏ hàng ở header
+    if (typeof updateCartBadge === "function") {
+      updateCartBadge();
+    }
   }
 }
 const list = [
@@ -399,7 +453,32 @@ document.addEventListener("DOMContentLoaded", () => {
     new loadCart(".Cart__article", list);
 
     document.querySelector(".buying__button").addEventListener("click", () => {
-      alert("Ban da  mua hang thanh cong");
+      //Kiểm tra giỏ hàng có sản phẩm hay không
+      const cart = JSON.parse(window.localStorage.getItem("cart")) || [];
+      if (cart.length === 0) {
+        alert("Giỏ hàng của bạn đang trống!");
+        return;
+      }
+
+      // Kiểm tra người dùng đã đăng nhập hay chưa (login.js lưu qua key "userHienTai")
+      const userHienTaiStr = window.localStorage.getItem("userHienTai");
+      if (!userHienTaiStr) {
+        alert("Vui lòng đăng nhập trước khi đặt hàng!");
+        window.location.href = "/dangnhap/login.html";
+        return;
+      }
+
+      // Đã đăng nhập và giỏ hàng có hàng -> xác nhận đặt hàng thành công
+      alert("Bạn đã mua hàng thành công!");
+
+      // Reset giỏ hàng sau khi đặt hàng thành công
+      window.localStorage.removeItem("cart");
+      if (typeof updateCartBadge === "function") {
+        updateCartBadge();
+      }
+
+      // Quay về trang chủ sau khi đặt hàng xong
+      window.location.href = "/trangchu.html";
     });
   }
 });
