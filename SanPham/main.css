@@ -378,18 +378,17 @@ p:last-child {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-
 }
 .form-details {
   background-color: #ededed;
 }
-.Cart__details__text  .Quality__items,
+.Cart__details__text .Quality__items,
 .Cart__details__text .price-div .sum__price {
   color: rgb(0, 52, 148);
   font-weight: bold;
   font-size: 20px;
   width: 100%;
-  margin-top:10px;
+  margin-top: 10px;
 }
 .Cart__details__text .price-div .Quality__items,
 .Cart__details__text .price-div .sum__price {
@@ -408,7 +407,6 @@ p:last-child {
   background-color: #fff;
   border: 1.5px solid #19457a;
   border-radius: 999px; /* bo tròn hết cỡ -> hình viên thuốc */
-  
 }
 .qty-control .qty-btn {
   width: 30px;
@@ -478,34 +476,32 @@ p:last-child {
 }
 
 .Cart__details__text .spSize {
-    margin: 0;
-    padding: 0;
-    color: rgb(0, 52, 148);
-    font-weight: bold;
-    padding-top:10px;
-    padding-bottom: 10px;
-    border-bottom: 2px dashed rgb(0, 52, 148);
- }
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 52, 148);
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed rgb(0, 52, 148);
+}
 
- 
- .Cart__details__text .spBox {
-    margin: 0;
-    padding: 0;
-    color: rgb(0, 52, 148);
-    font-weight: bold;
-    padding-top:10px;
-    padding-bottom: 10px;
-    border-bottom: 2px dashed rgb(0, 52, 148);
- }
+.Cart__details__text .spBox {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 52, 148);
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed rgb(0, 52, 148);
+}
 
-  .Cart__details .div__img {
-    display:flex;
-    flex-direction: column;
-  }
+.Cart__details .div__img {
+  display: flex;
+  flex-direction: column;
+}
 
 /* PAGES SAN PHAM CSS */
 
- 
 .pages__section {
   display: flex;
   align-items: center;
@@ -578,7 +574,7 @@ p:last-child {
 }
 
 .size .active {
-   background-color: black;
+  background-color: black;
   color: white;
 }
 .box {
@@ -704,8 +700,8 @@ p:last-child {
   text-align: center;
 }
 .Cart__details__text .delete {
-  margin:0;
-  margin-top:10px;
+  margin: 0;
+  margin-top: 10px;
   padding: 10px 20px 10px 20px;
   background-color: #9a0202;
   border: 1px solid rgb(205, 204, 204);
@@ -749,18 +745,16 @@ p:last-child {
     margin-right: 10px;
   }
   .Cart__details__text .price-div .qty-control {
-  padding: 0;
-}
-   .Cart__details__text .price-div {
+    padding: 0;
+  }
+  .Cart__details__text .price-div {
     flex-direction: column;
   }
-.items p:first-of-type, p:last-child {
-  margin-bottom: 10px;
+  .items p:first-of-type,
+  p:last-child {
+    margin-bottom: 10px;
+  }
 }
-
-
-}
-
 
 /* Desktop */
 @media (min-width: 1025px) {
@@ -808,17 +802,18 @@ p:last-child {
   .Cart__details__text .price-div {
     flex-direction: row;
   }
-  .Cart__details__text  .Quality__items,
-.Cart__details__text .price-div .sum__price {
-  width: 180px;
-  font-size: 16px;
-}
-.Cart__details__text .delete {
-  width: auto;
-  margin-left: 10px;
+  .Cart__details__text .Quality__items,
+  .Cart__details__text .price-div .sum__price {
+    width: 180px;
+    font-size: 16px;
+  }
+  .Cart__details__text .delete {
+    width: auto;
+    margin-left: 10px;
     margin-right: 10px;
-}
-.items p:first-of-type, p:last-child {
-  margin-bottom: 0;
-}
+  }
+  .items p:first-of-type,
+  p:last-child {
+    margin-bottom: 0;
+  }
 }

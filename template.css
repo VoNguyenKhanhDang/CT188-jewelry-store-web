@@ -110,6 +110,10 @@
   text-decoration: none;
   transition: all 0.3s;
 }
+/* dieu chinh cho hai icon ngang hang nhau */
+.header__btn--login {
+  padding-top: 15px;
+}
 
 .header__btn i {
   font-size: 22px;
@@ -122,7 +126,7 @@
   font-size: 12px;
   font-weight: 500;
   color: #333;
-  display: none;
+  display: block;
 }
 
 /* Khối bao quanh icon giỏ hàng */
@@ -438,6 +442,9 @@
     align-items: flex-start;
     padding-top: 15px;
     order: 4;
+  }
+  .header__btn--login {
+    padding-top: 0;
   }
 
   .header__btn i {
