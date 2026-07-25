@@ -258,8 +258,8 @@ p:last-child {
 /* PHẦN GIỎ HÀNG */
 .Cart-container {
   padding: 100px 20px 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 0;
+  margin-right: 0;
   text-align: center;
 }
 .Cart-container .price {
@@ -758,6 +758,10 @@ p:last-child {
    .sort__button {
     width: 200px;
   }
+   .Cart-container {
+  margin-left: 100px;
+  margin-right: 100px;
+  }
 }
 
 /* Desktop */
@@ -792,6 +796,8 @@ p:last-child {
   }
   .Cart-container {
     text-align: start;
+  margin-left: 100px;
+  margin-right: 100px;
   }
   .Cart__section .Cart__sidebar {
     width: 40%;
