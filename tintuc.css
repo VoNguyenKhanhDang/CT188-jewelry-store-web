@@ -188,7 +188,7 @@ body {
     order: 1; /* Ép cột bài viết mới nhất (Sidebar) nhảy sang phía bên TRÁI màn hình */
   }
 }
-/* vẽ widframe*/
+/* vẽ wireframe*/
 
 main.container {
   outline: 3px solid #06b6d4 !important;
