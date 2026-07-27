@@ -21,7 +21,6 @@ body {
   padding-top: 60px;
   padding-bottom: 30px;
   margin: 110px auto 10px; 
-  z-index: 1001;
 }
 
 .form {
@@ -270,15 +269,19 @@ svg {
   .container {
     margin: 145px auto 20px auto; 
     max-width: 100%;
-    padding: 15px;
+    padding-top: 60px;    
+    padding-bottom: 60px;
+    padding: 30px;
   }
 
   .form {
     max-width: 550px;
-    padding: 40px 30px; 
+    padding: 10px 40px 30px; 
   }
   .form__header  {
     margin-top: 0px;
+    padding-bottom: 20px;
+    padding-top: 10px;
   }
   .form__title {
     font-size: 26px; 
