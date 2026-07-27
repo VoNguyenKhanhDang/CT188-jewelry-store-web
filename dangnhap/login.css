@@ -299,7 +299,7 @@ svg {
     margin-top: 35px;
   }
 }
-/* Error Messages khi lỗi */
+/*======Error Messages khi lỗi===========*/
 
 .form__group.error .form__label {
   color: #e74c3c !important; 
@@ -308,4 +308,35 @@ svg {
 .form__group.error .form__input {
   border-color: #e74c3c !important;
     
+}
+
+/*===============Wireframe==================*/
+.container{
+  outline: 4px dashed #0fe7e7 !important;
+  outline-offset:-5px;
+}
+.form{
+  outline: 4px solid #e7410f !important;
+}
+.form__header  {
+  outline: 3px dashed #b8e70f !important;
+}
+.form__box {
+  outline:3px dashed #e7410f !important;
+}
+.form__group{
+  outline: 2px dashed #7f0fe7 !important;
+  outline-offset:-2px;
+}
+.form__bottom{
+  outline: 2px dashed #17be01 !important;
+  outline-offset:-2px;
+}
+.form__options{
+  outline: 2px dashed #017a61 !important;
+  outline-offset:-2px;
+}
+.form__btn{
+  outline: 2px dashed #020101 !important;
+  outline-offset:-2px;
 }

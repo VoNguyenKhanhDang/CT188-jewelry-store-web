@@ -206,12 +206,12 @@ window.frmValidate5 = function (frm) {
   // Bước C: Lưu thông tin người dùng vừa đăng nhập thành công làm "vé thông hành"
   localStorage.setItem(KEY_USER_HIEN_TAI, JSON.stringify(taiKhoanHopLe));
 
-  // Bước D: Đổi giao diện nút bấm thành trạng thái đang điều hướng
-  if (submitBtn) {
-    submitBtn.type = "button";
-    submitBtn.textContent = "Về trang chủ...";
-    submitBtn.style.backgroundColor = "#2ecc71"; // Đổi màu xanh lá
-  }
+  // // Bước D: Đổi giao diện nút bấm thành trạng thái đang điều hướng
+  // if (submitBtn) {
+  //   submitBtn.type = "button";
+  //   submitBtn.textContent = "Về trang chủ...";
+  //   submitBtn.style.backgroundColor = "#2ecc71"; // Đổi màu xanh lá
+  // }
 
   // Hiển thị thông báo và điều hướng trang
   alert(`Đăng nhập thành công! Chào mừng ${taiKhoanHopLe.name} đến với JENSY.`);
