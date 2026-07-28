@@ -1,16 +1,18 @@
-<!-- Dinh Thuy Tien _MSSV:B2404882
-  @create-date: 17/6/2026
-  Link tham khao:https://jensy.vn/blogs/news/
-    -->
+
+  <!-- ========================================== 
+            TÁC GIẢ: Dinh Thuy Tien
+            MSSV:B2404882
+============================================= -->
+
 <!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JENSY - Trang Sức Cao Cấp</title>
-    <link rel="shortcut icon" href="images/logo.png" type="image/png" />
-    <link rel="stylesheet" href="tintuc.css" />
-    <link rel="stylesheet" href="template.css" />
+    <link rel="shortcut icon" href="../images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="../data/css/tintuc.css" />
+    <link rel="stylesheet" href="../data/css/template.css" />
 
     <link
       rel="stylesheet"
@@ -18,7 +20,53 @@
     />
   </head>
   <body class="">
-    <div id="header-placeholder"></div>
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__left">
+          <button class="header__toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a href="../index.html" class="header__logo">
+            <img class="logo__image" src="../images/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <div class="header__search">
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Tìm kiếm"
+          />
+          <i class="fas fa-search header__search-icon"></i>
+        </div>
+        <div class="header__actions">
+          <a
+            href="../page/Cart.html"
+            class="toCart header__btn header__btn--cart"
+          >
+            <div class="icon-wrapper">
+              <i class="fas fa-shopping-bag"></i>
+              <span class="cart-badge">0</span>
+            </div>
+          </a>
+          <a
+            href="../page/login.html"
+            class="header__btn header__btn--login"
+            id="loginBtn"
+          >
+            <i class="fas fa-user" id="loginIcon"></i>
+            <span class="btn-text" id="loginText">Đăng nhập</span>
+          </a>
+        </div>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li><a href="main.html">Sản Phẩm</a></li>
+          <li><a href="../gioithieu/gioithieu.html">Giới thiệu</a></li>
+          <li><a href="tintuc.html">Tin tức</a></li>
+        </ul>
+      </nav>
+    </header>
     <main class="container">
       <h1 class="page-title">Tin Tức</h1>
       <div class="news-wrapper">
@@ -28,7 +76,7 @@
           <article class="news-item" id="hoatai">
             <!-- Khối chứa ảnh bài viết -->
             <div class="article-img">
-              <img src="images/hoatai.png" alt="Hoa tai" />
+              <img src="../images/hoatai.png" alt="Hoa tai" />
             </div>
             <!-- Khối chứa nội dung chi tiết (Tiêu đề, Tác giả, Đoạn văn) -->
             <div class="article-detail">
@@ -56,7 +104,7 @@
 
           <article class="news-item" id="cmnm">
             <div class="article-img">
-              <img src="images/cmnm.png" alt="Chúc mừng năm mới " />
+              <img src="../images/cmnm.png" alt="Chúc mừng năm mới " />
             </div>
             <div class="article-detail">
               <h2>Chúc Mừng Năm Mới Bình An Và Nhiều Yêu Thương</h2>
@@ -78,7 +126,7 @@
 
           <article class="news-item" id="valetine">
             <div class="article-img">
-              <img src="images/valetine.png" alt="Happy Valentine" />
+              <img src="../images/valetine.png" alt="Happy Valentine" />
             </div>
             <div class="article-detail">
               <h2>Happy Valentine !</h2>
@@ -105,7 +153,7 @@
 
           <article class="news-item" id="quatang">
             <div class="article-img">
-              <img src="images/quatang.jpg" alt="Quà tặng" />
+              <img src="../images/quatang.jpg" alt="Quà tặng" />
             </div>
             <div class="article-detail">
               <h2>Món Quà Bạn Tặng Nói Lên Điều Gì ?</h2>
@@ -143,7 +191,7 @@
 
           <article class="news-item" id="le">
             <div class="article-img">
-              <img src="images/le.png" alt="Combo quà tặng lễ" />
+              <img src="../images/le.png" alt="Combo quà tặng lễ" />
             </div>
 
             <div class="article-detail">
@@ -179,7 +227,7 @@
 
           <article class="news-item" id="lactay">
             <div class="article-img">
-              <img src="images/lac tay.png" alt="Lắc tay" />
+              <img src="../images/lac tay.png" alt="Lắc tay" />
             </div>
 
             <div class="article-detail">
@@ -210,7 +258,7 @@
 
           <article class="news-item" id="nhankc">
             <div class="article-img">
-              <img src="images/nhankc.png" alt="Nhẫn kim cương" />
+              <img src="../images/nhankc.png" alt="Nhẫn kim cương" />
             </div>
             <div class="article-detail">
               <h2>Tại Sao Chọn Kim Cương MOISSANITE</h2>
@@ -243,7 +291,7 @@
 
           <article class="news-item" id="anh">
             <div class="article-img">
-              <img src="images/anh.png" alt="Bộ trang sức" />
+              <img src="../images/anh.png" alt="Bộ trang sức" />
             </div>
             <div class="article-detail">
               <h2>Bí Quyết Chọn Trang Sức Cho Nàng Thơ</h2>
@@ -268,7 +316,7 @@
 
           <article class="news-item" id="lac">
             <div class="article-img">
-              <img src="images/lac.png" alt="Lắc " />
+              <img src="../images/lac.png" alt="Lắc " />
             </div>
             <div class="article-detail">
               <h2>
@@ -304,7 +352,7 @@
                 ><!-- Bấm vào bất kỳ đâu trong khối sẽ cuộn trang đến bài viết gốc -->
                 <!-- Khối chứa ảnh -->
                 <div class="aside-img">
-                  <img src="images/hoatai.png" alt="Hoa tai" />
+                  <img src="../images/hoatai.png" alt="Hoa tai" />
                 </div>
                 <!-- Khối chứa chữ (Tiêu đề + Tác giả) -->
                 <div class="aside-text">
@@ -317,7 +365,7 @@
             <li class="aside-item">
               <a href="#nhankc" class="aside-link">
                 <div class="aside-img">
-                  <img src="images/nhankc.png" alt="Nhẫn kim cương" />
+                  <img src="../images/nhankc.png" alt="Nhẫn kim cương" />
                 </div>
                 <div class="aside-text">
                   <h4>Tại Sao Chọn Kim Cương MOISSANITE</h4>
@@ -329,7 +377,7 @@
             <li class="aside-item">
               <a href="#cmnm" class="aside-link">
                 <div class="aside-img">
-                  <img src="images/cmnm.png" alt="Chúc mừng năm mới" />
+                  <img src="../images/cmnm.png" alt="Chúc mừng năm mới" />
                 </div>
                 <div class="aside-text">
                   <h4>Chúc Mừng Năm Mới Bình An Và Nhiều Yêu Thương</h4>
@@ -341,7 +389,7 @@
             <li class="aside-item">
               <a href="#lac" class="aside-link">
                 <div class="aside-img">
-                  <img src="images/lac.png" alt="Lắc" />
+                  <img src="../images/lac.png" alt="Lắc" />
                 </div>
                 <div class="aside-text">
                   <h4>
@@ -355,7 +403,7 @@
             <li class="aside-item">
               <a href="#quatang" class="aside-link">
                 <div class="aside-img">
-                  <img src="images/quatang.jpg" alt="Quà tặng" />
+                  <img src="../images/quatang.jpg" alt="Quà tặng" />
                 </div>
                 <div class="aside-text">
                   <h4>Món Quà Bạn Tặng Nói Lên Điều Gì ?</h4>
@@ -367,7 +415,41 @@
         </aside>
       </div>
     </main>
-    <div id="footer-placeholder"></div>
-    <script src="include.js"></script>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <a href="../index.html" class="footer__logo">
+            <img
+              class="logo__image"
+              src="../images/logo.png"
+              data-src="/images/logo.png"
+              alt="Logo"
+            />
+          </a>
+        </div>
+        <div class="footer__content">
+          <div class="footer__section">
+            <h3>Giới thiệu</h3>
+            <a href="">Về Jensy</a>
+            <a href="">Hệ thống cửa hàng</a>
+          </div>
+          <div class="footer__section">
+            <h3>Chính Sách</h3>
+            <a href="">Chính sách bảo mật</a>
+            <a href="">Chính sách bảo hành</a>
+          </div>
+          <div class="footer__section">
+            <h3>Theo dõi và liên lạc</h3>
+            <a href=""><i class="fab fa-facebook-square"></i> Facebook</a>
+            <a href=""><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 <a href="">Jensy. Group 6</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../data/js/include.js"></script>
   </body>
 </html>

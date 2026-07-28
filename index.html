@@ -1,18 +1,65 @@
+<!-- ========================================== 
+            TÁC GIẢ: VÕ NGUYỄN KHÁNH ĐĂNG 
+            MSSV:B2408783 
+============================================= -->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang Chủ</title>
-    <link rel="stylesheet" href="template.css" />
-    <link rel="stylesheet" href="/data/css/trangchu.css" />
+    <link rel="stylesheet" href="data/css/template.css" />
+    <link rel="stylesheet" href="data/css/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
-    <div id="header-placeholder"></div>
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__left">
+          <button class="header__toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a href="index.html" class="header__logo">
+            <img class="logo__image" src="images/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <div class="header__search">
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Tìm kiếm"
+          />
+          <i class="fas fa-search header__search-icon"></i>
+        </div>
+        <div class="header__actions">
+          <a href="page/Cart.html" class="toCart header__btn header__btn--cart">
+            <div class="icon-wrapper">
+              <i class="fas fa-shopping-bag"></i>
+              <span class="cart-badge">0</span>
+            </div>
+          </a>
+          <a
+            href="page/login.html"
+            class="header__btn header__btn--login"
+            id="loginBtn"
+          >
+            <i class="fas fa-user" id="loginIcon"></i>
+            <span class="btn-text" id="loginText">Đăng nhập</span>
+          </a>
+        </div>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="page/main.html">Sản Phẩm</a></li>
+          <li><a href="gioithieu/gioithieu.html">Giới thiệu</a></li>
+          <li><a href="page/tintuc.html">Tin tức</a></li>
+        </ul>
+      </nav>
+    </header>
     <main class="container">
       <!--  BANNER CHÍNH -->
       <section class="hero">
@@ -63,8 +110,8 @@
       <section class="category-section">
         <h2 class="section-title">Danh Mục Nổi Bật</h2>
         <div class="category-grid">
-          <a href="#" class="category-card">
-            <img src="/data/images/trangchu/nhan.png" alt="Nhẫn Bạc" />
+          <a href="page/main.html?category=nhan" class="category-card">
+            <img src="data/images/trangchu/nhan.png" alt="Nhẫn Bạc" />
             <div class="category-info">
               <h3 class="category-name">Nhẫn Bạc</h3>
               <span class="category-more"
@@ -72,8 +119,8 @@
               ></span>
             </div>
           </a>
-          <a href="#" class="category-card">
-            <img src="/data/images/trangchu/daychuyen.png" alt="Dây Chuyền" />
+          <a href="page/main.html?category=daych" class="category-card">
+            <img src="data/images/trangchu/daychuyen.png" alt="Dây Chuyền" />
             <div class="category-info">
               <h3 class="category-name">Dây Chuyền</h3>
               <span class="category-more"
@@ -81,8 +128,8 @@
               ></span>
             </div>
           </a>
-          <a href="#" class="category-card">
-            <img src="/data/images/trangchu/bongtai.png" alt="Bông Tai" />
+          <a href="page/main.html?category=bong" class="category-card">
+            <img src="data/images/trangchu/bongtai.png" alt="Bông Tai" />
             <div class="category-info">
               <h3 class="category-name">Bông Tai</h3>
               <span class="category-more"
@@ -90,7 +137,7 @@
               ></span>
             </div>
           </a>
-          <a href="#" class="category-card">
+          <a href="page/main.html?category=lac" class="category-card">
             <img src="data/images/trangchu/lactay.png" alt="Lắc Tay" />
             <div class="category-info">
               <h3 class="category-name">Lắc Tay / Vòng Tay</h3>
@@ -99,8 +146,8 @@
               ></span>
             </div>
           </a>
-          <a href="#" class="category-card">
-            <img src="/data/images/trangchu/nhandoi.png" alt="Nhẫn Đôi" />
+          <a href="page/main.html?category=nhan" class="category-card">
+            <img src="data/images/trangchu/nhandoi.png" alt="Nhẫn Đôi" />
             <div class="category-info">
               <h3 class="category-name">Nhẫn Đôi</h3>
               <span class="category-more"
@@ -110,31 +157,6 @@
           </a>
         </div>
       </section>
-
-      <!-- 4. SẢN PHẨM MỚI -->
-      <!-- <section class="product-section">
-        <h2 class="section-title">Sản Phẩm Mới</h2>
-        <div class="grid-layout">
-          <article class="product-card">
-            <div class="prod-img">Ảnh SP</div>
-            <h3 class="prod-name">Dây Chuyền Ánh Sao</h3>
-            <div class="prod-price">
-              <span class="price-sale">450.000đ</span>
-              <span class="price-old">600.000đ</span>
-            </div>
-            <button class="btn-buy">Thêm vào giỏ</button>
-          </article>
-
-          <article class="product-card">
-            <div class="prod-img">Ảnh SP</div>
-            <h3 class="prod-name">Nhẫn Đính Đá Moissanite</h3>
-            <div class="prod-price">
-              <span class="price-sale">850.000đ</span>
-            </div>
-            <button class="btn-buy">Thêm vào giỏ</button>
-          </article>
-        </div>
-      </section> -->
 
       <!-- KHỐI TIN TỨC & XU HƯỚNG -->
       <section class="news-section">
@@ -244,8 +266,40 @@
         </div>
       </aside>
     </main>
-    <div id="footer-placeholder"></div>
-    <script src="include.js"></script>
-    <script src="/data/js/trangchu.js"></script>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <a href="index.html" class="footer__logo">
+            <img
+              class="logo__image"
+              src="images/logo.png"
+              data-src="images/logo.png"
+              alt="Logo"
+            />
+          </a>
+        </div>
+        <div class="footer__content">
+          <div class="footer__section">
+            <h3>Giới thiệu</h3>
+            <a href="">Về Jensy</a>
+            <a href="">Hệ thống cửa hàng</a>
+          </div>
+          <div class="footer__section">
+            <h3>Chính Sách</h3>
+            <a href="">Chính sách bảo mật</a>
+            <a href="">Chính sách bảo hành</a>
+          </div>
+          <div class="footer__section">
+            <h3>Theo dõi và liên lạc</h3>
+            <a href=""><i class="fab fa-facebook-square"></i> Facebook</a>
+            <a href=""><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 <a href="">Jensy. Group 6</a></p>
+        </div>
+      </div>
+    </footer>
+    <script src="data/js/include.js"></script>
   </body>
 </html>

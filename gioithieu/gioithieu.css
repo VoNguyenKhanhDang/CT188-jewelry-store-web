@@ -1,252 +1,239 @@
-/* Huynh Trung Hau B2410718
-    @create-date: 17/6/2026
-    Link tham khao: https://jensy.vn/pages/about-us/  */
-
+/* ===================================
+            Huynh Trung Hau 
+            B2410718
+=======================================*/
 
 /*RESET */
-
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    color: #1a426e;
+  box-sizing: border-box;
+  color: #1a426e;
 }
 
 body {
-    margin: 0;
-    font-family: "Quicksand", sans-serif, inherit;
-    background: #fff;
+  margin: 0;
+  font-family: "Quicksand", sans-serif, inherit;
+  background: #fff;
 }
 
 img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
-
 
 /* MOBILE */
 
-
 .container {
-    width: 92%;
-    margin: 100px auto 40px;
-    display: grid;
-    grid-template-areas:
-        "article"
-        "aside";
-    gap: 32px;
+  width: 92%;
+  margin: 20px auto 40px;
+  display: grid;
+  grid-template-areas:
+    "article"
+    "aside";
+  gap: 32px;
 }
 
 /*ARTICLE  */
 
 .article {
-    grid-area: article;
+  grid-area: article;
 }
 
 .article__title {
-    margin: 0 0 32px;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.4;
+  margin: 0 0 32px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .article__intro {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    align-items: center;
-    margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 48px;
 }
 
 .article__content p {
-    margin: 0 0 18px;
-    line-height: 1.9;
-    text-align: justify;
+  margin: 0 0 18px;
+  line-height: 1.9;
+  text-align: justify;
 }
 
 .article__reason h2 {
-    text-align: center;
-    margin-bottom: 24px;
-    font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.7rem;
 }
 
 .article__intro img,
 .article__reason img {
-    width: 100%;
+  width: 100%;
 }
 
-ol li::marker{
-    font-weight: bold;
-    font-size: 2rem;
+ol li::marker {
+  font-weight: bold;
+  font-size: 2rem;
 }
 /*Thu tu chinh sach mua hang */
-.order ol li::marker{
-    font-size: 1rem;
+.order ol li::marker {
+  font-size: 1rem;
 }
- /* Thu tu chinh sach kiem hang */
-.checkgoods ol li::marker{
-    font-size: 1rem;
+/* Thu tu chinh sach kiem hang */
+.checkgoods ol li::marker {
+  font-size: 1rem;
 }
-
 
 /* ASIDE  */
 
-
-
 .aside {
-    grid-area: aside;
-    border: 1px solid #d9d9d9;
-    padding: 20px;
+  grid-area: aside;
+  border: 1px solid #d9d9d9;
+  padding: 20px;
 }
 
 .aside__title {
-    text-align: center;
-    margin: 0 0 16px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #d9d9d9;
+  text-align: center;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #d9d9d9;
 }
 
 .aside ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .aside li {
-    padding: 12px 0;
+  padding: 12px 0;
 }
 
 .aside li:not(:last-child) {
-    border-bottom: 1px dotted #999;
+  border-bottom: 1px dotted #999;
 }
 
 .aside a {
-    text-decoration: none;
-    transition: .25s;
+  text-decoration: none;
+  transition: 0.25s;
 }
 
 .aside a:hover {
-    padding-left: 6px;
+  padding-left: 6px;
 }
 
 /* TABLET */
 
 @media (min-width: 768px) {
-
-.container {
+  .container {
     width: 90%;
-}
+  }
 
-.article__title {
+  .article__title {
     font-size: 2.3rem;
-}
+  }
 
-.article__intro {
+  .article__intro {
     grid-template-columns: 1fr 1fr;
     gap: 36px;
-}
+  }
 
-.article h2 {
+  .article h2 {
     font-size: 2rem;
+  }
 }
-
-}
-
 
 /*DESKTOP*/
 
-
 @media (min-width: 1024px) {
-
-.container {
+  .container {
     width: 90%;
     max-width: 1280px;
-    margin: 140px auto 60px;
+    margin: 20px auto 60px;
     display: grid;
     grid-template-areas: "aside article";
     grid-template-columns: 280px 1fr;
     gap: 48px;
-}
+  }
 
-.aside {
+  .aside {
     position: sticky;
     top: 120px;
     align-self: start;
-}
+  }
 
-.article__title {
+  .article__title {
     font-size: 2.6rem;
-}
+  }
 
-.article__intro {
+  .article__intro {
     grid-template-columns: 1.3fr 1fr;
     gap: 48px;
-}
+  }
 
-.article h2{
+  .article h2 {
     font-size: 2.2rem;
+  }
 }
-}
-
 
 /*WIREFRAME */
 
-
 .container {
-    outline: 3px solid #ff0000;
+  outline: 3px solid #ff0000;
 }
 
 .article {
-    outline: 3px solid #2196f3;
+  outline: 3px solid #2196f3;
 }
 
 .article__title {
-    outline: 2px dashed #9c27b0;
+  outline: 2px dashed #9c27b0;
 }
 
 .article__intro {
-    outline: 3px solid #4caf50;
+  outline: 3px solid #4caf50;
 }
 
 .article__content {
-    outline: 2px dashed #ff9800;
+  outline: 2px dashed #ff9800;
 }
 
 .article__intro img {
-    outline: 2px dashed #795548;
+  outline: 2px dashed #795548;
 }
 
 .article__reason {
-    outline: 3px solid #009688;
+  outline: 3px solid #009688;
 }
 
 .article__reason h2 {
-    outline: 2px dashed #e91e63;
+  outline: 2px dashed #e91e63;
 }
 
 .article__reason img {
-    outline: 2px dashed #607d8b;
+  outline: 2px dashed #607d8b;
 }
 
 .aside {
-    outline: 3px solid #f44336;
+  outline: 3px solid #f44336;
 }
 
 .aside__title {
-    outline: 2px dashed #673ab7;
+  outline: 2px dashed #673ab7;
 }
 
 .aside ul {
-    outline: 2px dashed #3f51b5;
+  outline: 2px dashed #3f51b5;
 }
 
 .aside li {
-    outline: 1px dashed #8bc34a;
+  outline: 1px dashed #8bc34a;
 }
 
 .aside a {
-    outline: 1px dotted #ff5722;
+  outline: 1px dotted #ff5722;
 }
