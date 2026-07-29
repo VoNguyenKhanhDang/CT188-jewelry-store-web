@@ -267,23 +267,10 @@ window.frmValidate5 = function(frm) {
   danhSachHienTai.push(nguoiDungMoi);
   luuDanhSachNguoiDung(danhSachHienTai);
 
-  // Bước D: Thay đổi cấu trúc và giao diện nút Đăng ký thành nút hướng dẫn Đăng nhập nhanh
-  if (submitBtn) {
-    submitBtn.type = "button";               // Đổi type sang button để vô hiệu hóa tính năng submit mặc định
-    submitBtn.textContent = "Đăng Nhập Ngay"; // Đổi chữ nút sang thông báo hành động mới
-    submitBtn.style.backgroundColor = "#2ecc71"; // Đổi màu nền nút sang xanh lá thành công
+  setTimeout(() => {
+    window.location.href = "./login.html";
+  }, 1000); // Trì hoãn 1 giây
 
-    // Tìm khối liên kết văn bản nhỏ "Bạn đã có tài khoản? Đăng nhập ngay" ở dưới và ẩn đi cho gọn giao diện
-    const formBottom = frm.querySelector('.form__bottom');
-    if (formBottom) {
-      formBottom.style.display = 'none'; 
-    }
-
-    // Gắn sự kiện click vào nút mới để lập tức chuyển hướng người dùng sang trang Đăng nhập
-    submitBtn.addEventListener('click', () => {
-      window.location.href = "login.html"; // Đường dẫn chuyển file trang đăng nhập của bạn   
-    });
-  }
 
   // Hiển thị hộp thoại chúc mừng kết thúc quy trình
   alert("Chúc mừng bạn đã đăng ký tài khoản thành công! Đăng nhập ngay và trải nghiệm!");

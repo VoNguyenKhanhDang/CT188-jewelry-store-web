@@ -327,7 +327,7 @@ svg {
 }
 
 /*===============Wireframe==================*/
-.container{
+/* .container{
   outline: 4px dashed #0fe7e7 !important;
   outline-offset:-5px;
 }
@@ -355,4 +355,4 @@ svg {
 .form__btn{
   outline: 2px dashed #020101 !important;
   outline-offset:-2px;
-}
+} */

@@ -276,8 +276,6 @@ svg {
   .container {
     margin: 140px auto 0px auto; 
     max-width: 100%;
-     /* padding-top: 60px;    
-    padding-bottom: 30px;  */
   }
 
   .form {
@@ -286,7 +284,6 @@ svg {
   }
 
   .form__header  {
-    /* margin-top: 0; */
     padding-top: 10px;
   }
   .form__title {
@@ -311,7 +308,7 @@ svg {
 }
 
 /*===============Wireframe==================*/
-.container{
+ .container{
   outline: 4px dashed #0fe7e7 !important;
   outline-offset:-5px;
 }
