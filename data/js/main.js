@@ -272,6 +272,7 @@ class localId {
     this.a = a;
     document.querySelectorAll(a).forEach((e) => {
       e.addEventListener("click", (e1) => {
+        e1.preventDefault();
         const temp = e1.target.closest("a");
         const id = temp.id;
         window.localStorage.setItem("itemID", id);
@@ -408,7 +409,7 @@ class activeButton {
         const temp = evt.target;
         const parent = temp.parentElement;
         const isActive = temp.classList.contains("active");
-       for (let i = 0; i < parent.children.length; i++) {
+        for (let i = 0; i < parent.children.length; i++) {
           parent.children[i].classList.remove("active");
         }
         if (!isActive) {
@@ -458,7 +459,7 @@ class addToCart {
         id: id,
         quantity: quantity,
         box: boxS,
-        size: size
+        size: size,
       });
     }
     window.localStorage.setItem(cartKey, JSON.stringify(cart));
@@ -638,7 +639,12 @@ document.addEventListener("DOMContentLoaded", () => {
     but.value = 1;
 
     // Gắn sự kiện tăng giảm số lượng & lấy thông tin Size/Hộp
-    const quality = new inputQuality(".input_number",".increase",".decreass",".price");
+    const quality = new inputQuality(
+      ".input_number",
+      ".increase",
+      ".decreass",
+      ".price",
+    );
 
     // Tạo hiệu ứng click cho các nút
     new activeButton(".box button");
