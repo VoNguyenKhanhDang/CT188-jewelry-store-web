@@ -526,7 +526,7 @@ p:last-child {
   margin-top: 20px;
   margin-left: 200px;
 }
-.page-sidebar {
+.page__sidebar {
   margin-right: 10px;
   text-align: center;
   margin-left: 10px;
@@ -536,7 +536,7 @@ p:last-child {
   margin-top: 30px;
   color: #19457a;
 }
-.page-sidebar h2 {
+.page__sidebar h2 {
   margin-top: 20px;
 
   margin-bottom: 20px;
@@ -727,7 +727,7 @@ p:last-child {
   .pages-article {
     margin-left: 30px;
   }
-  .page-sidebar {
+  .page__sidebar {
     margin-right: 30px;
     text-align: center;
   }
@@ -790,7 +790,7 @@ p:last-child {
   .pages-article {
     display: block;
   }
-  .page-sidebar {
+  .page__sidebar {
     margin-right: 200px;
     text-align: start;
     margin-left: 0px;

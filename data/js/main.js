@@ -199,7 +199,7 @@ class DropList {
           if (!e.classList.contains("lac")) e.classList.add("hidden");
         });
         break;
-      case "Bông tay":
+      case "Bông tai":
         document.querySelectorAll(this.tag2).forEach((e) => {
           if (!e.classList.contains("bong")) e.classList.add("hidden");
         });
