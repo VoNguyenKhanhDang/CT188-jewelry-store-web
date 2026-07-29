@@ -82,13 +82,13 @@ if (emailInp) {
     if (emailInp.disabled) return; // Nếu form đã bị khóa thì ngưng xử lý
 
     if (emailInp.value.trim() === "") {
-      emailInp.parentElement.classList.add("error"); // Kích hoạt viền đỏ và label đỏ
+      emailInp.parentElement.classList.add("error"); // Kích hoạt thông báo lỗi
       emailErr.textContent = "Email không được để trống.";
     } else if (!emailReg.test(emailInp.value.trim())) {
       emailInp.parentElement.classList.add("error");
       emailErr.textContent = "Email sai định dạng (Ví dụ: abc@gmail.com).";
     } else {
-      emailInp.parentElement.classList.remove("error"); // Xóa màu đỏ nếu dữ liệu hợp lệ
+      emailInp.parentElement.classList.remove("error"); 
       emailErr.textContent = "";
     }
   });
@@ -116,9 +116,9 @@ if (passInp) {
 allLoginInputs.forEach((input) => {
   if (input) {
     input.addEventListener("focus", () => {
-      if (input.disabled) return; // Nếu form đã bị khóa/đóng băng thì cấm sửa
+      if (input.disabled) return; // Nếu form đã bị disabled thì cấm sửa
 
-      // Tự động gỡ màu đỏ và xóa dòng chữ lỗi ngay khi vừa bấm vào ô
+      // Tự động gỡ màu đỏ và thông báo lỗi ngay khi vừa bấm vào ô
       input.parentElement.classList.remove("error");
       const errorSpan = input.parentElement.querySelector(".form__error");
       if (errorSpan) errorSpan.textContent = "";
@@ -172,7 +172,7 @@ window.frmValidate5 = function (frm) {
   // 5. TIẾN HÀNH ĐỐI CHIẾU DỮ LIỆU ĐĂNG NHẬP VỚI LOCALSTORAGE
   // ========================================================
   const danhSachHienTai = layDanhSachNguoiDung(); // Đọc danh sách tài khoản dưới máy lên
-  const emailDangNhap = emailInp.value.trim().toLowerCase(); // Chuẩn hóa email đăng nhập về chữ thường
+  const emailDangNhap = emailInp.value.trim().toLowerCase(); // Chuẩn hóa email
   const matKhauDangNhap = passInp.value.trim();
 
   // Bước A: Tìm tài khoản trong danh sách có Email trùng khớp
@@ -199,25 +199,24 @@ window.frmValidate5 = function (frm) {
 
   // TÌNH HUỐNG 4: ĐĂNG NHẬP THÀNH CÔNG HOÀN TOÀN
 
-  // Bước B: Khóa toàn bộ form nhập liệu để trải nghiệm mượt mà
+  // Bước B: Khóa toàn bộ form nhập liệu
   allLoginInputs.forEach((input) => {
     if (input) {
       input.parentElement.classList.remove("error");
-      // input.parentElement.classList.add("success"); // Thêm class thành công nếu muốn đổi viền xanh lá
-      input.disabled = true; // Khóa ô input
+      input.disabled = true;
     }
   });
 
-  // Bước C: Lưu thông tin người dùng vừa đăng nhập thành công làm "vé thông hành"
+  // Bước C: Lưu thông tin người dùng vừa đăng nhập thành công lại
   localStorage.setItem(KEY_USER_HIEN_TAI, JSON.stringify(taiKhoanHopLe));
 
   // Hiển thị thông báo và điều hướng trang
   alert(`Đăng nhập thành công! Chào mừng ${taiKhoanHopLe.name} đến với JENSY.`);
 
-  // Thực hiện điều hướng người dùng sang trang chủ
+  //Điều hướng người dùng sang trang chủ
   setTimeout(() => {
     window.location.href = "../index.html";
-  }, 1000); // Trì hoãn 1 giây
+  }, 1000); 
 
   return false; // Đảm bảo trang web không bị reload đột ngột
 };

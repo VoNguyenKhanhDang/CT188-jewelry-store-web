@@ -88,7 +88,7 @@ const nameReg = /^[a-zA-ZÀ-ỹ\s]+$/; // Chỉ chứa chữ cái (bao gồm ti�
 const phoneReg = /^[0-9]{10}$/;     // Phải là số và có độ dài chính xác 10 ký tự
 const emailReg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Định dạng chuẩn email mẫu abc@gmail.com
 
-// Gom tất cả các ô input vào một mảng chung để tiện duyệt vòng lặp xử lý số đông
+// Gom tất cả các ô input vào một mảng chung để duyệt vòng lặp xử lý số đông
 const allInputs = [nameInp, phoneInp, emailInp, passInp, confirmInp];
 
 // ========================================================
@@ -99,13 +99,13 @@ const allInputs = [nameInp, phoneInp, emailInp, passInp, confirmInp];
 nameInp.addEventListener('blur', () => {
   if (nameInp.disabled) return; // Nếu form đã bị khóa thì ngưng xử lý sự kiện
   if (nameInp.value.trim() === "") {
-    nameInp.parentElement.classList.add("error"); // Kích hoạt màu đỏ cho khung viền và label
+    nameInp.parentElement.classList.add("error"); // Kích hoạt tb lỗi
     nameErr.textContent = "Họ và tên không được để trống.";
   } else if (!nameReg.test(nameInp.value.trim())) {
     nameInp.parentElement.classList.add("error");
     nameErr.textContent = "Họ tên chỉ được chứa chữ cái và khoảng trắng.";
   } else {
-    nameInp.parentElement.classList.remove("error"); // Xóa màu đỏ nếu dữ liệu đã gõ hợp lệ
+    nameInp.parentElement.classList.remove("error"); // Xóa tb lỗi nếu dữ liệu đã gõ hợp lệ
     nameErr.textContent = "";
   }
 });
@@ -173,10 +173,9 @@ confirmInp.addEventListener('blur', () => {
 // Xử lý sự kiện khi người dùng click chuột trở lại ô input để sửa dữ liệu (Focus)
 allInputs.forEach(input => {
   input.addEventListener('focus', () => {
-    // Điều kiện chặn: Nếu đã đăng ký thành công rồi thì đóng băng giao diện xanh lá, cấm sửa
     if (input.disabled) return; 
     
-    // Nếu chưa đăng ký thành công: Tự động gỡ màu đỏ và xóa dòng chữ lỗi ngay khi vừa bấm vào ô
+    // Nếu chưa đăng ký thành công: Tự động tb lỗi ngay khi vừa bấm vào ô
     input.parentElement.classList.remove("error");
     const errorSpan = input.parentElement.querySelector('.form__error');
     if (errorSpan) errorSpan.textContent = "";
@@ -194,7 +193,7 @@ window.frmValidate5 = function(frm) {
   const submitBtn = frm.querySelector('.form__btn--submit');
   if (submitBtn && submitBtn.type === "button") return false;
 
-  let isValid = true; // Cờ theo dõi trạng thái lỗi, mặc định ban đầu coi như form đúng hoàn toàn
+  let isValid = true; // đánh dấu theo dõi trạng thái lỗi, mặc định ban đầu coi như form đúng hoàn toàn
 
   // 1. Quét kiểm tra lỗi Họ và tên tổng thể
   if (nameInp.value.trim() === "" || !nameReg.test(nameInp.value.trim())) {
@@ -234,7 +233,7 @@ window.frmValidate5 = function(frm) {
   // TÌNH HUỐNG 1: QUÉT FORM THẤT BẠI (CÓ LỖI)
   if (!isValid) {
     alert("Vui lòng kiểm tra lại và sửa các thông tin bị lỗi!");
-    return false; // Dừng hàm, giữ nguyên các ô màu đỏ để người dùng nhìn thấy sửa
+    return false; // Dừng hàm, giữ nguyên các thông báo lỗi để người dùng nhìn thấy sửa
   }
     
   // TÌNH HUỐNG 2: KIỂM TRA TRÙNG LẶP DỮ LIỆU TRONG LOCALSTORAGE
@@ -249,16 +248,16 @@ window.frmValidate5 = function(frm) {
 
   if (taiKhoanDaTonTai) {
     alert("Email hoặc Số điện thoại này đã được đăng ký tài khoản từ trước!");
-    return false; // Chặn đứng không cho đăng ký tài khoản trùng
+    return false; // Chặn không cho đăng ký tài khoản trùng
   }
 
   // TÌNH HUỐNG 3: ĐĂNG KÝ THÀNH CÔNG HOÀN TOÀN
   
   // Bước A: Khóa toàn bộ form nhập liệu và đồng loạt chuyển giao diện sang màu xanh lá cây
   allInputs.forEach(input => {
-    input.parentElement.classList.remove("error"); // Xóa class lỗi màu đỏ nếu có trước đó
-    input.parentElement.classList.add("success");  // Kích hoạt class thành công làm xanh viền và nhãn
-    input.disabled = true;                          // Khóa cứng ô input, không cho người dùng sửa nữa
+    input.parentElement.classList.remove("error"); // Xóa thông báo lỗi nếu có trước đó
+    input.parentElement.classList.add("success");  // Kích hoạt class thành công
+    input.disabled = true;                          // Khóa ô input, không cho người dùng sửa nữa
   });
 
   // Bước B: Đóng gói thông tin người dùng mới thành một Đối tượng (Object)
@@ -269,16 +268,14 @@ window.frmValidate5 = function(frm) {
     password: passInp.value.trim()
   };
 
-  // Bước C: Đẩy (push) đối tượng mới này vào mảng danh sách hiện tại và lưu xuống máy tính
+  // Bước C: Đẩy đối tượng mới này vào mảng danh sách hiện tại và lưu xuống máy tính
   danhSachHienTai.push(nguoiDungMoi);
   luuDanhSachNguoiDung(danhSachHienTai);
 
   setTimeout(() => {
     window.location.href = "./login.html";
-  }, 1000); // Trì hoãn 1 giây
+  }, 1000); 
 
-
-  // Hiển thị hộp thoại chúc mừng kết thúc quy trình
   alert("Chúc mừng bạn đã đăng ký tài khoản thành công! Đăng nhập ngay và trải nghiệm!");
-  return false; // Trả về false nhằm đảm bảo tuyệt đối trang web không bị reload mất màu sắc thành công
+  return false;
 };
