@@ -15,7 +15,7 @@ body {
 .container {
   max-width: 1101px;
   padding: 0 15px;
-  margin: 30px auto 20px auto;
+  margin: 50px auto 30px auto;
 }
 /* Thiết lập phong cách tiêu đề trang lớn */
 .page-title {
@@ -31,6 +31,7 @@ body {
   flex-direction: column;
   gap: 30px;
   align-items: start;
+  padding:0 15px;
 }
 /* Cột danh sách các bài viết lớn */
 .news-list {

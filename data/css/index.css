@@ -2,7 +2,9 @@
             TÁC GIẢ: VÕ NGUYỄN KHÁNH ĐĂNG 
             MSSV:B2408783 
 ============================================= --> */
-
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 /*--------------------------------------------
                     KHỐI BANER CHÍNH
 ----------------------------------------------*/
@@ -409,7 +411,6 @@
    WIREFRAME TRANG CHỦ
    ========================================= */
 
-/*Cấp độ 1: Các Section lớn ngoài cùng (Màu xanh dương nhạt, nét liền, dày) */
 .hero,
 .coupon-section,
 .category-section,
@@ -419,7 +420,6 @@
   outline-offset: 4px;
 }
 
-/*Cấp độ 2: Tiêu đề khối và các khung lưới bọc ngoài Grid (Màu xanh lam đậm, nét đứt) */
 .section-title,
 .coupon-grid,
 .category-grid,
@@ -428,7 +428,6 @@
   outline-offset: 2px;
 }
 
-/*Cấp độ 3: Từng thẻ thành phần - Card (Màu hồng đậm, nét liền) */
 .coupon-card,
 .category-card,
 .news-card,
@@ -437,7 +436,6 @@
   outline-offset: 1px;
 }
 
-/*Cấp độ 4: Khối bọc hình ảnh và nội dung bên trong Card (Màu vàng, nét đứt, bóp vào trong) */
 .coupon-content,
 .category-info,
 .news-img-box,
@@ -448,7 +446,6 @@
   outline-offset: -2px;
 }
 
-/*Cấp độ 5: Các thẻ văn bản, nút bấm chi tiết cuối cùng (Màu xanh ngọc, nét đứt mỏng) */
 .coupon-content h3,
 .coupon-content p,
 .coupon-btn,
