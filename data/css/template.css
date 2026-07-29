@@ -1,10 +1,17 @@
+/* <!-- ========================================== 
+            TÁC GIẢ: VÕ NGUYỄN KHÁNH ĐĂNG 
+            MSSV:B2408783 
+============================================= --> */
+
+/* CSS CHO KHUNG HEADER VÀ FOOTER CHUNG */
+
 /* ---------------------------------
           HEADER
 --------------------------------*/
 
 /* MOBILE FIRST */
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -502,4 +509,57 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
+}
+
+/* =========================================
+   WIREFRAME HEADER & FOOTER 
+   ========================================= */
+
+/* Cấp độ 1: Khối ngoài cùng (Màu xanh dương nhạt, nét liền, dày) */
+.header,
+.footer {
+  outline: 4px solid #06b6d4 !important;
+  outline-offset: -4px; /* Ép viền vào trong để không làm to kích thước tổng */
+}
+
+/*Cấp độ 2: Khung giới hạn nội dung 1200px (Màu xanh lam đậm, nét đứt) */
+.header__inner,
+.header__nav,
+.footer__inner {
+  outline: 3px dashed #3b82f6 !important;
+  outline-offset: -2px;
+}
+
+/*Cấp độ 3: Các cụm khối chính (Trái, Giữa, Phải, Các cột Footer) (Màu tím, nét đứt) */
+.header__left,
+.header__search,
+.header__actions,
+.header__menu,
+.footer__left,
+.footer__content,
+.footer__bottom {
+  outline: 2px dashed #a855f7 !important;
+  outline-offset: -1px;
+}
+
+/*Cấp độ 4: Từng thẻ chi tiết cấp 1 (Màu hồng đậm, nét liền) */
+.header__toggle,
+.header__logo,
+.header__search-input,
+.header__btn,
+.header__menu li,
+.footer__logo,
+.footer__section {
+  outline: 2px solid #ec4899 !important;
+  outline-offset: -1px;
+}
+
+/*Cấp độ 5: Các thành phần văn bản, icon nhỏ bé nhất (Màu xanh lá, nét đứt) */
+.icon-wrapper,
+.btn-text,
+.footer__section h3,
+.footer__section a,
+.footer__bottom p {
+  outline: 1px dashed #10b981 !important;
+  outline-offset: 0px;
 }

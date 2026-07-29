@@ -1,7 +1,8 @@
-/* Dinh Thuy Tien _MSSV:B2404882
-  @create-date: 17/6/2026
-  Link tham khao:https://jensy.vn/blogs/news/
-  */
+/* <!-- ========================================== 
+            TÁC GIẢ: Dinh Thuy Tien
+            MSSV:B2404882
+============================================= --> */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ body {
 .container {
   max-width: 1101px;
   padding: 0 15px;
-  margin: 150px auto 50px auto;
+  margin: 30px auto 20px auto;
 }
 /* Thiết lập phong cách tiêu đề trang lớn */
 .page-title {
