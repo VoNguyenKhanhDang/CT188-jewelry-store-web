@@ -272,7 +272,6 @@ class localId {
     this.a = a;
     document.querySelectorAll(a).forEach((e) => {
       e.addEventListener("click", (e1) => {
-        e1.preventDefault();
         const temp = e1.target.closest("a");
         const id = temp.id;
         window.localStorage.setItem("itemID", id);
@@ -354,6 +353,17 @@ class inputQuality {
         this.updatePrice();
       }
     });
+
+    document.querySelectorAll(".box button").forEach((b) => {
+      b.addEventListener("click", (e) => {
+        this.boxS = e.target.textContent;
+      });
+    });
+    document.querySelectorAll(".size button").forEach((b) => {
+      b.addEventListener("click", (e) => {
+        this.size = e.target.textContent;
+      });
+    });
   }
 
   increass() {
@@ -368,20 +378,10 @@ class inputQuality {
   }
 
   getBoxSizing() {
-    document.querySelectorAll(".box button").forEach((b) => {
-      b.addEventListener("click", (e) => {
-        this.boxS = e.target.textContent;
-      });
-    });
     return this.boxS;
   }
 
   getSizing() {
-    document.querySelectorAll(".size button").forEach((b) => {
-      b.addEventListener("click", (e) => {
-        this.size = e.target.textContent;
-      });
-    });
     return this.size;
   }
 
@@ -390,7 +390,7 @@ class inputQuality {
   }
 
   updatePrice() {
-    const qty = Number(this.number.value) || 0;
+    const qty = Number(this.number.value);
     const p = document.querySelector(this.price);
     p.textContent = (this.unitPrice * qty).toLocaleString("vi-VN") + "đ";
   }
@@ -408,11 +408,9 @@ class activeButton {
         const temp = evt.target;
         const parent = temp.parentElement;
         const isActive = temp.classList.contains("active");
-
-        Array.from(parent.children).forEach((d) => {
-          d.classList.remove("active");
-        });
-
+       for (let i = 0; i < parent.children.length; i++) {
+          parent.children[i].classList.remove("active");
+        }
         if (!isActive) {
           temp.classList.add("active");
         }
@@ -441,22 +439,18 @@ class addToCart {
     const id = params.get("id") || window.localStorage.getItem("itemID");
     const cartKey = getCartKey();
     let cart = JSON.parse(window.localStorage.getItem(cartKey)) || [];
-
     const quantity = this.sl.getValue();
     const boxS = this.sl.getBoxSizing();
     const size = this.sl.getSizing();
-
     if (!boxS || !size) {
       alert("Vui lòng chọn size và loại túi trước khi thêm vào giỏ hàng!");
       return;
     } else {
       alert("Bạn đã thêm vào giỏ hàng thành công!");
     }
-
     const check = cart.find(
       (item) => item.id === id && item.size === size && item.box === boxS,
     );
-
     if (check) {
       check.quantity += quantity;
     } else {
@@ -464,12 +458,10 @@ class addToCart {
         id: id,
         quantity: quantity,
         box: boxS,
-        size: size,
+        size: size
       });
     }
-
     window.localStorage.setItem(cartKey, JSON.stringify(cart));
-
     if (typeof updateCartBadge === "function") {
       updateCartBadge();
     }
@@ -497,18 +489,14 @@ class loadCart {
     const cartKey = getCartKey();
     const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
     let sum = 0;
-
     cart.forEach((item) => {
       const id = item.id;
       const quantity = item.quantity;
       const temp = this.list.find((t) => t.id == id);
-
       const contain = document.createElement("div");
       contain.classList.add("Cart__details");
-
       const div1 = document.createElement("div");
       div1.classList.add("div__img");
-
       const div2 = document.createElement("div");
       div2.classList.add("Cart__details__text");
 
@@ -525,12 +513,10 @@ class loadCart {
       p1.classList.add("price");
       p1.textContent = Number(temp.price).toLocaleString("vi-VN") + "đ";
       div2.appendChild(p1);
-
       const sizeText = document.createElement("p");
       sizeText.classList.add("spSize");
       sizeText.textContent = item.size;
       div2.appendChild(sizeText);
-
       const boxText = document.createElement("p");
       boxText.classList.add("spBox");
       boxText.textContent = item.box;
@@ -584,7 +570,6 @@ class loadCart {
       document.querySelector(".sPrice .price").textContent =
         sum.toLocaleString("vi-VN") + "đ";
       div3.appendChild(p4);
-
       contain.appendChild(div1);
       contain.appendChild(div2);
       const form = this.parent.querySelector(".form-details");
@@ -595,19 +580,15 @@ class loadCart {
   removeItem(id, size, box) {
     const cartKey = getCartKey();
     let cart = JSON.parse(window.localStorage.getItem(cartKey)) || [];
-
     cart = cart.filter(
       (item) => !(item.id === id && item.size === size && item.box === box),
     );
-
     window.localStorage.setItem(cartKey, JSON.stringify(cart));
-
     if (typeof updateCartBadge === "function") {
       updateCartBadge();
     }
     location.reload();
   }
-
   changeQuantity(id, size, box, delta) {
     const cartKey = getCartKey();
     let cart = JSON.parse(window.localStorage.getItem(cartKey)) || [];
@@ -615,7 +596,6 @@ class loadCart {
     const item = cart.find(
       (i) => i.id === id && i.size === size && i.box === box,
     );
-    if (!item) return;
 
     if (delta < 0 && item.quantity <= 1) {
       if (confirm("Bạn có muốn xoá sản phẩm này khỏi giỏ hàng không?")) {
@@ -658,14 +638,7 @@ document.addEventListener("DOMContentLoaded", () => {
     but.value = 1;
 
     // Gắn sự kiện tăng giảm số lượng & lấy thông tin Size/Hộp
-    const quality = new inputQuality(
-      ".input_number",
-      ".increase",
-      ".decreass",
-      ".price",
-    );
-    quality.getBoxSizing();
-    quality.getSizing();
+    const quality = new inputQuality(".input_number",".increase",".decreass",".price");
 
     // Tạo hiệu ứng click cho các nút
     new activeButton(".box button");
@@ -679,7 +652,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Xử lý nút MUA NGAY (Thêm vào giỏ và chuyển trang)
     document.querySelector(".cart").addEventListener("click", (e) => {
       new addToCart(".cart", quality);
-      if (quality.size !== null && quality.boxS !== null) {
+      if (quality.getSizing() !== null && quality.getBoxSizing() !== null) {
         window.location.href = "Cart.html";
       }
     });
