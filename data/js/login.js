@@ -21,7 +21,19 @@ function layDanhSachNguoiDung() {
 function luuDanhSachNguoiDung(danhSach) {
   localStorage.setItem(KEY_DANH_SACH_USER, JSON.stringify(danhSach));
 }
-
+ /* Hàm tạo Key giỏ hàng động tùy theo tài khoản đang đăng nhập.
+ * Mỗi user sẽ có một giỏ hàng của riêng mình
+ */
+function getCartKey() {
+  const userStr = window.localStorage.getItem("userHienTai");
+  if (userStr) {
+    const user = JSON.parse(userStr);
+    return (
+      "cart_" + (user.name || user.username || "default").replace(/\s/g, "")
+    );
+  }
+  return "cart_guest";
+}
 // ========================================================
 // 1. CHỨC NĂNG ẨN / HIỆN MẬT KHẨU
 // ========================================================
