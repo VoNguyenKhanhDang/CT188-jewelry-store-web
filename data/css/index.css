@@ -2,7 +2,10 @@
             TÁC GIẢ: VÕ NGUYỄN KHÁNH ĐĂNG 
             MSSV:B2408783 
 ============================================= --> */
-body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 /*--------------------------------------------
@@ -190,12 +193,6 @@ body {
   max-height: 30px; /* mở rộng chiều cao để chứa chữ */
   transform: translateY(0); /* trả về đúng vị trí ban đầu */
   margin-top: 5px;
-}
-
-/* MŨI TÊN DUY CHUYỂN SANG PHẢI 5px */
-.category-card:hover .category-more i {
-  transform: translateX(5px);
-  transition: transform 0.3s ease;
 }
 
 /*--------------------------------------------
@@ -410,7 +407,7 @@ body {
 /* =========================================
    WIREFRAME TRANG CHỦ
    ========================================= */
-
+/* 
 .hero,
 .coupon-section,
 .category-section,
@@ -457,4 +454,4 @@ body {
 .service-desc {
   outline: 1px dashed #10b981 !important;
   outline-offset: -1px;
-}
+} */

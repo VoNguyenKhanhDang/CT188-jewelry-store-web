@@ -151,7 +151,7 @@ function initHeaderSearch() {
 }
 
 // =========================================================
-// 5. KHỞI CHẠY TẤT CẢ KHI TRANG WEB TẢI XONG (THAY THẾ FETCH)
+// 5. KHỞI CHẠY TẤT CẢ KHI TRANG WEB TẢI XONG
 // =========================================================
 document.addEventListener("DOMContentLoaded", function () {
   capNhatHeaderKhiDangNhap();

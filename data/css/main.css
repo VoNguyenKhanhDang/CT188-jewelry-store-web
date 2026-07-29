@@ -7,12 +7,10 @@
    PHẦN MAIN CONTENT
    ============================================================== */
 * {
-  box-sizing: border-box;
-}
-
-body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .Lavitas {
@@ -773,7 +771,7 @@ p:last-child {
 }
 
 /* Desktop */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .main__section .items {
     width: calc((100% - 90px) / 4);
   }

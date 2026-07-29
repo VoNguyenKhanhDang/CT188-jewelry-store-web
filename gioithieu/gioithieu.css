@@ -14,7 +14,7 @@
 
 body {
   margin: 0;
-  font-family: "Quicksand", sans-serif, inherit;
+  font-family: Arial, Helvetica, sans-serif;
   background: #fff;
 }
 
@@ -182,7 +182,7 @@ ol li::marker {
 
 /*WIREFRAME */
 
-.container {
+/* .container {
   outline: 3px solid #ff0000;
 }
 
@@ -236,4 +236,4 @@ ol li::marker {
 
 .aside a {
   outline: 1px dotted #ff5722;
-}
+} */
