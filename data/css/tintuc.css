@@ -13,7 +13,8 @@ body {
 }
 
 .container {
-  max-width: 1101px;
+  width: 100%;
+  max-width: 99%;
   padding: 0 15px;
   margin: 50px auto 30px auto;
 }
@@ -31,7 +32,7 @@ body {
   flex-direction: column;
   gap: 30px;
   align-items: start;
-  padding:0 15px;
+  padding: 0 15px;
 }
 /* Cột danh sách các bài viết lớn */
 .news-list {
